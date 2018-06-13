@@ -216,7 +216,7 @@
         },
         methods : {
             listarDepartamento () {
-                axios.get('/departamentos').then(function (response){
+                axios.get('/departamento').then(function (response){
                     console.log(response);
                 })
                 .catch(function (error){

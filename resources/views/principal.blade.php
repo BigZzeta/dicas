@@ -12,6 +12,11 @@
     <title>Sistema GTH - Xaero.net</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Icons -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/simple-line-icons-min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!--Línea compilada -->
     <link href="css/plantilla.css" rel="stylesheet">
 
 </head>
@@ -88,9 +93,18 @@
     </footer>
 
     <!-- Bootstrap and necessary plugins -->
-    <script src="js/app.js"></script>
-    <script src="js/plantilla.js"></script>
-        
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/pace.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/template.js"></script>
+    
+    <!--Línea compilada -->
+    <!--<script src="js/app.js"></script>
+    <script src="js/plantilla.js"></script>-->
+    
     
 </body>
 
