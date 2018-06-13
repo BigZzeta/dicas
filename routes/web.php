@@ -1,7 +1,13 @@
 <?php
 
 Route::get('/', function () {
-    return view('contenido/contenido');
+    //return view('contenido/contenido');
+    return "hola";
+});
+
+Route::get('/usuarios2', function () {
+  //return view('contenido/contenido');
+  return "hola";
 });
 
 Route::get('/visitante', function () {
@@ -14,7 +20,7 @@ Route::get('/vistaEmpleado',function(){
 })->name('bEntrada');
 
 
-
+//aqui voy a empezar
 Route::get('/usuarios', 'UserController@index');
 
 Route::get('/usuarios/nuevo', 'UserController@create');
