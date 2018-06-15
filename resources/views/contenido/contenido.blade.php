@@ -1,5 +1,5 @@
     @extends('principal')
-    @section('contenido')   
+    @section('contenido')
     <main class="main">
                 <!-- Breadcrumb -->
                 <ol class="breadcrumb">
@@ -202,7 +202,7 @@
                     <!-- /.modal-dialog -->
                 </div>
                 <!-- Fin del modal Eliminar -->
-                
-            </main> 
-        
+
+            </main>
+
     @endsection

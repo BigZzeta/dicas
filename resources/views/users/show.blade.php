@@ -1,10 +1,19 @@
 @extends('layout')
 
-@section('title',"Usuario {$id}")
+@section('title',"Usuario {$user->id}")
 
 @section('content')
-  <h1>Usuario: {{$id}}</h1>
+  <h1>Usuario Id: {{$user->id}}</h1>
 
-  Mostrando el detalle del usuario: {{$id}}
+
+
+  <p>Nombre del Usuario: {{$user->name}} {{$user->apellidoPaterno}} {{$user->apellidoMaterno}}</p>
+  <p>Username: {{$user->username}}</p>
+  <p>Correo Electrónico: {{$user->email}}</p>
+
+  <p>
+    <!--<a href={{ action('UserController@index') }}>Volver al listado de usuarios</a>-->
+    <a href={{ route('users') }}>Regresar al listado de usuarios</a>
+  </p>
 
 @endsection
