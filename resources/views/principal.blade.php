@@ -10,13 +10,14 @@
     <meta name="keyword" content="Sistema RH Laravel Vue Js, Sistema de Reclutamiento Laravel Vue Js">
     <link rel="shortcut icon" href="img/favicon.png">
     <title>Sistema GTH - Xaero.net</title>
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Icons -->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
     <!--<link href="css/style.css" rel="stylesheet">-->
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/simple-line-icons.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/simple-line-icons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 </head>
 
@@ -32,7 +33,7 @@
         </button>
         <ul class="nav navbar-nav d-md-down-none">
             <li class="nav-item px-3">
-                <a class="nav-link" href="#">Escritorio</a>
+                <a class="nav-link" href="{{ asset('/') }}">Escritorio</a>
             </li>
             <li class="nav-item px-3">
                 <a class="nav-link" href="#">Configuraciones</a>
@@ -76,10 +77,10 @@
 
     <div class="app-body">
 
-        @include('plantilla.sidebar')
+        @include('plantilla.sidebar1')
 
         <!-- Contenido Principal -->
-            @yield('contenido')
+        @yield('content')
         <!-- /Fin del contenido principal -->
     </div>
 
@@ -91,12 +92,12 @@
     </footer>
 
     <!-- Bootstrap and necessary plugins -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/pace.min.js"></script>
-    <script src="js/Chart.min.js"></script>
-    <script src="js/template.js"></script>
+    <script src="{{ asset('js/jquery.min.js') }} "></script>
+    <script src="{{ asset('js/popper.min.js') }} "></script>
+    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('js/pace.min.js') }} "></script>
+    <script src="{{ asset('js/Chart.min.js') }} "></script>
+    <script src="{{ asset('js/template.js') }}"></script>
 
 </body>
 

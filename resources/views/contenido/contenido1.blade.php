@@ -1,5 +1,5 @@
     @extends('principal')
-    @section('contenido')
+    @section('content')
     <main class="main">
                 <!-- Breadcrumb -->
                 <ol class="breadcrumb">
