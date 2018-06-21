@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="{{ asset('bower_components/font-awesome/css/font-awesome.min.css') }}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="{{ asset('bower_components/Ionicons/css/ionicons.min.css') }}">
+
+  <link href="{{ asset('vendors/css/simple-line-icons.min.css') }}" rel="stylesheet">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('dist/css/AdminLTE.min.css') }}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -258,7 +260,7 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
               <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
@@ -311,10 +313,10 @@
   <!-- Left side column. contains the logo and sidebar -->
   @include('plantilla.sidebar')
 
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+    <!--
     <section class="content-header">
       <h1>
         Dashboard
@@ -324,6 +326,8 @@
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Dashboard</li>
       </ol>
+    </section> -->
+    <section class="content-header">
     </section>
 
     <!-- Main content -->
@@ -336,7 +340,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://servisky.dyndns.org">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2018-2019 <a href="http://servisky.dyndns.org">Xaero</a>.</strong> All rights
     reserved.
   </footer>
 
