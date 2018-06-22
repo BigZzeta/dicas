@@ -1,5 +1,5 @@
-    @extends('home')
-    @section('content')
+@extends('home')
+@section('content')
 
 
 <!--#################################################################################### -->
@@ -19,75 +19,93 @@
         </div>
     </div>
 </div>-->
+<section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Usuarios</h3>
+                <div class="box-title">
+                    <input type="submit" value="Nuevo Usuario" onclick = "location='/usuarios/nuevo'"/>
+                </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
 
-<!-- crear nuevo usuario -->
-<div class="card-body">
-  <input type="submit" value="Nuevo Usuario" onclick = "location='/usuarios/nuevo'"/>
-</div>
+                <!-- fin de crear nuevo usuario -->
+                <table class="table table-bordered table-striped table-sm">
+                    <tbody>
+                        @if ($users->isNotEmpty())
+                        <thead>
+                        <tr class="">
+                            <td>Opciones</td>
+                            <td>Num.</td>
+                            <td>Nombre</td>
+                            <td>Apellido</td>
+                            <td>Correo</td>
+                            <td>Estatus</td>
+                            <td>Detalles</td>
+                        </tr>
+                        </thead>
 
-<!-- fin de crear nuevo usuario -->
+                            @foreach($users as $user)
+                            <tr>
+                            <td>
+                                <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalNuevo">
+                                <i class="icon-pencil"></i>
+                                </button> &nbsp;
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalEliminar">
+                                <i class="icon-trash"></i>
+                                </button>
+                            </td>
+                            <th scope="row">{{ $user->id}}</th>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->apellidoPaterno}}</td>
+                            <td>{{ $user->email}}</td>
+                            <td>
+                                <span class="badge badge-success">
+                                    @if($user->status===1)
+                                    Activo
+                                    @else
+                                    Inactivo
+                                    @endif
+                                </span>
+                            </td>
+                            <td><a href="{{ route('users.show', ['id' => $user->id]) }}">Ver detalles</a></td>
+                            </tr>
+                            @endforeach
 
-<table class="table table-bordered table-striped table-sm">
-    <tbody>
-        @if ($users->isNotEmpty())
-        <tr class="">
-            <td>Opciones</td>
-            <td>Num.</td>
-            <td>Nombre</td>
-            <td>Apellido</td>
-            <td>Correo</td>
-            <td>Estatus</td>
-            <td>Detalles</td>
-        </tr>
+                        @else
+                        <tr>
+                        <!--
+                        <td>
+                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalNuevo">
+                            <i class="icon-pencil"></i>
+                            </button> &nbsp;
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalEliminar">
+                            <i class="icon-trash"></i>
+                            </button>
+                        </td> -->
 
-            @foreach($users as $user)
-            <tr>
-              <td>
-                  <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalNuevo">
-                  <i class="icon-pencil"></i>
-                  </button> &nbsp;
-                  <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalEliminar">
-                  <i class="icon-trash"></i>
-                  </button>
-              </td>
-              <th scope="row">{{ $user->id}}</th>
-              <td>{{ $user->name }}</td>
-              <td>{{ $user->apellidoPaterno}}</td>
-              <td>{{ $user->email}}</td>
-              <td>
-                  <span class="badge badge-success">
-                    @if($user->status===1)
-                      Activo
-                    @else
-                      Inactivo
-                    @endif
-                  </span>
-              </td>
-              <td><a href="{{ route('users.show', ['id' => $user->id]) }}">Ver detalles</a></td>
-            </tr>
-            @endforeach
+                        </tr>
 
-        @else
-        <tr>
-          <!--
-          <td>
-              <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalNuevo">
-              <i class="icon-pencil"></i>
-              </button> &nbsp;
-              <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalEliminar">
-              <i class="icon-trash"></i>
-              </button>
-          </td> -->
+                        <p>No hay registros</p>
 
-        </tr>
+                        @endif
 
-        <p>No hay registros</p>
+                    </tbody>
+                </table>
+                <!--#################################################################################### -->
 
-        @endif
+            </div>
+            <!-- /.box-body -->
+          </div>
 
-    </tbody>
-</table>
-<!--#################################################################################### -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
 <nav>
     <ul class="pagination">
         <li class="page-item">
@@ -111,8 +129,44 @@
     </ul>
 </nav>
 
-
+<!--Inicio del modal agregar/actualizar-->
+<div class="modal fade" id="modalNuevo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog modal-primary modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Agregar categoría</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <div class="form-group row">
+                        <label class="col-md-3 form-control-label" for="text-input">Nombre</label>
+                        <div class="col-md-9">
+                            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre de categoría">
+                            <span class="help-block">(*) Ingrese el nombre de la categoría</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 form-control-label" for="email-input">Descripción</label>
+                        <div class="col-md-9">
+                            <input type="email" id="descripcion" name="descripcion" class="form-control" placeholder="Enter Email">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+</div>
 <!--Fin del modal-->
+
 <!-- Inicio del modal Eliminar -->
 <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
   <div class="modal-dialog modal-danger" role="document">
@@ -137,4 +191,4 @@
 </div>
 <!-- Fin del modal Eliminar -->
 
-    @endsection
+@endsection
