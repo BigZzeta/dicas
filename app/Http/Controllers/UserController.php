@@ -4,8 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
+//use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use App\User;
+//use Illuminate\Foundation\Http\FormRequest;
+//use Illuminate\Http\Request\UserRequest;
+use App\Http\Requests\UserRequest;
+
+//class App\Http\Controllers\Validator;
 
 class UserController extends Controller
 
@@ -48,25 +55,43 @@ class UserController extends Controller
   {
       return view('users.create');
   }
+  
+  public function store(UserRequest $request)
+  {
+    $data = new User();
 
-  public function store(Request $request)
-    {
-        //$data = new User();
-        $data = request()->validate([
-          'name'=>'required'
-        ]);
+    $data ->name = $request->input('name');
+    $data ->apellidoPaterno = $request->input('apellidoPaterno');
+    $data ->apellidoMaterno = $request->input('apellidoMaterno');
+    $data ->email = $request->input('email');
+    $data ->username = $request->input('username');
+    $data ->password = bcrypt($request->input['password']);
 
-        $data ->name = $request->input('name');
-        $data ->apellidoPaterno = $request->input('apellidoPaterno');
-        $data ->apellidoMaterno = $request->input('apellidoMaterno');
-        $data ->email = $request->input('email');
-        $data ->username = $request->input('username');
-        $data -> password = bcrypt($request->input['password']);
+    $data -> save();
 
-        $data -> save();
-
-        return redirect()->route('users');
+    return redirect()->route('users');
 
     }
+    public function update(UserRequest $request, $id)
+  {
+    /*
+    $data = new User();
+
+    $data ->name = $request->input('name');
+    $data ->apellidoPaterno = $request->input('apellidoPaterno');
+    $data ->apellidoMaterno = $request->input('apellidoMaterno');
+    $data ->email = $request->input('email');
+    $data ->username = $request->input('username');
+    $data ->password = bcrypt($request->input['password']);
+
+    $data -> save();
+
+    return redirect()->route('users');
+    */
+    return "Usuario actualizado" . $id;
+
+    }
+
+
 
 }
