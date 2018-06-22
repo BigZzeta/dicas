@@ -19,8 +19,6 @@ class userSeeder extends Seeder
             'username'=>'ericen',
             'password'=> bcrypt('celeste12'),
             'status'=>'1'
-
-
         ]);
 
         DB::table('users')->insert([
@@ -31,8 +29,6 @@ class userSeeder extends Seeder
             'username'=>'jose',
             'password'=> bcrypt('jose'),
             'status'=>'0'
-
-
         ]);
 
         DB::table('users')->insert([
@@ -43,8 +39,6 @@ class userSeeder extends Seeder
             'username'=>'adrian',
             'password'=> bcrypt('adrian'),
             'status'=>'0'
-
-
         ]);
 
         DB::table('users')->insert([
@@ -55,8 +49,6 @@ class userSeeder extends Seeder
             'username'=>'guadalupe',
             'password'=> bcrypt('guadalupe'),
             'status'=>'0'
-
-
         ]);
 
         DB::table('users')->insert([
@@ -67,8 +59,6 @@ class userSeeder extends Seeder
             'username'=>'margarito',
             'password'=> bcrypt('margarito'),
             'status'=>'0'
-
-
         ]);
 
         DB::table('users')->insert([
@@ -79,8 +69,6 @@ class userSeeder extends Seeder
             'username'=>'juan',
             'password'=> bcrypt('juan'),
             'status'=>'0'
-
-
         ]);
 
             /*

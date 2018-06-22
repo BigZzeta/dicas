@@ -15,7 +15,7 @@ class departamentosSeeder extends Seeder
         
         DB::table('departamentos')->insert([
             'nombre'=>'Ventas',
-            'descripcion'=>'Contiene los pues de vendedores',
+            'descripcion'=>'Contiene los puestos de vendedores',
             'condicion'=>'1'
         ]);
 

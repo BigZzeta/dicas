@@ -72,7 +72,7 @@ class UserController extends Controller
     return redirect()->route('users');
 
     }
-    public function update(UserRequest $request, $id)
+  public function update(UserRequest $request, $id)
   {
     /*
     $data = new User();
