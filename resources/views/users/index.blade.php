@@ -19,16 +19,23 @@
         </div>
     </div>
 </div>-->
+
 <section class="content">
+
+  <!-- botones Lisate empelados y nuevo usuario-->
+  <div class="row">
+    <div class="col-xs-12">
+        <div class="panel-heading">
+          Lista de usuarios
+          <a href="{{ url('/usuarios/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo usuario</a>
+        </div>
+  </div>
+  </div>
+
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Usuarios</h3>
-                <div class="box-title">
-                    <input type="submit" value="Nuevo Usuario" onclick = "location='/usuarios/nuevo'"/>
-                </div>
-            </div>
+
             <!-- /.box-header -->
             <div class="box-body">
 
@@ -105,6 +112,16 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
+
+      <!-- botones nuevo usuario-->
+      <div class="row">
+        <div class="col-xs-12">
+            <div class="panel-heading">
+              <a href="{{ url('/usuarios/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo usuario</a>
+            </div>
+      </div>
+      </div>
+
     </section>
 <nav>
     <ul class="pagination">

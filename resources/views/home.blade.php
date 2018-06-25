@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"> <!-- Hi hi ssdwewe-->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>GTH | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->

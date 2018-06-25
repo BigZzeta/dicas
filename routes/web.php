@@ -1,9 +1,14 @@
 <?php
 
 //aqui voy a empezar
-Route::get('/', function(){
-  return view('contenido/dashboard');
-});
+// Route::get('/', function(){
+//   return view('/usuarios');
+// });
+
+//en el futo eliminar oe ditar esta linea
+Route::get('/', 'UserController@index')
+  ->name('users');
+
 
 Route::get('/login', function(){
   return view('login');

@@ -2,7 +2,7 @@
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
     <!-- Sidebar user panel -->
-    
+
     <!-- muestra usuarios online
     <div class="user-panel">
       <div class="pull-left image">
@@ -83,8 +83,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="/usuarios"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-          <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-          <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+          <li><a href="/usuarios/nuevo"><i class="fa fa-circle-o"></i> Nuevo Usuario</a></li>
         </ul>
       </li>
       <!-- -->
