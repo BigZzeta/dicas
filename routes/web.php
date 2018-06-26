@@ -2,7 +2,7 @@
 
 //aqui voy a empezar
 // Route::get('/', function(){
-//   return view('/usuarios');
+//   return view('contenido/dashboard');
 // });
 
 //en el futo eliminar oe ditar esta linea
@@ -10,7 +10,7 @@ Route::get('/', 'UserController@index')
   ->name('users');
 
 
-Route::get('/login', function(){
+Route::get('/loginx', function(){
   return view('login');
 });
 
@@ -25,3 +25,7 @@ Route::post('/usuarios/crear','UserController@store');
 Route::get('/usuarios/{user}', 'UserController@show')
   ->where('user', '\w+')
   ->name('users.show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
