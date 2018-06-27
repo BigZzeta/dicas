@@ -1,4 +1,4 @@
-@extends('principal')
+@extends('inicio')
 
 @section('title',"Página no encontrada")
 

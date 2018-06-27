@@ -1,4 +1,4 @@
-@extends('principal')
+@extends('inicio')
 
 <!--@section('title',"Crear usuario")-->
 
@@ -11,9 +11,6 @@
     <!--{!! csrf_field() !!}-->
 
     {{ csrf_field() }}
-
-
-
 
         <!-- Main content -->
         <section class="content">
