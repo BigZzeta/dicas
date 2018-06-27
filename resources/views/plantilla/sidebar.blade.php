@@ -12,6 +12,15 @@
       </li>
 
       <li class="submenu">
+        <a href="#"><i class="fa fa-fw fa-table"></i> <span> Catálogos </span> <span class="menu-arrow"></span></a>
+        <ul class="list-unstyled">
+          <li><a href="/usuarios">Empelados</a></li>
+          <li><a href="/usuarios/nuevo">Puestos</a></li>
+          <li><a href="/usuarios/nuevo">Departamentos</a></li>
+        </ul>
+      </li>
+
+      <li class="submenu">
         <a href="#"><i class="fa fa-fw fa-table"></i> <span> Usuarios </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="/usuarios">Usuarios</a></li>
@@ -19,6 +28,8 @@
         </ul>
       </li>
 
+
+<!--
         <li class="submenu">
           <a href="charts.html"><i class="fa fa-fw fa-area-chart"></i><span> Charts </span> </a>
         </li>
@@ -124,7 +135,7 @@
               <li><a href="pro-slider.html">Slider</a></li>
                           </ul>
                   </li>
-
+-->
           </ul>
 
           <div class="clearfix"></div>
