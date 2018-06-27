@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\usuario;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
-//use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use App\User;
-//use Illuminate\Foundation\Http\FormRequest;
-//use Illuminate\Http\Request\UserRequest;
 use App\Http\Requests\UserRequest;
 
-//class App\Http\Controllers\Validator;
+//colocando esta clase
+use App\Http\Controllers\Controller;
+
 
 class UserController extends Controller
 
@@ -20,7 +20,7 @@ class UserController extends Controller
 
   public function __construct()
   {
-    $this->middleware('auth');
+    //$this->middleware('auth');
   }
 
   public function index()
