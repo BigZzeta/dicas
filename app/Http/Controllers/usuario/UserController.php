@@ -33,25 +33,12 @@ class UserController extends Controller
 
     $title = 'Listado de usuarios';
 
-    //return view('users.index')
-    //    ->with('users', User::all())
-    //    ->with('title','Listado de usuarios');
-
-      return view('users.index', compact('title', 'users'));
+    return view('users.index', compact('title', 'users'));
   }
 
-  public function show(User $user)
+  public function show($username)
   {
-    //$users = DB::table('users')->get();
-    //$user = User::findOrFail($id);
-
-    //dd($user);
-
-    /*
-    if ($user == null){
-      return view('errors.404');
-    }
-    */
+    $user = User::where('username','=',$username)->firstOrFail();
 
     return view('users.show', compact('user'));
 
@@ -64,11 +51,19 @@ class UserController extends Controller
 
   public function store(UserRequest $request)
   {
+    //return $request;
+    if($request->hasFile('foto')){
+        $file = $request->file('foto');
+        $name  = time().$file->getClientOriginalName();
+        $file->move(public_path().'/img/user/',$name);
+        //return $name;
+    }
     $data = new User();
 
     $data ->name = $request->input('name');
     $data ->apellidoPaterno = $request->input('apellidoPaterno');
     $data ->apellidoMaterno = $request->input('apellidoMaterno');
+    $data ->foto = $name;
     $data ->email = $request->input('email');
     $data ->username = $request->input('username');
     $data ->password = bcrypt($request->input['password']);
@@ -78,6 +73,12 @@ class UserController extends Controller
     return redirect()->route('users');
 
     }
+
+  public function editar()
+  {
+    return view('users.editar');
+  }
+
   public function update(UserRequest $request, $id)
   {
     /*
@@ -94,7 +95,8 @@ class UserController extends Controller
 
     return redirect()->route('users');
     */
-    return "Usuario actualizado" . $id;
+    // return "Usuario actualizado" . $id;
+    return "Actualizado";
 
     }
 

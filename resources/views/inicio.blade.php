@@ -4,56 +4,52 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>Pike Admin - Free Bootstrap 4 Admin Template</title>
-		<meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
-		<meta name="author" content="Pike Web Development - https://www.pikephp.com">
+		<title>GTH</title>
+		<!--<meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">-->
+		<!-- <meta name="author" content="Pike Web Development - http://servisky.dyndns.org"> -->
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
-
+		<link rel="shortcut icon" href="{{ asset('assets/images/favicon2.ico') }}">
 		<!-- Bootstrap CSS -->
 		<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-
 		<!-- Font Awesome CSS -->
 		<link href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
-
 		<!-- Custom CSS -->
 		<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css" />
-
 		<!-- BEGIN CSS for this page -->
 		<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/> -->
-    <link rel="stylesheet" type="text/css" href="{{ asset ('assets/css/dataTables.bootstrap4.min.css') }}"/>
-		<!-- END CSS for this page -->
+        <link rel="stylesheet" type="text/css" href="{{ asset ('assets/css/dataTables.bootstrap4.min.css') }}"/>
+        <!-- END CSS for this page -->
+     
 
 </head>
 
-  <body class="adminbody">
-
-  <div id="main">
+<body class="adminbody">
+	<div id="main">
 
   	<!-- top bar navigation -->
   	<div class="headerbar">
 
   		<!-- LOGO -->
           <div class="headerbar-left">
-  			<a href="/" class="logo"><img alt="Logo" src="{{ asset('assets/images/logo.png') }}" /> <span>GTH</span></a>
+  			<a href="/dashboard" class="logo"><img alt="Logo" src="{{ asset('assets/images/dicas.png') }}" /> <span>GTH</span></a>
           </div>
 
           <nav class="navbar-custom">
 
                       <ul class="list-inline float-right mb-0">
 
-  						<li class="list-inline-item dropdown notif">
+  												<li class="list-inline-item dropdown notif">
                               <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                  <i class="fa fa-fw fa-question-circle"></i>
+                                  <!--<i class="fa fa-fw fa-question-circle"></i>-->
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
-                                  <!-- item-->
-                                  <div class="dropdown-item noti-title">
+
+																	<!--<div class="dropdown-item noti-title">
                                       <h5><small>Help and Support</small></h5>
                                   </div>
 
-                                  <!-- item-->
+
                                   <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
                                       <p class="notify-details ml-0">
                                           <b>Do you want custom development to integrate this theme?</b>
@@ -61,7 +57,7 @@
                                       </p>
                                   </a>
 
-                                  <!-- item-->
+
                                   <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">
                                       <p class="notify-details ml-0">
                                           <b>Do you want PHP version of the theme that save dozens of hours of work?</b>
@@ -69,10 +65,10 @@
                                       </p>
                                   </a>
 
-                                  <!-- All-->
+
                                   <a title="Clcik to visit Pike Admin Website" target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item notify-all">
                                       <i class="fa fa-link"></i> Visit Pike Admin Website
-                                  </a>
+                                  </a>-->
 
                               </div>
                           </li>
@@ -135,7 +131,7 @@
                                   <!-- item-->
                                   <a href="#" class="dropdown-item notify-item">
                                       <div class="notify-icon bg-faded">
-                                          <img src="assets/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid">
+                                          <img src="{{ asset('assets/images/avatars/avatar2.png') }}" alt="img" class="rounded-circle img-fluid">
                                       </div>
                                       <p class="notify-details">
                                           <b>John Doe</b>
@@ -147,7 +143,7 @@
                                   <!-- item-->
                                   <a href="#" class="dropdown-item notify-item">
                                       <div class="notify-icon bg-faded">
-                                          <img src="assets/images/avatars/avatar3.png" alt="img" class="rounded-circle img-fluid">
+                                          <img src="{{ asset('assets/images/avatars/avatar3.png') }}" alt="img" class="rounded-circle img-fluid">
                                       </div>
                                       <p class="notify-details">
                                           <b>Michael Cox</b>
@@ -159,7 +155,7 @@
                                   <!-- item-->
                                   <a href="#" class="dropdown-item notify-item">
                                       <div class="notify-icon bg-faded">
-                                          <img src="assets/images/avatars/avatar4.png" alt="img" class="rounded-circle img-fluid">
+                                          <img src="{{ asset('assets/images/avatars/avatar4.png') }}" alt="img" class="rounded-circle img-fluid">
                                       </div>
                                       <p class="notify-details">
                                           <b>Michelle Dolores</b>
@@ -178,7 +174,7 @@
 
                           <li class="list-inline-item dropdown notif">
                               <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                  <img src="assets/images/avatars/admin.png" alt="Profile image" class="avatar-rounded">
+                                  <img src="{{ asset('assets/images/avatars/admin.png') }}" alt="Profile image" class="avatar-rounded">
                               </a>
                               <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                   <!-- item-->
@@ -196,10 +192,10 @@
                                       <i class="fa fa-power-off"></i> <span>Logout</span>
                                   </a>
 
-  								<!-- item-->
+  								<!-- item-->		<!--
                                   <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
                                       <i class="fa fa-external-link"></i> <span>Pike Admin</span>
-                                  </a>
+                                  </a>-->
                               </div>
                           </li>
 
@@ -276,7 +272,7 @@
 
   	<!-- Counter-Up-->
   	<script src="{{ asset ('assets/plugins/waypoints/lib/jquery.waypoints.min.js') }}"></script>
-  	<script src="{{ asset ('assets/plugins/counterup/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset ('assets/plugins/counterup/jquery.counterup.min.js') }}"></script>   
 
   	<script>
   		$(document).ready(function() {

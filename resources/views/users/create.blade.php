@@ -7,7 +7,7 @@
 
   @include('errors.error')
 
-  <form class="form-grup" method="POST" action="{{ url('usuarios/crear') }}">
+  <form class="form-grup" method="POST" action="{{ url('usuarios/crear') }}" enctype="multipart/form-data">
     <!--{!! csrf_field() !!}-->
 
     {{ csrf_field() }}
@@ -46,13 +46,23 @@
                     <input type="text" class="form-control my-colorpicker1" name="apellidoPaterno" placeholder="Apellido Paterno" value="{{ old('apellidoPaterno') }}" required>
                   </div>
                 </div>
-                <!--Apellido Paterno -->
+                <!--Apellido Materno -->
                 <div class="box-body">
                   <div class="form-group">
                     <label>Apellido Materno:</label>
                     <input type="text" class="form-control my-colorpicker1" name="apellidoMaterno" placeholder="Apellido Materno" value="{{ old('apellidoMaterno') }}" required>
                   </div>
                 </div>
+
+                <!--foto -->
+                <div class="box-body">
+                  <div class="form-group">
+                    <label>Foto:</label>
+                    <!-- <input type="file" class="form-control my-colorpicker1" id="filer_example2" multiple="multiple" name="foto" placeholder="foto" value="{{ old('foto') }}"> -->
+                    <input type="file" name="foto" required>
+                  </div>
+                </div>
+
                 <!--email -->
                 <div class="box-body">
                   <div class="form-group">

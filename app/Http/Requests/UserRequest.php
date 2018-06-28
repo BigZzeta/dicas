@@ -27,6 +27,7 @@ class UserRequest extends FormRequest
             'name' => 'required',
             'apellidoPaterno' => 'required',
             'apellidoMaterno' => 'required',
+            //'foto' => 'required',
             'email'=>'required|unique:users,email',
             'username'=>'required|unique:users,username',
             'password'=> 'required'

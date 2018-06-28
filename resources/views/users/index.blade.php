@@ -23,6 +23,7 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Correo</th>
+                <th>Usuario</th>
                 <th>Status</th>
                 <th>Detalles</th>
               </tr>
@@ -35,6 +36,7 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->apellidoPaterno}}</td>
                 <td>{{ $user->email}}</td>
+                <td>{{ $user->username}}</td>
                 <td>
 
                 <span class="badge badge-success">
@@ -46,7 +48,7 @@
                 </span>
 
                 </td>
-                  <td><a href="{{ route('users.show', ['id' => $user->id]) }}">Ver detalles</a></td>
+                  <td><a href="{{ route('users.show', ['username' => $user->username]) }}">Ver detalles</a></td>
                 </tr>
               @endforeach
 
