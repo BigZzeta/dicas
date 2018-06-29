@@ -39,14 +39,13 @@ class UserController extends Controller
     //$users = DB::table('users')->get();
     //$user = User::findOrFail($id);
 
-    //dd($user);
+   // dd($user);
 
     /*
     if ($user == null){
       return view('errors.404');
     }
     */
-
     return view('users.show', compact('user'));
 
   }

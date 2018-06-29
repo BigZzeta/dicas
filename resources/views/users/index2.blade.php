@@ -22,12 +22,12 @@
 
 <!-- crear nuevo usuario -->
 <div class="card-body">
-  <input type="submit" value="Nuevo Usuario" onclick = "location='/usuarios/nuevo'"/>
+  <input  type="button" value="Nuevo Usuario" onclick = "location='/usuarios/nuevo'"/>
 </div>
 
 <!-- fin de crear nuevo usuario -->
 
-<table class="table table-bordered table-striped table-sm">
+<table class="table table-re table-bordered table-striped table-sm">
     <tbody>
         @if ($users->isNotEmpty())
         <tr class="">
