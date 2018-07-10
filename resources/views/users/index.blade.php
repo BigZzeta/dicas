@@ -75,3 +75,4 @@
 <!-- fin de nueva tabla -->
 
 @endsection
+

@@ -21,6 +21,7 @@ Route::get('/usuarios/{user}', 'usuario\UserController@show')
   ->where('user', '\w+')
   ->name('users.show');
 
+<<<<<<< HEAD
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -33,5 +34,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::any('/empleados','empleados\EmpleadosController@index')->name('empleados');
 Route::any('/empleados/ver','empleados\EmpleadosController@show')->name('showEmpleados');
 Route::any('/empleados/actualizar/{id?}/{id2?}','empleados\EmpleadosController@update')->name('updateEmpleados');
+=======
+/*empleados*/
+Route::any('/empleados','empleados\EmpleadosController@index')->name('empleados');
+Route::any('/empleados/ver','empleados\EmpleadosController@show')->name('showEmpleados');
+Route::any('/empleados/actualizar/{id?}','empleados\EmpleadosController@update')->name('updateEmpleados');
+>>>>>>> 9d8da7cd819abd81830fc9626734f27c59e19da0
 Route::any('/empleados/eliminar/{id?}','empleados\EmpleadosController@delete')->name('deleteEmpleados');
 Route::any('/empleados/agregar/{id?}','empleados\EmpleadosController@add')->name('addEmpleados');
