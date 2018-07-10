@@ -131,6 +131,16 @@ class userSeeder extends Seeder
             'status'=>'0'
         ]);
 
+        DB::table('users')->insert([
+            'name'=>'admin',
+            'apellidoPaterno'=>'Ramirez',
+            'apellidoMaterno'=>'Rivera',
+            'email'=>'admin@gmail.com',
+            'username'=>'admin',
+            'password'=> bcrypt('admin'),
+            'status'=>'0'
+        ]);
+
 
 
             /*

@@ -1,4 +1,4 @@
-@extends('inicio')
+@extends('layouts.app')
 
 @section('content')
 

@@ -8,7 +8,8 @@
     <ul>
 
       <li class="submenu">
-        <a class="active" href="/dashboard"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
+        <!--<a class="active" href="/dashboard"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>-->
+        <a class="active" href="#"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
       </li>
 
       <li class="submenu">
@@ -24,7 +25,7 @@
         <a href="#"><i class="fa fa-user-circle bigfonts"></i> <span> Accesos </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="/usuarios">Usuarios</a></li>
-          <li><a href="/usuarios/nuevo">Nuevo usuarios</a></li>
+          <li><a href="/usuarios/nuevo">Nuevo usuario</a></li>
         </ul>
       </li>
 

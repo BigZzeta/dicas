@@ -39,19 +39,22 @@ class UserController extends Controller
   public function show($username)
   {
     $user = User::where('username','=',$username)->firstOrFail();
-
+    // return $user;
     return view('users.show', compact('user'));
 
   }
 
   public function create()
   {
+    // dd('Actualizando');
       return view('users.create');
   }
 
   public function store(UserRequest $request)
   {
     //return $request;
+    // dd('Actualizando');
+
     if($request->hasFile('foto')){
         $file = $request->file('foto');
         $name  = time().$file->getClientOriginalName();
@@ -74,32 +77,21 @@ class UserController extends Controller
 
     }
 
-  public function editar()
+  public function editar($username)
   {
-    return view('users.editar');
+    $user = User::where('username','=',$username)->firstOrFail();
+
+    return view('users.editar', compact('user'));
   }
 
-  public function update(UserRequest $request, $id)
+  public function update(UserRequest $request)
   {
-    /*
-    $data = new User();
+    return "hola";
+    // $request;
+    // return redirect()->route('users');
 
-    $data ->name = $request->input('name');
-    $data ->apellidoPaterno = $request->input('apellidoPaterno');
-    $data ->apellidoMaterno = $request->input('apellidoMaterno');
-    $data ->email = $request->input('email');
-    $data ->username = $request->input('username');
-    $data ->password = bcrypt($request->input['password']);
-
-    $data -> save();
-
-    return redirect()->route('users');
-    */
-    // return "Usuario actualizado" . $id;
-    return "Actualizado";
+    // return "Actualizado";
 
     }
-
-
 
 }
