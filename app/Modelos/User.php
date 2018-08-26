@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Modelos;
 
 use Illuminate\Notifications\Notifiable;

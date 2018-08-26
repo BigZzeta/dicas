@@ -1,110 +1,157 @@
-@extends('home')
+@extends('inicio')
 @section('content')
 
-    <!--#################################################################################### -->
-    <!--######cuerpo de la pagina ########################################################## -->
-    <table class="table table-bordered table-striped table-sm">
-        <tbody>
-            <tr>
-                <td>Opciones</td>
-                <td>Num.</td>
-                <td>Nombre</td>
-                <td>Apellido</td>
-                <td>Correo</td>
-                <td>Estatus</td>
-            </tr>
-                <tr>
-                  <td>
-                      <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalNuevo">
-                      <i class="icon-pencil"></i>
-                      </button> &nbsp;
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalEliminar">
-                      <i class="icon-trash"></i>
-                      </button>
+  
+<!-- Start content -->
+<div class="content">
 
-                      <th scope="row">{{ $user->id}}</th>
-                      <td>{{ $user->name }}</td>
-                      <td>{{ $user->apellidoPaterno}}</td>
-                      <td>{{ $user->apellidoMaterno}}</td>
-                      <td>{{ $user->email}}</td>
-                      <td>
-                          <span class="badge badge-success">Activo</span>
-                      </td>
+    <div class="container-fluid">
 
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="breadcrumb-holder">
+                        <h1 class="main-title float-left">Perfil</h1>
+                        <ol class="breadcrumb float-right">
+                            <!--<li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item active">Profile</li>-->
+                        </ol>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->            
 
-                  </td>
+            <div class="row">
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    <h3><i class="fa fa-user"></i> Detalle</h3>
+                                </div>
+
+                                <div class="card-body">
 
 
+                                    <form action="#" method="post" enctype="multipart/form-data">
 
-                </tr>
+                                    <div class="row"> 
+
+                                    <div class="col-lg-3 col-xl-3">
+                                        <!--                                            
+                                        <b>Latest activity</b>: Dec 06 2017, 22:23
+                                        <br />
+                                        <b>Register date: </b>: Nov 24 2017, 20:32
+                                        <br />
+                                        <b>Register IP: </b>: 123.456.789-->
+
+                                        <div class="m-b-10"></div>
+
+                                        <div id="avatar_image">                                              
+                                            <img style="height: 120px; width: 120px; background-color: #EFEFEFEF;" class="profile-user-img img-responsive rounded-circle mx-auto d-block" 
+                                            src="../../img/user/{{ $user->foto }}" alt="imagen">                                                
+                                            
+                                            <!--<i class="fa fa-trash-o fa-fw"></i>--> <!--<a class="delete_image" href="#">Eliminar avatar</a>-->
+
+                                        </div>
+                                        <!--<div id="image_deleted_text"></div>-->
 
 
-        </tbody>
-    </table>
-    <p>
-      <a href={{ route('users') }}>Regresar al listado de usuarios</a>
-    </p>
-  <!--#################################################################################### -->
+                                        <div class="m-b-10"></div>
 
-  <!--Inicio del modal agregar/actualizar-->
-  <div class="modal fade" id="modalNuevo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-      <div class="modal-dialog modal-primary modal-lg" role="document">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h4 class="modal-title">Agregar categoría</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-                  <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-                      <div class="form-group row">
-                          <label class="col-md-3 form-control-label" for="text-input">Nombre</label>
-                          <div class="col-md-9">
-                              <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre de categoría">
-                              <span class="help-block">(*) Ingrese el nombre de la categoría</span>
-                          </div>
-                      </div>
-                      <div class="form-group row">
-                          <label class="col-md-3 form-control-label" for="email-input">Descripción</label>
-                          <div class="col-md-9">
-                              <input type="email" id="descripcion" name="descripcion" class="form-control" placeholder="Enter Email">
-                          </div>
-                      </div>
-                  </form>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-primary">Guardar</button>
-              </div>
-          </div>
-          <!-- /.modal-content -->
-      </div>
-      <!-- /.modal-dialog -->
-  </div>
-  <!--Fin del modal-->
-  <!-- Inicio del modal Eliminar -->
-  <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-      <div class="modal-dialog modal-danger" role="document">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h4 class="modal-title">Eliminar Categoría</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-                  <p>Estas seguro de eliminar la categoría?</p>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-danger">Eliminar</button>
-              </div>
-          </div>
-          <!-- /.modal-content -->
-      </div>
-      <!-- /.modal-dialog -->
-  </div>
-  <!-- Fin del modal Eliminar -->
+                                        <!--<div class="form-group">
+                                        <label>Cambiar avatar</label>
+                                        <input type="file" name="image" class="form-control">
+                                        </div>-->
+
+                                        <hr>
+                                        
+                                        <h3 class="profile-username text-center">{{ $user->name }} </h3>
+                                        <!--<p class="text-muted text-center">Software Engineer</p>
+                                        <ul class="list-group list-group-unbordered">
+                                        <li class="list-group-item">
+                                            <b>Followers</b> <a class="pull-right">1,322</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Following</b> <a class="pull-right">543</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Friends</b> <a class="pull-right">13,287</a>
+                                        </li>
+                                        </ul>-->
+
+                                    </div>
+
+                                    <div class="col-lg-9 col-xl-9 border-left">
+
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label>Nombre</label>                                                                                              
+                                                    <input class="form-control" name="name" type="text" value="{{ $user->name }} {{ $user->apellidoPaterno }} {{ $user->apellidoMaterno }}" readonly />
+                                                </div>
+                                            </div>                                                
+
+                                            <div class="col-lg-6">
+                                            <div class="form-group">
+                                            <label>Correo Electrónico</label>
+                                            <input class="form-control" name="email" type="email" value=" {{ $user->email }}" readonly />
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                            <div class="form-group">
+                                            <label>Estatus</label>                                                                                           
+                                            <input class="form-control" name="status" type="text" value="@if($user->status===1) Activo @else Inactivo @endif" readonly />
+                                            </div>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                            <div class="form-group">
+                                            <label>Telefono</label>
+                                            <input class="form-control" name="telefono" type="text" value="" readonly/>
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div>
+                                                <p align="right">
+                                                <a href="{{ url('/usuarios') }}" class="btn btn-primary">Volver</a>
+                                                <a href="{{ url('/usuarios/editar1') }}" class="btn btn-primary">Editar Perfil</a>                                                                                                                      
+                                                </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            
+                                        </div>
+
+                                    </div>
+                                    
+                                    </div>
+
+                                    </form>
+
+                    </div>
+                    <!-- end card-body -->
+
+                </div>
+                <!-- end card -->
+
+            </div>
+            <!-- end col -->
+
+        </div>
+        <!-- end row -->
+
+    </div>
+    <!-- END container-fluid -->
+
+</div>
+<!-- END content -->
 
 @endsection
