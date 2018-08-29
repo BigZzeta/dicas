@@ -15,13 +15,15 @@ class DatabaseSeeder extends Seeder
         //dd('departamentoSeeder');
         $this->truncateTables([
             'departamentos',
+            'users',
             'empleados',
-            'users'
+            'cat_entidad_federativa'
         ]);
 
         $this->call(departamentosSeeder::class);
         $this->call(userSeeder::class);
-        $this->call(EmplSeeder::class);
+        $this->call(empleadosSeeder::class);
+        $this->call(cat_entidad_federativa::class);
 
     }
     protected function truncateTables(array $tables)

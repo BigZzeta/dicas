@@ -1,44 +1,42 @@
 <?php
 
-Route::get('/', 'usuario\UserController@index')->name('inicio');
+/*Route::get('/', 'usuario\UserController@index')
+  ->name('users');*/
+/*Ruta de inicio de la aplicacion*/
+Route::get('/','Login\LoginController@index')->name('start');
+/*fin de la ruta de inicio de la aplicacion*/
+Route::any('/validar','Login\LoginController@valida')->name('validar');
+Route::get('/inicio', function (){return view('inicio');})->name('inicio');
+
 
 Route::get('/dashboard', function(){
-  return view('contenido/dashboard');
+  return view('contenido.dashboard');
 });
 
-Route::get('/usuarios', 'usuario\UserController@index')
-  ->name('users');
 
+
+//probar esta ruta para el login
+Route::get('/loginx', function(){
+  return view('login');
+});
+
+
+Route::get('/usuarios', 'usuario\UserController@index')->name('users');
 Route::get('/usuarios/nuevo', 'usuario\UserController@create')->name('users.create');
-
 Route::post('/usuarios/crear','usuario\UserController@store');
-
 Route::get('/usuarios/{user}/editar', 'usuario\UserController@editar')->name('users.editar');
-
-Route::put('/usuarios/{user}/actualizar','usuario\UserController@update');
+Route::any('/usuarios/update/{users}', 'usuario\UserController@update')->name('users.update');
 
 Route::get('/usuarios/{user}', 'usuario\UserController@show')
   ->where('user', '\w+')
   ->name('users.show');
 
-<<<<<<< HEAD
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//sadsdsd
-// Route::put('/usuarios/{user}', 'UserController@update');
-// Route::delete('/usuarios/{user}', 'UserController@destroy')->name('users.destroy');
-
 /*empleados*/
 Route::any('/empleados','empleados\EmpleadosController@index')->name('empleados');
-Route::any('/empleados/ver','empleados\EmpleadosController@show')->name('showEmpleados');
 Route::any('/empleados/actualizar/{id?}/{id2?}','empleados\EmpleadosController@update')->name('updateEmpleados');
-=======
-/*empleados*/
-Route::any('/empleados','empleados\EmpleadosController@index')->name('empleados');
-Route::any('/empleados/ver','empleados\EmpleadosController@show')->name('showEmpleados');
-Route::any('/empleados/actualizar/{id?}','empleados\EmpleadosController@update')->name('updateEmpleados');
->>>>>>> 9d8da7cd819abd81830fc9626734f27c59e19da0
 Route::any('/empleados/eliminar/{id?}','empleados\EmpleadosController@delete')->name('deleteEmpleados');
 Route::any('/empleados/agregar/{id?}','empleados\EmpleadosController@add')->name('addEmpleados');

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,9 +18,9 @@
 		<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css" />
 		<!-- BEGIN CSS for this page -->
 		<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/> -->
-        <link rel="stylesheet" type="text/css" href="{{ asset ('assets/css/dataTables.bootstrap4.min.css') }}"/>
-        <!-- END CSS for this page -->
-     
+    <link rel="stylesheet" type="text/css" href="{{ asset ('assets/css/dataTables.bootstrap4.min.css') }}"/>
+    <!-- END CSS for this page -->
+    <script src="{{ asset ('assets/js/jquery.min.js') }}"></script>
 
 </head>
 
@@ -248,7 +248,7 @@
   <!-- END main -->
 
   <script src="{{ asset ('assets/js/modernizr.min.js') }}"></script>
-  <script src="{{ asset ('assets/js/jquery.min.js') }}"></script>
+ <!-- <script src="{{ asset ('assets/js/jquery.min.js') }}"></script>-->
   <script src="{{ asset ('assets/js/moment.min.js') }}"></script>
 
   <script src="{{ asset ('assets/js/popper.min.js') }}"></script>
@@ -273,7 +273,7 @@
 
   	<!-- Counter-Up-->
   	<script src="{{ asset ('assets/plugins/waypoints/lib/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset ('assets/plugins/counterup/jquery.counterup.min.js') }}"></script>   
+    <script src="{{ asset ('assets/plugins/counterup/jquery.counterup.min.js') }}"></script>
 
   	<script>
   		$(document).ready(function() {
@@ -384,6 +384,18 @@
 
   	});
   	</script>
+
+		<!-- script para mostrar preview de la imagena  subir -->
+		<script>
+		var loadFile = function(event) {
+			var reader = new FileReader();
+			reader.onload = function(){
+				var output = document.getElementById('output');
+				output.src = reader.result;
+			};
+			reader.readAsDataURL(event.target.files[0]);
+		};
+		</script>
   <!-- END Java Script for this page -->
 
   </body>

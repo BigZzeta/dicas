@@ -8,14 +8,14 @@
         <title>Laravel</title>
         <link rel="shortcut icon" href="{{asset('img/icon.png')}}" />
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> -->
         <!--Bootstrap 4.1-->
-        <link href=" {{ asset('bootstrap_4.0/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
-        <link href=" {{ asset('bootstrap_4.0/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
-        <link href=" {{ asset('bootstrap_4.0/css/carousel.css') }}" rel="stylesheet" type="text/css">
-        <script src="{{ asset('bootstrap_4.0/js/bootstrap.min.js') }}"  type="text/javascript"></script>
-        <script src="{{ asset('bootstrap_4.0/js/jquery-3.2.1.min.js') }}"  type="text/javascript"></script>
-        <script src="{{ asset('bootstrap_4.0/js/bootstrap.js') }}"  type="text/javascript"></script>
+        <link href=" {{ asset('assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+        <link href=" {{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+        <link href=" {{ asset('assets/css/carousel.css') }}" rel="stylesheet" type="text/css">
+        <script src="{{ asset('assets/js/bootstrap.min.js') }}"  type="text/javascript"></script>
+        <script src="{{ asset('assets/js/jquery.min.js') }}"  type="text/javascript"></script>
+        <script src="{{ asset('assets/js/bootstrap.js') }}"  type="text/javascript"></script>
     </head>
     <body style="background: #009688">
 
@@ -134,7 +134,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form id="form1" action="{{route('logueo')}}" method="POST" >
+                            <form id="form1" action="{{route('validar')}}" method="POST" >
                                 <div class="modal-body" >
                                     <div class="container-fluid">
                                         <div class="row">
@@ -145,7 +145,7 @@
                                             <div class="col-sm-4 " >Contraseña:</div>
                                             <input id="pass" name="pass" type="password" class="col-sm-8 form-control" required placeholder="*****"/>
                                             <!-- token de laravel-->
-                                            <input type="hidden" name="_token" value="{{csrf_token()}}" id="token"/>
+                                            {{ csrf_field() }}
                                         </div>
                                     </div>
                                 </div>
@@ -157,58 +157,54 @@
                         </div>
                     </div>
                 </div>
-                <a id="entrada" href="{{route('panelControl')}}"></a>
+                <a id="logueado" href="#"></a>
                 <!--Aqui termina la ventana modal de logueo-->
 
-
-                <div class="flex-center position-ref full-height">
-                    @if (Route::has('login'))
-                    <div class="top-right links">
-                        @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                        @else
-                        <a href="{{ route('auth/login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                        @endauth
-                    </div>
-                    @endif
-                </div>
                 <!--Ejecutar ajax de formulario Login-->
                 <script type="text/javascript">
                     function validaLogueo() {
-                        /*Primera forma
-                         *   var nombre = document.getElementsByName("usr")[0].value;
-                         var clave = document.getElementsByName("pass")[0].value;
-                         var form= $('#form1');
-                         var url= form.attr('action')+"/4";
-                         alert("excelente: " + url);
-                         var data=form.serialize();
-                         $.post(url,data,function(result){
-                         alert("excelente: " + result);
-                         });*/
-
+                        /*el link*/
+                        var link = document.getElementById('logueado');
                         var form = $('#form1');
                         var url = form.attr('action');
+                        //alert("la ruta: " + url);
                         var data = form.serialize();
-                        $.ajax({
-                                url: url,
-                                headers: {'X-CSRF-TOKEN': token},
-                                type: 'POST',
-                                dataType: 'json',
-                                data: data,
-                                success: function( respuesta){
-                                    var a=respuesta.msj;
-                                   if(a=="Logueado"){
-                                       var en=document.getElementById("entrada");
-                                       en.click();
-                                   }else{
-                                       alert("Error en el logueo, intente de nuevo");
-                                   }
-                                },
-                                error: function(){
-                                    alert("Recarga la pagina, se ha vencido la sesión");
-                                }
-                            });
+                        $.post(url, data, function (result) {
+                            // alert("el msj: " + result.Login);
+                            if (result == 'error') {
+                                alert("Credenciales incorrectas, Intenta de Nuevo!!! ;)");
+                            } else {
+                                link.href = result.Login;
+                                link.click();
+                            }
+                        }).fail(function (jqXHR) {
+                            alert('sesion vencida, recarga la pagina');
+                            //alert(jqXHR.responseText);
+                        });
+
+                        /*  var form = $('#form1');
+                         var url = form.attr('action');
+                         var data = form.serialize();
+                         alert(data);
+                         $.ajax({
+                         url: url,
+                         headers: {'X-CSRF-TOKEN': token},
+                         type: 'POST',
+                         dataType: 'json',
+                         data: data,
+                         success: function (respuesta) {
+                         var a = respuesta.msj;
+                         if (a == "Logueado") {
+                         var en = document.getElementById("entrada");
+                         en.click();
+                         } else {
+                         alert("Error en el logueo, intente de nuevo");
+                         }
+                         },
+                         error: function () {
+                         alert("Recarga la pagina, se ha vencido la sesión");
+                         }
+                         });*/
                     }
                 </script>
                 </body>
