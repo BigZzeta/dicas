@@ -65,7 +65,7 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL');
                                         <a class="btn btn-secondary btn-sm" href="{{route('updateEmpleados').'/'.$item->idEmpleado}}" style="margin-left: 3px;">Editar</a>
                                         <button type="button" onclick="javascript:pasar({{$item->idEmpleado}})" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#borrar" style="margin-left: 3px;" >Borrar</button>
                                     </div>
-                                </td> 
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -119,7 +119,7 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL');
                 </button>
             </div>
             <div class="modal-body"  >
-                <!--Aqui va todo lo chido --> 
+                <!--Aqui va todo lo chido -->
                 <div class="form-group row">
                     <div class="col-md-3"></div>
                     <div class="col-md-6"><!-- mostrar -->
@@ -140,7 +140,7 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL');
                         <label class="form-control-label">Código Empleado:</label>
                         <input type="text"  name="codigoEmpleado" class="form-control text text-uppercase" value="{{$item->codigoEmpleado}}" readonly>
                     </div>
-                </div> 
+                </div>
                 <!--DATOS PERSONALES -->
                 <h4 class="tex text-primary">Datos Personales</h4>
                 <hr/>
@@ -300,7 +300,7 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL');
     elemento.value = id;
     }
 </script>
-<!-- funciones para ajax, envio de datos 
+<!-- funciones para ajax, envio de datos
 <script type="text/javas            cript">
 function ad            d(d) {
 var cerrado = $('#close_add');
