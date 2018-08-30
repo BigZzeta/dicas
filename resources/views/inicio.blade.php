@@ -273,12 +273,7 @@
 
         <!-- Counter-Up-->
         <script src="{{ asset ('assets/plugins/waypoints/lib/jquery.waypoints.min.js') }}"></script>
-        <<<<<<< HEAD
         <script src="{{ asset ('assets/plugins/counterup/jquery.counterup.min.js') }}"></script>   
-        =======
-        <script src="{{ asset ('assets/plugins/counterup/jquery.counterup.min.js') }}"></script>
-        >>>>>>> 774ce2983090cd240c050ac0798b43b8853a118f
-
         <script>
 $(document).ready(function () {
     // data-tables
