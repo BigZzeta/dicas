@@ -101,7 +101,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <label class=" form-control-label" ><i class="text-danger">*</i> Curp:</label>
-                                <input minlength="18" maxlength="30"   name="curp" class="form-control text text-uppercase" value="{{ old('curp') }}"   required />
+                                <input minlength="18" maxlength="18"   name="curp" class="form-control text text-uppercase" value="{{ old('curp') }}"   required />
                                 @if($errors->get('curp'))
                                 <div class="alert alert-danger">{{ $errors->get('curp')[0]}}</div>
                                 @endif
