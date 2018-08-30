@@ -4,6 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+use Illuminate\Validation\Rule;
+
 class UserRequest extends FormRequest
 {
     /**
@@ -25,11 +27,12 @@ class UserRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'apellidoPaterno' => 'required',
-            'apellidoMaterno' => 'required',
-            //'foto' => 'required',
-            'email'=>'required|unique:users,email',
+            'apellidoPaterno' => '',
+            'apellidoMaterno' => '',
+            'foto' => '',          
+            'email' => ['required', 'email', 'max:255', 'unique:users,email,$id'],
             'username'=>'required|unique:users,username',
+            'tipousuario'=>'required',
             'password'=> 'required'
         ];
     }

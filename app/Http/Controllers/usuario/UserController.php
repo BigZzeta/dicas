@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\usuario;
 
-//use Illuminate\Http\Request;
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use App\Modelos\User;
+use App\User;
+use App\tipousuario;
 use App\Http\Requests\UserRequest;
 //colocando esta clase
 use App\Http\Controllers\Controller;
@@ -19,15 +19,15 @@ class UserController extends Controller {
     }
 
     public function index() {
-        //$users = DB::table('users')->get();
         $users = User::all();
-        //dd($users);
+
         $title = 'Listado de usuarios';
+
         return view('users.index', compact('title', 'users'));
     }
 
-    public function show($username) {
-        $user = User::where('username', '=', $username)->firstOrFail();
+    public function show($id) {
+        $user = User::where('username', '=', $id)->firstOrFail();
         return view('users.show', compact('user'));
     }
 
@@ -36,12 +36,12 @@ class UserController extends Controller {
     }
 
     public function store(UserRequest $request) {
-        //return $request;
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');
             $name = time() . $file->getClientOriginalName();
             $file->move(public_path() . '/img/user/', $name);
-            //return $name;
+        } else {
+            $name = '';
         }
         $data = new User();
 
@@ -51,6 +51,7 @@ class UserController extends Controller {
         $data->foto = $name;
         $data->email = $request->input('email');
         $data->username = $request->input('username');
+        // $data ->tipousuario = $request->input('tipousuario');
         $data->password = bcrypt($request->input['password']);
 
         $data->save();
@@ -58,27 +59,57 @@ class UserController extends Controller {
         return redirect()->route('users');
     }
 
-    public function editar() {
-        return view('users.editar');
+    public function editar($username) {
+        // $tipou = tipousuario::all();
+
+        $user = User::where('username', '=', $username)->firstOrFail();
+
+        return view('users.editar', compact('user'));
     }
 
-    public function update(UserRequest $request, $id) {
-        /*
-          $data = new User();
+    public function update(Request $request, $id) {
+        $data = User::findOrFail($id);
 
-          $data ->name = $request->input('name');
-          $data ->apellidoPaterno = $request->input('apellidoPaterno');
-          $data ->apellidoMaterno = $request->input('apellidoMaterno');
-          $data ->email = $request->input('email');
-          $data ->username = $request->input('username');
-          $data ->password = bcrypt($request->input['password']);
+        $valida = $request->validate([
+            'name' => 'required',
+            'apellidoPaterno' => '',
+            'apellidoMaterno' => '',
+            'foto' => '',
+            'email' => Rule::unique('users')->ignore($data->id, 'id'),
+            'username' => Rule::unique('users')->ignore($data->id, 'id'),
+            'tipousuario' => 'required'
+        ]);
 
-          $data -> save();
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $namefoto = time() . $file->getClientOriginalName();
+            $file->move(public_path() . '/img/user/', $namefoto);
 
-          return redirect()->route('users');
-         */
-        // return "Usuario actualizado" . $id;
-        return "Actualizado";
+            $data->foto = $namefoto;
+        }
+
+        if ($data['password'] != null) {
+            $data['password'] = bcrypt($data['password']);
+        } else {
+            unset($data['password']);
+        }
+
+        /* Aqui va todo el rollo de la edita en la bd */
+        /* Listo, el unico pex que da es el del request, ahi checalo, ya esta solucionado ese rollo */
+
+        $data->name = $request->input('name');
+        $data->apellidoPaterno = $request->input('apellidoPaterno');
+        $data->apellidoMaterno = $request->input('apellidoMaterno');
+        // $data ->foto = $namefoto;
+        $data->email = $request->input('email');
+        $data->username = $request->input('username');
+        $data->status = $request->input('status');
+        $data->idTipoUsuario = $request->input('tipousuario');
+        $data->password = bcrypt($request->input['password']);
+
+        $data->save();
+
+        return redirect()->route('users');
     }
 
 }

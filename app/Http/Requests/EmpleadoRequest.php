@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use App\Empleado;
+
 class EmpleadoRequest extends FormRequest
 {
     /**
@@ -35,8 +36,6 @@ class EmpleadoRequest extends FormRequest
             'clabeInterbancaria' => 'unique:empleados,clabeInterbancaria',
         ];
     }
-    
-    
      public function messages()
     {
         return [

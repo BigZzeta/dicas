@@ -68,6 +68,7 @@ class EmpleadosController extends Controller {
     static function refrescar(Request $request, $objeto) {
 
         $msj = array(
+            'codigoEmpleado.unique' => 'Valor Repetido',
             'curp.unique' => 'Valor Repetido',
             'numeroSeguroSocial.unique' => 'Valor repetido',
             'umf.unique' => 'Valor repetido',
@@ -79,6 +80,7 @@ class EmpleadosController extends Controller {
 
         $valida = $request->validate([
             'curp' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado'),
+            ($request->codigoEmpleado !='')?'codigoEmpleado':'' => Rule::unique('empleados')->ignore($objeto->codigoEmpleado, 'codigoEmpleado'),
             ($request->numeroSeguroSocial != '') ? 'numeroSeguroSocial' : '' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado'),
             ($request->umf != '') ? 'umf' : '' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado'),
             'rfc' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado'),
@@ -86,10 +88,11 @@ class EmpleadosController extends Controller {
             ($request->numeroFonacot != '') ? 'numeroFonacot' : '' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado'),
             'correoElectronico' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado'),
             ($request->clabeInterbancaria != '') ? 'clabeInterbancaria':'' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado')
-                ], $msj);
+            ], $msj);
 
         $objeto->codigoEmpleado = ($request->input('codigoEmpleado') == '') ? null : $request->input('codigoEmpleado');
         $objeto->nombre = $request->input('nombre');
+
         if ($request->hasFile('fotografia')) {
             $file = $request->file('fotografia');
             $name = time() . $file->getClientOriginalName();

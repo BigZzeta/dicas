@@ -8,31 +8,21 @@ Route::get('/','Login\LoginController@index')->name('start');
 Route::any('/validar','Login\LoginController@valida')->name('validar');
 Route::get('/inicio', function (){return view('inicio');})->name('inicio');
 
-
-  Route::get('/dashboard', function(){
-    return view('contenido.dashboard');
-  });
-
-
+Route::get('/dashboard', function(){
+  return view('contenido.dashboard');
+});
 
 //probar esta ruta para el login
 Route::get('/loginx', function(){
   return view('login');
 });
 
-Route::get('/usuarios', 'usuario\UserController@index')
-  ->name('users');
 
-Route::get('/usuarios/nuevo', 'usuario\UserController@create')
-  ->name('users.create');
-
+Route::get('/usuarios', 'usuario\UserController@index')->name('users');
+Route::get('/usuarios/nuevo', 'usuario\UserController@create')->name('users.create');
 Route::post('/usuarios/crear','usuario\UserController@store');
-
-Route::get('/usuarios/editar', 'usuario\UserController@editar')
-  ->name('users.editar');
-
-// Route::post('/usuarios/crear','usuario\UserController@store');
-
+Route::get('/usuarios/{user}/editar', 'usuario\UserController@editar')->name('users.editar');
+Route::any('/usuarios/update/{users}', 'usuario\UserController@update')->name('users.update');
 
 Route::get('/usuarios/{user}', 'usuario\UserController@show')
   ->where('user', '\w+')

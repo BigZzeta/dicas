@@ -46,7 +46,6 @@
                             <div class="col-md-3">
                                 <label class="form-control-label" for="text-input">Codigo Empleado:</label>
                                 <input minlength="4"  maxlength="30" type="text"  name="codigoEmpleado" class="form-control text text-uppercase" value="{{old('codigoEmpleado',$edit->codigoEmpleado)}}" >
-                                @if($errors->get('codigoEmpleado'))  
                                 <div class="alert alert-danger">{{ $errors->get('codigoEmpleado')[0]}}</div>
                                 @endif
                             </div>
@@ -138,7 +137,7 @@
                             <div class="col-md-3">
                                 <label class=" form-control-label" >Numero de Afore :</label>
                                 <input minlength="4"  maxlength="40" type="text" name="numeroAfore" class="form-control text text-uppercase"  value="{{old('numeroAfore',$edit->numeroAfore)}}" >
-                                @if($errors->get('numeroAfore'))  
+                                @if($errors->get('numeroAfore'))
                                 <div class="alert alert-danger">{{ $errors->get('numeroAfore')[0]}}</div>
                                 @endif
                             </div>

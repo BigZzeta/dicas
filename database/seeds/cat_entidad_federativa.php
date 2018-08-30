@@ -53,7 +53,7 @@ class cat_entidad_federativa extends Seeder {
             'estado' => 'HIDALGO'
         ]);
         DB::table('cat_entidad_federativa')->insert([
-            'estado' => 'MERIDA'
+            'estado' => 'YUCATÁN'
         ]);
         DB::table('cat_entidad_federativa')->insert([
             'estado' => 'MEXICO'

@@ -19,6 +19,7 @@
           <table id="example1" class="table table-bordered table-hover display">
             <thead>
               <tr>
+                <th>Foto</th>
                 <th>Num</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
@@ -32,7 +33,9 @@
 
               @foreach($users as $user)
               <tr>
-                <td>{{ $user->id}}</td>
+                <td><img style="height: 40px; width: 40px; background-color: #EFEFEFEF;" class="profile-user-img img-responsive rounded-circle mx-auto d-block"
+                src="../../img/user/{{ $user->foto }}" alt="imagen"></td>
+                <td align="center">{{ $user->id}}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->apellidoPaterno}}</td>
                 <td>{{ $user->email}}</td>
