@@ -15,7 +15,7 @@ class Empleados extends Migration
     public function up()
     {
          Schema::create('empleados', function (Blueprint $table) {
-            $table->increments('idEmpleado');
+            $table->increments('idEmpleado')->unique();
             $table->string('codigoEmpleado',30)->nullable()->unique();
             $table->string('nombre',40)->nullable();
             $table->string('fotografia',100)->nullable();
@@ -25,10 +25,10 @@ class Empleados extends Migration
             $table->string('lugarNacimiento',40)->nullable();
             $table->string('estadoCivil',15)->nullable();
             $table->string('sexo',10)->nullable();
-            $table->string('curp',30)->nullable()->unique();
+            $table->string('curp',18)->nullable()->unique();
+            $table->string('rfc',12)->nullable()->unique();
             $table->string('numeroSeguroSocial',15)->nullable()->unique();
             $table->integer('umf')->nullable()->unique();
-            $table->string('rfc',12)->nullable()->unique();
             $table->string('tipoContrato',2)->nullable();
             $table->string('expediente',500)->nullable();
             $table->string('telefono',15)->nullable();
@@ -45,7 +45,7 @@ class Empleados extends Migration
             $table->string('entidadFederativa',2)->nullable();
             $table->timestamp('registro')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
-          
+
     }
 
     /**
@@ -55,6 +55,6 @@ class Empleados extends Migration
      */
     public function down()
     {
-         Schema::dropIfExists('empleados');   
+         Schema::dropIfExists('empleados');
     }
 }

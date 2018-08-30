@@ -25,6 +25,7 @@ class EmpleadoRequest extends FormRequest
     {
         return [
             'codigoEmpleado' => 'unique:empleados,codigoEmpleado',
+            'curp' => ['required', 'curp', 'max:18', 'unique:empleados,curp'],
             'curpi' => 'unique:empleados,curpi',
             'curpf' => 'unique:empleados,curpf',
             'numeroSeguroSocial' => 'unique:empleados,numeroSeguroSocial',

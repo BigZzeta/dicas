@@ -32,7 +32,7 @@ class EmpleadosController extends Controller {
 
     public function update(Request $request, $id = 0, $id2 = 0) {
         if ($id == 'update') {
-            $objeto = Empleado::findOrFail($id2);
+            $objeto = Empleado::findOrFail($id2);            
             /* Validator::make($request, [
               'correoElectronico' => [
               'required',
@@ -68,7 +68,6 @@ class EmpleadosController extends Controller {
     static function refrescar(Request $request, $objeto) {
 
         $msj = array(
-            // 'codigoEmpleado.unique' => 'Valor Repetido',
             'curp.unique' => 'Valor Repetido',
             'numeroSeguroSocial.unique' => 'Valor repetido',
             'umf.unique' => 'Valor repetido',

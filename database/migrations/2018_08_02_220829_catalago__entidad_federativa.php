@@ -13,8 +13,9 @@ class CatalagoEntidadFederativa extends Migration {
      */
     public function up() {
         Schema::create('cat_entidad_federativa', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('estado', 25);
+            $table->increments('id')->unique();
+            $table->string('codigo',10)->unique();
+            $table->string('estado', 40)->unique();
             $table->timestamp('registro')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
