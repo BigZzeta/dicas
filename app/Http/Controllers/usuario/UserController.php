@@ -20,7 +20,7 @@ class UserController extends Controller
 
   public function __construct()
   {
-    //$this->middleware('auth');
+    // $this->middleware('auth');
   }
 
   public function index()
@@ -111,10 +111,9 @@ class UserController extends Controller
     /*Aqui va todo el rollo de la edita en la bd */
     /*Listo, el unico pex que da es el del request, ahi checalo, ya esta solucionado ese rollo*/
 
-    $data ->name = $request->input('name');
-    $data ->apellidoPaterno = $request->input('apellidoPaterno');
-    $data ->apellidoMaterno = $request->input('apellidoMaterno');
-    // $data ->foto = $namefoto;
+    $data ->name = ucwords(strtolower($request->input('name')));
+    $data ->apellidoPaterno = ucwords(strtolower($request->input('apellidoPaterno')));
+    $data ->apellidoMaterno = ucwords(strtolower($request->input('apellidoMaterno')));
     $data ->email = $request->input('email');
     $data ->username = $request->input('username');
     $data ->status = $request->input('status');

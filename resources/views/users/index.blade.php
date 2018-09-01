@@ -22,7 +22,7 @@
                 <th>Foto</th>
                 <th>Num</th>
                 <th>Nombre</th>
-                <th>Apellido</th>
+                <th>Apellidos</th>
                 <th>Correo</th>
                 <th>Usuario</th>
                 <th>Status</th>
@@ -37,7 +37,7 @@
                 src="../../img/user/{{ $user->foto }}" alt="imagen"></td>
                 <td align="center">{{ $user->id}}</td>
                 <td>{{ $user->name }}</td>
-                <td>{{ $user->apellidoPaterno}}</td>
+                <td>{{ $user->apellidoPaterno}} {{$user->apellidoMaterno}}</td>
                 <td>{{ $user->email}}</td>
                 <td>{{ $user->username}}</td>
                 <td>

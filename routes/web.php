@@ -14,7 +14,6 @@ Route::get('/dashboard', function(){
 });
 
 
-
 //probar esta ruta para el login
 Route::get('/loginx', function(){
   return view('login');

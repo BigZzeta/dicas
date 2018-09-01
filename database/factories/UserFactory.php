@@ -21,3 +21,12 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+$factory->define(App\Departamento::class, function (Faker $faker) {
+    return [
+        'numerodepartamento' => $faker->unique()->randomDigit,    
+        'nombre' => $faker->unique()->text(10),
+        'numempleados' => $faker->randomDigit,       
+    ];
+});

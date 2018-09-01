@@ -32,13 +32,14 @@ class EmpleadosController extends Controller {
 
     public function update(Request $request, $id = 0, $id2 = 0) {
         if ($id == 'update') {
-            $objeto = Empleado::findOrFail($id2);            
+            $objeto = Empleado::findOrFail($id2);
             /* Validator::make($request, [
               'correoElectronico' => [
               'required',
               Rule::unique('empleados')->ignore($request->$id),
               ],
               ]); */
+
             EmpleadosController::refrescar($request, $objeto);
             return redirect()->route('empleados');
         } else {
@@ -98,7 +99,7 @@ class EmpleadosController extends Controller {
             $file->move(public_path() . '/img/empleados/', $name);
             $objeto->fotografia = $name;
         }
-        $objeto->apellidoPaterno = $request->input('apellidoPaterno');
+        $objeto->apellidoPaterno = $request-> input('apellidoPaterno');
         $objeto->apellidoMaterno = $request->input('apellidoMaterno');
         $objeto->fechaNacimiento = $request->input('fechaNacimiento');
         $objeto->lugarNacimiento = $request->input('lugarNacimiento');

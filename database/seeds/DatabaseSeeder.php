@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(userSeeder::class);
         $this->call(empleadosSeeder::class);
         $this->call(cat_entidad_federativa::class);
+        $this->call(EmpresaSeeder::class);
 
     }
     protected function truncateTables(array $tables)
