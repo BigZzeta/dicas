@@ -1,7 +1,7 @@
 @extends('inicio')
 <?php
 /* Colecciones de datos */
-$tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL');
+$tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL','4'=>'POR TIEMPO DETERMINADO','5'=>'INDETERMINADO');
 ?>
 @section('content')
 <div class="row">
@@ -222,7 +222,7 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL');
                     </div>
                     <div class="col-md-3">
                         <label class="form-control-label" >Tipo contrato:</label>
-                        <input type="text"  name="tipoContrato" class="form-control" value="<?php echo $tipoContrato[$item->tipoContrato] ?>" readonly />
+                        <input style="font-size: 11px;" type="text"  name="tipoContrato" class="form-control" value="<?php echo $tipoContrato[$item->tipoContrato] ?>" readonly />
                     </div>
                 </div>
                 <div class="row">

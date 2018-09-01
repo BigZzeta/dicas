@@ -22,7 +22,7 @@ class EmpleadosController extends Controller {
     public function add(Request $request, $id = 0) {
         if ($id != 0) {
             $empleados = new Empleado();
-            EmpleadosController::refrescar($request, $empleados);
+           EmpleadosController::refrescar($request, $empleados);
             return redirect()->route('empleados');
         } else {
             $estados = \Illuminate\Support\Facades\DB::table('cat_entidad_federativa')->get();
@@ -90,7 +90,7 @@ class EmpleadosController extends Controller {
             ($request->clabeInterbancaria != '') ? 'clabeInterbancaria':'' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado')
             ], $msj);
 
-        $objeto->codigoEmpleado = ($request->input('codigoEmpleado') == '') ? null : $request->input('codigoEmpleado');
+        $objeto->codigoEmpleado = ($request->input('codigoEmpleado') == '') ? null : strtoupper($request->input('codigoEmpleado'));
         $objeto->nombre = $request->input('nombre');
 
         if ($request->hasFile('fotografia')) {
@@ -105,7 +105,7 @@ class EmpleadosController extends Controller {
         $objeto->lugarNacimiento = $request->input('lugarNacimiento');
         $objeto->estadoCivil = $request->input('estadoCivil');
         $objeto->sexo = $request->input('sexo');
-        $objeto->curp = ($request->input('curp') == '') ? null : $request->input('curp');
+        $objeto->curp = ($request->input('curp') == '') ? null : strtoupper($request->input('curp'));
         $objeto->numeroSeguroSocial = ($request->input('numeroSeguroSocial') == '') ? null : $request->input('numeroSeguroSocial');
         $objeto->umf = ($request->input('umf') == '') ? null : $request->input('umf');
         $objeto->rfc = ($request->input('rfc') == '') ? null : $request->input('rfc');
