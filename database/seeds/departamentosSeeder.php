@@ -15,12 +15,12 @@ class departamentosSeeder extends Seeder
     {        
         factory(departamento::class,10)->create();
 
-        DB::table('departamentos')->insert([
-            'numerodepartamento'=>1,
-            'nombre'=>'CPA',
-            'numempleados'=>20,
-            // 'condicion'=>'1'
-        ]);
+        // DB::table('departamentos')->insert([
+        //     'numerodepartamento'=>1,
+        //     'nombre'=>'CPA',
+        //     'numempleados'=>20,
+        //     // 'condicion'=>'1'
+        // ]);
 
 
 
