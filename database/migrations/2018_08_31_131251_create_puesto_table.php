@@ -17,6 +17,9 @@ class CreatePuestoTable extends Migration
             $table->increments('idpuesto');
             $table->integer('numeropuesto');
             $table->string('descripcion');
+            $table->increments('idpuesto')->unique();
+            $table->integer('numeropuesto')->unique();
+            $table->string('descripcion')->unique();
             $table->string('cartatecnica');
             $table->double('sueldominimo');
             $table->double('sueldomaximo');

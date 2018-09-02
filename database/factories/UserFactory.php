@@ -26,7 +26,18 @@ $factory->define(App\User::class, function (Faker $faker) {
 $factory->define(App\Departamento::class, function (Faker $faker) {
     return [
         'numerodepartamento' => $faker->unique()->randomDigit,    
+        'numerodepartamento' => $faker->unique()->randomDigit,
         'nombre' => $faker->unique()->text(10),
         'numempleados' => $faker->randomDigit,       
+        'numempleados' => $faker->randomDigit,
     ];
 });
+
+// $factory->define(App\Puesto::class, function (Faker $faker) {
+//     return [
+//         'numeropuesto' => $faker->unique()->randomDigit,
+//         'descripcion' => $faker->unique()->text(10),
+//         'sueldominimo' => $faker->randomDigit,
+//         'sueldomaximo' => $faker->randomDigit,
+//     ];
+// });
