@@ -1,10 +1,6 @@
 @extends('inicio')
-
 @section('title',"Mostrando usuario")
-
 @section('content')
-
-
 <!-- Start content -->
 <div class="content">
 
@@ -22,8 +18,7 @@
                     </div>
                 </div>
             </div>
-            <!-- end row -->
-
+            <!-- end row -->            
             <div class="row">
 
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -36,6 +31,7 @@
 
 
                                     <form action="#" method="post" enctype="multipart/form-data">
+
 
                                     <div class="row">
 
@@ -52,20 +48,15 @@
                                             src="../../img/user/{{ $user->foto }}" alt="imagen">
 
                                             <!-- <i class="fa fa-trash-o fa-fw"></i><a class="delete_image" href="#">Eliminar avatar</a> -->
-
                                         </div>
                                         <!-- <div id="image_deleted_text"></div> -->
-
-
                                         <div class="m-b-10"></div>
 
                                         <!--<div class="form-group">
                                         <label>Cambiar avatar</label>
                                         <input type="file" name="image" class="form-control">
                                         </div>-->
-
                                         <hr>
-
                                         <h3 class="profile-username text-center">{{ $user->username }} </h3>
                                         <!--<p class="text-muted text-center">Software Engineer</p>
                                         <ul class="list-group list-group-unbordered">
@@ -106,17 +97,13 @@
                                             <input class="form-control" name="status" type="text" value="@if($user->status===1)Activo @else Inactivo @endif" readonly />
                                             </div>
                                             </div>
-
                                             <div class="col-lg-6">
                                             <div class="form-group">
                                             <label>Tipo Usuario</label>
                                             <input class="form-control" name="status" type="text" value="@if($user->idTipoUsuario===1)Administrador @else Usuario @endif" readonly />
                                             </div>
                                             </div>
-
-
                                         </div>
-
                                         <div class="row">
 
                                           <!-- <div class="col-lg-6">
@@ -143,33 +130,21 @@
                                                 </p>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="row">
-
                                         </div>
-
                                     </div>
-
                                     </div>
-
                                     </form>
-
                     </div>
                     <!-- end card-body -->
-
                 </div>
                 <!-- end card -->
-
             </div>
-            <!-- end col -->
-
         </div>
         <!-- end row -->
-
     </div>
     <!-- END container-fluid -->
-
 </div>
 <!-- END content -->
 

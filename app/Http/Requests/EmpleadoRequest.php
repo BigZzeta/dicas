@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+use App\Empleado;
 
 class EmpleadoRequest extends FormRequest
 {
@@ -25,17 +27,34 @@ class EmpleadoRequest extends FormRequest
     {
         return [
             'codigoEmpleado' => 'unique:empleados,codigoEmpleado',
+<<<<<<< HEAD
             'curp' => ['required', 'curp', 'max:18', 'unique:empleados,curp'],
             'curpi' => 'unique:empleados,curpi',
             'curpf' => 'unique:empleados,curpf',
+=======
+            'curp' => 'unique:empleados,curp',
+>>>>>>> fdff1b17f5b0e4994f06510630b43a06be190efa
             'numeroSeguroSocial' => 'unique:empleados,numeroSeguroSocial',
-            'umf' => 'unique:empleados,umf',
             'rfc' => 'unique:empleados,rfc',
-            'homoclave' => 'unique:empleados,homoclave',
             'numeroAfore' => 'unique:empleados,numeroAfore',
             'numeroFonacot' => 'unique:empleados,numeroFonacot',
             'correoElectronico' => 'unique:empleados,correoElectronico',
             'clabeInterbancaria' => 'unique:empleados,clabeInterbancaria',
+        ];
+    }
+     public function messages()
+    {
+        return [
+            'codigoEmpleado.unique' => 'Valor repetido',
+            'curpi.unique' => 'Valor repetido',
+            'curpf.unique' => 'Valor repetido',
+            'numeroSeguroSocial.unique' => 'Valor repetido',
+            'rfc.unique' => 'Valor repetido',
+            'homoclave.unique' => 'Valor repetido',
+            'numeroAfore.unique' => 'Valor repetido',
+            'numeroFonacot.unique' => 'Valor repetido',
+            'correoElectronico.unique' => 'Valor repetido',   
+            'clabeInterbancaria.unique' => 'Valor repetido',  
         ];
     }
 }

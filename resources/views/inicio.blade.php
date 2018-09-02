@@ -1,75 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>GTH</title>
-		<!--<meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">-->
-		<!-- <meta name="author" content="Pike Web Development - http://servisky.dyndns.org"> -->
+        <title>GTH</title>
+        <!--<meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">-->
+        <!-- <meta name="author" content="Pike Web Development - http://servisky.dyndns.org"> -->
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="{{ asset('assets/images/favicon2.ico') }}">
-		<!-- Bootstrap CSS -->
-		<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-		<!-- Font Awesome CSS -->
-		<link href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
-		<!-- Custom CSS -->
-		<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css" />
-		<!-- BEGIN CSS for this page -->
-		<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/> -->
-    <link rel="stylesheet" type="text/css" href="{{ asset ('assets/css/dataTables.bootstrap4.min.css') }}"/>
-    <!-- END CSS for this page -->
-    <script src="{{ asset ('assets/js/jquery.min.js') }}"></script>
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{{ asset('assets/images/favicon2.ico') }}">
+        <!-- Bootstrap CSS -->
+        <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <!-- Font Awesome CSS -->
+        <link href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
+        <!-- Custom CSS -->
+        <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css" />
+        <!-- BEGIN CSS for this page -->
+        <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/> -->
+        <link rel="stylesheet" type="text/css" href="{{ asset ('assets/css/dataTables.bootstrap4.min.css') }}"/>
+        <!-- END CSS for this page -->
+        <script src="{{ asset ('assets/js/jquery.min.js') }}"></script>
 
-</head>
+    </head>
 
-<body class="adminbody">
-	<div id="main">
+    <body class="adminbody">
+        <div id="main">
 
-  	<!-- top bar navigation -->
-  	<div class="headerbar">
+            <!-- top bar navigation -->
+            <div class="headerbar">
 
-  		<!-- LOGO -->
-          <div class="headerbar-left">
-  			<!--<a href="/dashboard" class="logo"><img alt="Logo" src="{{ asset('assets/images/dicas.png') }}" /> <span>GTH</span></a>-->
-              <a href="/" class="logo"><img alt="Logo" src="{{ asset('assets/images/dicas.png') }}" /> <span>GTH</span></a>
-          </div>
+                <!-- LOGO -->
+                <div class="headerbar-left">
+                              <!--<a href="/dashboard" class="logo"><img alt="Logo" src="{{ asset('assets/images/dicas.png') }}" /> <span>GTH</span></a>-->
+                    <a href="/" class="logo"><img alt="Logo" src="{{ asset('assets/images/dicas.png') }}" /> <span>GTH</span></a>
+                </div>
 
-          <nav class="navbar-custom">
+                <nav class="navbar-custom">
 
                     <ul class="list-inline float-right mb-0">
 
-                            <li class="list-inline-item dropdown notif">
+                        <li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <!--<i class="fa fa-fw fa-question-circle"></i>-->
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
 
-                                                                <!--<div class="dropdown-item noti-title">
-                                    <h5><small>Help and Support</small></h5>
-                                </div>
+                                <!--<div class="dropdown-item noti-title">
+    <h5><small>Help and Support</small></h5>
+</div>
 
 
-                                <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
-                                    <p class="notify-details ml-0">
-                                        <b>Do you want custom development to integrate this theme?</b>
-                                        <span>Contact Us</span>
-                                    </p>
-                                </a>
+<a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
+    <p class="notify-details ml-0">
+        <b>Do you want custom development to integrate this theme?</b>
+        <span>Contact Us</span>
+    </p>
+</a>
 
 
-                                <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">
-                                    <p class="notify-details ml-0">
-                                        <b>Do you want PHP version of the theme that save dozens of hours of work?</b>
-                                        <span>Try Pike Admin PRO</span>
-                                    </p>
-                                </a>
+<a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">
+    <p class="notify-details ml-0">
+        <b>Do you want PHP version of the theme that save dozens of hours of work?</b>
+        <span>Try Pike Admin PRO</span>
+    </p>
+</a>
 
 
-                                <a title="Clcik to visit Pike Admin Website" target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item notify-all">
-                                    <i class="fa fa-link"></i> Visit Pike Admin Website
-                                </a>-->
+<a title="Clcik to visit Pike Admin Website" target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item notify-all">
+    <i class="fa fa-link"></i> Visit Pike Admin Website
+</a>-->
 
                             </div>
                         </li>
@@ -119,12 +119,12 @@
                             </div>
                         </li>
 
-                    <li class="list-inline-item dropdown notif">
+                        <li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fa fa-fw fa-bell-o"></i><span class="notif-bullet"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg">
-                            <!-- item-->
+                                <!-- item-->
                                 <div class="dropdown-item noti-title">
                                     <h5><small><span class="label label-danger pull-xs-right">5</span>Allerts</small></h5>
                                 </div>
@@ -193,10 +193,10 @@
                                     <i class="fa fa-power-off"></i> <span>Salir</span>
                                 </a>
 
-                            <!-- item-->		<!--
-                                <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
-                                    <i class="fa fa-external-link"></i> <span>Pike Admin</span>
-                                </a>-->
+                                <!-- item-->		<!--
+                                    <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
+                                        <i class="fa fa-external-link"></i> <span>Pike Admin</span>
+                                    </a>-->
                             </div>
                         </li>
 
@@ -205,198 +205,198 @@
                     <ul class="list-inline menu-left mb-0">
                         <li class="float-left">
                             <button class="button-menu-mobile open-left">
-                            <i class="fa fa-fw fa-bars"></i>
+                                <i class="fa fa-fw fa-bars"></i>
                             </button>
                         </li>
                     </ul>
 
-          </nav>
+                </nav>
 
-  	</div>
-  	<!-- End Navigation -->
-
-
-  	<!-- Left Sidebar -->
-  	@include('plantilla.sidebar')
-  	<!-- End Sidebar -->
+            </div>
+            <!-- End Navigation -->
 
 
-      <div class="content-page">
-
-  		<!-- Start content -->
-      <div class="content">
-
-  		@yield('content')
-  			<!-- END container-fluid -->
-
-  		</div>
-  		<!-- END content -->
-
-      </div>
-  	<!-- END content-page -->
-
-  	<footer class="footer">
-  		<span class="text-right">
-  		Copyright <a href="#">servisky.dyndns.net</a>
-  		</span>
-  		<span class="float-right">
-  		<!-- Powered by <a target="_blank" href="https://www.pikeadmin.com"><b>Pike Admin</b></a> -->
-  		</span>
-  	</footer>
-
-  </div>
-  <!-- END main -->
-
-  <script src="{{ asset ('assets/js/modernizr.min.js') }}"></script>
- <!-- <script src="{{ asset ('assets/js/jquery.min.js') }}"></script>-->
-  <script src="{{ asset ('assets/js/moment.min.js') }}"></script>
-
-  <script src="{{ asset ('assets/js/popper.min.js') }}"></script>
-  <script src="{{ asset ('assets/js/bootstrap.min.js') }}"></script>
-
-  <script src="{{ asset ('assets/js/detect.js') }}"></script>
-  <script src="{{ asset ('assets/js/fastclick.js') }}"></script>
-  <script src="{{ asset ('assets/js/jquery.blockUI.js') }}"></script>
-  <script src="{{ asset ('assets/js/jquery.nicescroll.js') }}"></script>
-
-  <!-- App js -->
-  <script src="{{ asset('assets/js/pikeadmin.js') }}"></script>
-
-  <!-- BEGIN Java Script for this page -->
-  	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-  	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-  	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script> -->
-
-    <script src="{{ asset('assets/js/Chart.min.js') }}"></script>
-  	<script src="{{ asset('assets/js/jquery.dataTables.min.js') }}"></script>
-  	<script src="{{ asset('assets/js/dataTables.bootstrap4.min.js') }}"></script>
-
-  	<!-- Counter-Up-->
-  	<script src="{{ asset ('assets/plugins/waypoints/lib/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset ('assets/plugins/counterup/jquery.counterup.min.js') }}"></script>
-
-  	<script>
-  		$(document).ready(function() {
-  			// data-tables
-  			$('#example1').DataTable();
-
-  			// counter-up
-  			$('.counter').counterUp({
-  				delay: 10,
-  				time: 600
-  			});
-  		} );
-  	</script>
-
-  	<script>
-  	var ctx1 = document.getElementById("lineChart").getContext('2d');
-  	var lineChart = new Chart(ctx1, {
-  		type: 'bar',
-  		data: {
-  			labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-  			datasets: [{
-  					label: 'Dataset 1',
-  					backgroundColor: '#3EB9DC',
-  					data: [10, 14, 6, 7, 13, 9, 13, 16, 11, 8, 12, 9]
-  				}, {
-  					label: 'Dataset 2',
-  					backgroundColor: '#EBEFF3',
-  					data: [12, 14, 6, 7, 13, 6, 13, 16, 10, 8, 11, 12]
-  				}]
-
-  		},
-  		options: {
-  						tooltips: {
-  							mode: 'index',
-  							intersect: false
-  						},
-  						responsive: true,
-  						scales: {
-  							xAxes: [{
-  								stacked: true,
-  							}],
-  							yAxes: [{
-  								stacked: true
-  							}]
-  						}
-  					}
-  	});
+            <!-- Left Sidebar -->
+            @include('plantilla.sidebar')
+            <!-- End Sidebar -->
 
 
-  	var ctx2 = document.getElementById("pieChart").getContext('2d');
-  	var pieChart = new Chart(ctx2, {
-  		type: 'pie',
-  		data: {
-  				datasets: [{
-  					data: [12, 19, 3, 5, 2, 3],
-  					backgroundColor: [
-  						'rgba(255,99,132,1)',
-  						'rgba(54, 162, 235, 1)',
-  						'rgba(255, 206, 86, 1)',
-  						'rgba(75, 192, 192, 1)',
-  						'rgba(153, 102, 255, 1)',
-  						'rgba(255, 159, 64, 1)'
-  					],
-  					label: 'Dataset 1'
-  				}],
-  				labels: [
-  					"Red",
-  					"Orange",
-  					"Yellow",
-  					"Green",
-  					"Blue"
-  				]
-  			},
-  			options: {
-  				responsive: true
-  			}
+            <div class="content-page">
 
-  	});
+                <!-- Start content -->
+                <div class="content">
+
+                    @yield('content')
+                    <!-- END container-fluid -->
+
+                </div>
+                <!-- END content -->
+
+            </div>
+            <!-- END content-page -->
+
+            <footer class="footer">
+                <span class="text-right">
+                    Copyright <a href="#">servisky.dyndns.net</a>
+                </span>
+                <span class="float-right">
+                    <!-- Powered by <a target="_blank" href="https://www.pikeadmin.com"><b>Pike Admin</b></a> -->
+                </span>
+            </footer>
+
+        </div>
+        <!-- END main -->
+
+        <script src="{{ asset ('assets/js/modernizr.min.js') }}"></script>
+       <!-- <script src="{{ asset ('assets/js/jquery.min.js') }}"></script>-->
+        <script src="{{ asset ('assets/js/moment.min.js') }}"></script>
+
+        <script src="{{ asset ('assets/js/popper.min.js') }}"></script>
+        <script src="{{ asset ('assets/js/bootstrap.min.js') }}"></script>
+
+        <script src="{{ asset ('assets/js/detect.js') }}"></script>
+        <script src="{{ asset ('assets/js/fastclick.js') }}"></script>
+        <script src="{{ asset ('assets/js/jquery.blockUI.js') }}"></script>
+        <script src="{{ asset ('assets/js/jquery.nicescroll.js') }}"></script>
+
+        <!-- App js -->
+        <script src="{{ asset('assets/js/pikeadmin.js') }}"></script>
+
+        <!-- BEGIN Java Script for this page -->
+              <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+              <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+              <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script> -->
+
+        <script src="{{ asset('assets/js/Chart.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('assets/js/dataTables.bootstrap4.min.js') }}"></script>
+
+        <!-- Counter-Up-->
+        <script src="{{ asset ('assets/plugins/waypoints/lib/jquery.waypoints.min.js') }}"></script>
+        <script src="{{ asset ('assets/plugins/counterup/jquery.counterup.min.js') }}"></script>   
+        <script>
+$(document).ready(function () {
+    // data-tables
+    $('#example1').DataTable();
+
+    // counter-up
+    $('.counter').counterUp({
+        delay: 10,
+        time: 600
+    });
+});
+        </script>
+
+        <script>
+            var ctx1 = document.getElementById("lineChart").getContext('2d');
+            var lineChart = new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    datasets: [{
+                            label: 'Dataset 1',
+                            backgroundColor: '#3EB9DC',
+                            data: [10, 14, 6, 7, 13, 9, 13, 16, 11, 8, 12, 9]
+                        }, {
+                            label: 'Dataset 2',
+                            backgroundColor: '#EBEFF3',
+                            data: [12, 14, 6, 7, 13, 6, 13, 16, 10, 8, 11, 12]
+                        }]
+
+                },
+                options: {
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        xAxes: [{
+                                stacked: true,
+                            }],
+                        yAxes: [{
+                                stacked: true
+                            }]
+                    }
+                }
+            });
 
 
-  	var ctx3 = document.getElementById("doughnutChart").getContext('2d');
-  	var doughnutChart = new Chart(ctx3, {
-  		type: 'doughnut',
-  		data: {
-  				datasets: [{
-  					data: [12, 19, 3, 5, 2, 3],
-  					backgroundColor: [
-  						'rgba(255,99,132,1)',
-  						'rgba(54, 162, 235, 1)',
-  						'rgba(255, 206, 86, 1)',
-  						'rgba(75, 192, 192, 1)',
-  						'rgba(153, 102, 255, 1)',
-  						'rgba(255, 159, 64, 1)'
-  					],
-  					label: 'Dataset 1'
-  				}],
-  				labels: [
-  					"Red",
-  					"Orange",
-  					"Yellow",
-  					"Green",
-  					"Blue"
-  				]
-  			},
-  			options: {
-  				responsive: true
-  			}
+            var ctx2 = document.getElementById("pieChart").getContext('2d');
+            var pieChart = new Chart(ctx2, {
+                type: 'pie',
+                data: {
+                    datasets: [{
+                            data: [12, 19, 3, 5, 2, 3],
+                            backgroundColor: [
+                                'rgba(255,99,132,1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            label: 'Dataset 1'
+                        }],
+                    labels: [
+                        "Red",
+                        "Orange",
+                        "Yellow",
+                        "Green",
+                        "Blue"
+                    ]
+                },
+                options: {
+                    responsive: true
+                }
 
-  	});
-  	</script>
+            });
 
-		<!-- script para mostrar preview de la imagena  subir -->
-		<script>
-		var loadFile = function(event) {
-			var reader = new FileReader();
-			reader.onload = function(){
-				var output = document.getElementById('output');
-				output.src = reader.result;
-			};
-			reader.readAsDataURL(event.target.files[0]);
-		};
-		</script>
-  <!-- END Java Script for this page -->
 
-  </body>
+            var ctx3 = document.getElementById("doughnutChart").getContext('2d');
+            var doughnutChart = new Chart(ctx3, {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                            data: [12, 19, 3, 5, 2, 3],
+                            backgroundColor: [
+                                'rgba(255,99,132,1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            label: 'Dataset 1'
+                        }],
+                    labels: [
+                        "Red",
+                        "Orange",
+                        "Yellow",
+                        "Green",
+                        "Blue"
+                    ]
+                },
+                options: {
+                    responsive: true
+                }
+
+            });
+        </script>
+
+
+        <!-- script para mostrar preview de la imagena  subir -->
+        <script>
+            var loadFile = function (event) {
+                var reader = new FileReader();
+                reader.onload = function () {
+                    var output = document.getElementById('output');
+                    output.src = reader.result;
+                };
+                reader.readAsDataURL(event.target.files[0]);
+            };
+        </script>
+        <!-- END Java Script for this page -->
+
+    </body>
 </html>

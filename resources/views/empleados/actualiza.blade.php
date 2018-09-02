@@ -46,21 +46,21 @@
                             <div class="col-md-3">
                                 <label class="form-control-label" for="text-input">Codigo Empleado:</label>
                                 <input minlength="4"  maxlength="30" type="text"  name="codigoEmpleado" class="form-control text text-uppercase" value="{{old('codigoEmpleado',$edit->codigoEmpleado)}}" >
-                                @if($errors->get('codigoEmpleado'))
+                                  @if($errors->get('codigoEmpleado'))  
                                 <div class="alert alert-danger">{{ $errors->get('codigoEmpleado')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-3">
-                                <label class=" form-control-label"><i class="text-danger">*</i> Nombre:</label>
-                                <input  minlength="4"  maxlength="40" type="text" name="nombre" class="form-control text text-uppercase" value="{{old('nombre',$edit->nombre)}}" required />
+                                <label class=" form-control-label" for="text-input"><i class="text-danger">*</i> Nombre:</label>
+                                <input  minlength="4"  maxlength="40" type="text" name="nombre" class="form-control text" value="{{old('nombre',$edit->nombre)}}" required />
                             </div>
                             <div class="col-md-3">
                                 <label class="form-control-label"><i class="text-danger">*</i> Apellido Paterno:</label>
-                                <input minlength="4"  maxlength="40" type="text"  name="apellidoPaterno" class="form-control text text-uppercase" value="{{old('apellidoPaterno',$edit->apellidoPaterno)}}" required />
+                                <input minlength="4"  maxlength="40" type="text"  name="apellidoPaterno" class="form-control text" value="{{old('apellidoPaterno',$edit->apellidoPaterno)}}" required />
                             </div>
                             <div class="col-md-3">
                                 <label class=" form-control-label"><i class="text-danger">*</i> Apellido Materno:</label>
-                                <input  minlength="4"  maxlength="40" type="text"  name="apellidoMaterno" class="form-control text text-uppercase" value="{{old('apellidoMaterno',$edit->apellidoMaterno)}}" required />
+                                <input  minlength="4"  maxlength="40" type="text"  name="apellidoMaterno" class="form-control text " value="{{old('apellidoMaterno',$edit->apellidoMaterno)}}" required />
                             </div>
                         </div>
                         <div class="row">
@@ -70,35 +70,36 @@
                             </div>
                             <div class="col-md-3">
                                 <label class="form-control-label" >Lugar Nacimiento:</label>
-                                <input  maxlength="40" type="text" name="lugarNacimiento" class="form-control text text-uppercase" value="{{old('lugarNacimiento',$edit->lugarNacimiento)}}">
+                                <input  maxlength="40" type="text" name="lugarNacimiento" class="form-control text" value="{{old('lugarNacimiento',$edit->lugarNacimiento)}}">
                             </div>
                             <div class="col-md-3">
                                 <label class="form-control-label" ><i class="text-danger">*</i> Estado civil:</label>
                                 <select name="estadoCivil" class="form-control" required >
                                     <option></option>
-                                    <option value="SOLTERO (A)" {{old('estadoCivil', $edit->estadoCivil)=='SOLTERO (A)' ? 'selected' : ''}}>SOLTERO (A)</option>
-                                    <option value="CASADO (A)" {{old('estadoCivil', $edit->estadoCivil)=='CASADO (A)' ? 'selected' : ''}} >CASADO (A)</option>
-                                    <option value="VIUDO (A)" {{old('estadoCivil', $edit->estadoCivil)=='VIUDO (A)' ? 'selected' : ''}}>VIUDO (A)</option>
-                                    <option value="DIVORCIADO (A)" {{old('estadoCivil', $edit->estadoCivil)=='DIVORCIADO (A)' ? 'selected' : ''}}>DIVORCIADO (A)</option>
+                                    <option value="Soltero (a)" {{old('estadoCivil', $edit->estadoCivil)=='Soltero (a)' ? 'selected' : ''}}>Soltero (a)</option>
+                                    <option value="Casado (a)" {{old('estadoCivil', $edit->estadoCivil)=='Casado (a)' ? 'selected' : ''}} >Casado (a)</option>
+                                    <option value="Viudo (a)" {{old('estadoCivil', $edit->estadoCivil)=='Viudo (a)' ? 'selected' : ''}}>Viudo (a)</option>
+                                    <option value="Divorciado (a)" {{old('estadoCivil', $edit->estadoCivil)=='Divorciado (a)' ? 'selected' : ''}}>Divorciado (a)</option>
+                                    <option value="Unión Libre" {{old('estadoCivil', $edit->estadoCivil)=='Unión Libre' ? 'selected' : ''}}>Union Libre</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
                                 <label class="form-control-label" ><i class="text-danger">*</i> Sexo:</label>
-                                <select   name="sexo" class="form-control" value="{{old('sexo',$edit->sexo)}}" required/>
+                                <select name="sexo" class="form-control" required/>
                                 <option></option>
-                                <option  label="MASCULINO" value="MASCULINO" {{old('sexo',$edit->sexo)=='MASCULINO' ? 'selected' : ''}} >MASCULINO </OPTION>
-                                <option  label="FEMENINO" value="FEMENINO" {{old('sexo',$edit->sexo)=='FEMENINO' ? 'selected' : ''}} >FEMENINO </OPTION>
+                                <option value="Masculino"  {{old('sexo',$edit->sexo)=='Masculino' ? 'selected' : ''}}>Masculino</option>
+                                <option value="Femenino"   {{old('sexo',$edit->sexo)=='Femenino' ? 'selected' : ''}} >Femenino</option>
                                     </select>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <label class=" form-control-label" ><i class="text-danger">*</i> Nombre Padre:</label>
-                                <input minlength="4"  maxlength="40" type="text" name="nombrePadre" class="form-control text text-uppercase"  value="{{old('nombrePadre',$edit->nombrePadre)}}" required />
+                                <input minlength="4"  maxlength="40" type="text" name="nombrePadre" class="form-control text"  value="{{old('nombrePadre',$edit->nombrePadre)}}" required />
                             </div>
                             <div class="col-md-6">
                                 <label class=" form-control-label" ><i class="text-danger">*</i> Nombre Madre:</label>
-                                <input minlength="4"  maxlength="40" type="text"  name="nombreMadre" class="form-control text text-uppercase"  value="{{old('nombreMadre',$edit->nombreMadre)}}" required />
+                                <input minlength="4"  maxlength="40" type="text"  name="nombreMadre" class="form-control text"  value="{{old('nombreMadre',$edit->nombreMadre)}}" required />
                             </div>
                         </div>
                         <hr/>
@@ -108,28 +109,28 @@
                             <div class="col-md-4">
                                 <label class="form-control-label" ><i class="text-danger">*</i> Curp:</label>
                                 <input   minlength="18"  maxlength="30" name="curp" class="form-control text text-uppercase" value="{{old('curp',$edit->curp)}}"required />
-                                @if($errors->get('curp'))
+                                @if($errors->get('curp'))  
                                 <div class="alert alert-danger">{{ $errors->get('curp')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-3">
                                 <label class=" form-control-label" ><i class="text-danger">*</i> Rfc:</label>
-                                <input minlength="4"  maxlength="12" type="text"  name="rfc" class="form-control text text-uppercase" value="{{old('rfc',$edit->rfc)}}" required>
-                                @if($errors->get('rfc'))
+                                <input minlength="4"  maxlength="12" type="text"  name="rfc" class="form-control text" value="{{old('rfc',$edit->rfc)}}" required>
+                                @if($errors->get('rfc'))  
                                 <div class="alert alert-danger">{{ $errors->get('rfc')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-3">
                                 <label class=" form-control-label" >Numero Seguro Social:</label>
-                                <input maxlength="15" type="text" name="numeroSeguroSocial" class="form-control text text-uppercase" value="{{old('numeroSeguroSocial',$edit->numeroSeguroSocial)}}">
-                                @if($errors->get('numeroSeguroSocial'))
+                                <input maxlength="15" type="text" name="numeroSeguroSocial" class="form-control text" value="{{old('numeroSeguroSocial',$edit->numeroSeguroSocial)}}">
+                                @if($errors->get('numeroSeguroSocial'))  
                                 <div class="alert alert-danger">{{ $errors->get('numeroSeguroSocial')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-2">
                                 <label class="form-control-label" >Umf:</label>
-                                <input maxlength="11" type="number"  name="umf" class="form-control text text-uppercase" value="{{old('umf',$edit->umf)}}">
-                                @if($errors->get('umf'))
+                                <input maxlength="11" type="number"  name="umf" class="form-control text" value="{{old('umf',$edit->umf)}}">
+                                @if($errors->get('umf'))  
                                 <div class="alert alert-danger">{{ $errors->get('umf')[0]}}</div>
                                 @endif
                             </div>
@@ -137,22 +138,22 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <label class=" form-control-label" >Numero de Afore :</label>
-                                <input minlength="4"  maxlength="40" type="text" name="numeroAfore" class="form-control text text-uppercase"  value="{{old('numeroAfore',$edit->numeroAfore)}}" >
+                                <input minlength="4"  maxlength="40" type="text" name="numeroAfore" class="form-control text"  value="{{old('numeroAfore',$edit->numeroAfore)}}" >
                                 @if($errors->get('numeroAfore'))
                                 <div class="alert alert-danger">{{ $errors->get('numeroAfore')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-3">
                                 <label class="form-control-label" >Numero Fonacot :</label>
-                                <input minlength="4"  maxlength="40" type="text" name="numeroFonacot" class="form-control text text-uppercase"  value="{{old('numeroFonacot',$edit->numeroFonacot)}}">
-                                @if($errors->get('numeroFonacot'))
+                                <input minlength="4"  maxlength="40" type="text" name="numeroFonacot" class="form-control text"  value="{{old('numeroFonacot',$edit->numeroFonacot)}}">
+                                @if($errors->get('numeroFonacot'))  
                                 <div class="alert alert-danger">{{ $errors->get('numeroFonacot')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-3">
-                                <label class=" form-control-label" ><i class="text-danger">*</i> Clabe Interbancaria:</label>
-                                <input  minlength="18"  maxlength="25" type="text"  name="clabeInterbancaria" class="form-control text text-uppercase"  value="{{old('clabeInterbancaria',$edit->clabeInterbancaria)}}" required>
-                                @if($errors->get('clabeInterbancaria'))
+                                <label class=" form-control-label" >Clabe Interbancaria:</label>
+                                <input  minlength="18"  maxlength="25" type="text"  name="clabeInterbancaria" class="form-control text"  value="{{old('clabeInterbancaria',$edit->clabeInterbancaria)}}" >
+                                @if($errors->get('clabeInterbancaria'))  
                                 <div class="alert alert-danger">{{ $errors->get('clabeInterbancaria')[0]}}</div>
                                 @endif
                             </div>
@@ -160,9 +161,11 @@
                                 <label class=" form-control-label" ><i class="text-danger">*</i> Tipo contrato:</label>
                                 <select name="tipoContrato" class="form-control" required />
                                 <option></option>
-                                <option  value="1" {{old('tipoContrato',$edit->tipoContrato)==1 ? 'selected' : ''}}>POR TIEMPO DETERMINADO</option>
-                                <option  value="2" {{old('tipoContrato',$edit->tipoContrato)==2 ? 'selected' : ''}}>INDETERMINADO</option>
-                                <!-- <option  value="3" {{old('tipoContrato',$edit->tipoContrato)==3 ? 'selected' : ''}}>ANUAL</option> -->
+                                <option  value="1" {{old('tipoContrato',$edit->tipoContrato)==1 ? 'selected' : ''}}>Bimestral</option>
+                                <option  value="2" {{old('tipoContrato',$edit->tipoContrato)==2 ? 'selected' : ''}}>Semestral</option>
+                                <option  value="3" {{old('tipoContrato',$edit->tipoContrato)==3 ? 'selected' : ''}}>Anual</option>
+                                <option  value="4" {{old('tipoContrato',$edit->tipoContrato)==4 ? 'selected' : ''}}>Por tiempo determinado</option>
+                                <option  value="5" {{old('tipoContrato',$edit->tipoContrato)==5 ? 'selected' : ''}}>Indeterminado</option>
                                 </select>
                             </div>
                         </div>
@@ -170,8 +173,8 @@
                             <div class="col-md-3"></div>
                             <div class="col-md-6">
                                 <label class=" form-control-label" >Expediente :</label>
-                                <textarea maxlength="500" type="text"  name="expediente" class="form-control text text-uppercase">{{old('expediente',$edit->expediente)}}</textarea>
-                            </div>
+                                <textarea maxlength="500" type="text"  name="expediente" class="form-control text">{{old('expediente',$edit->expediente)}}</textarea>
+                            </div> 
                         </div>
                         <hr/>
                         <h4 class="text text-primary">Domicilio Actual</h4>
@@ -179,18 +182,18 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label class="form-control-label" ><i class="text-danger">*</i> Dirección :</label>
-                                <input  minlength="4"  maxlength="60" type="text"  name="direccion" class="form-control text text-uppercase"  value="{{old('direccion',$edit->direccion)}}" required />
+                                <input  minlength="4"  maxlength="60" type="text"  name="direccion" class="form-control text"  value="{{old('direccion',$edit->direccion)}}" required />
                             </div>
                             <div class="col-md-3">
                                 <label class=" form-control-label" >Población:</label>
-                                <input  minlength="4"  maxlength="60" type="text" name="poblacion" class="form-control text text-uppercase"  value="{{old('poblacion',$edit->poblacion)}}">
+                                <input  minlength="4"  maxlength="60" type="text" name="poblacion" class="form-control text"  value="{{old('poblacion',$edit->poblacion)}}">
                             </div>
                             <div class="col-md-3">
-                                <label class="form-control-label" >Entidad Federativa:</label>
+                                <label class="form-control-label" ><i class="text text-danger">*</i> Entidad Federativa:</label>
                                 <select name="entidadFederativa" class="form-control" required>
                                     <option></option>
                                     @foreach($estados as $item)
-                                    <option class="form-control" value="{{$item->id}}" label="{{$item->estado}}" {{ old('entidadFederativa',$edit->entidadFederativa)==$item->id ? 'selected' : ''}} >{{$item->estado}} </option>
+                                    <option class="form-control" value="{{$item->id}}" {{ old('entidadFederativa',$edit->entidadFederativa)==$item->id ? 'selected' : ''}}>{{$item->estado}}</option>
                                     @endforeach
                             </select>
                         </div>
@@ -207,7 +210,7 @@
                         <div class="col-md-4">
                             <label class="form-control-label" ><i class="text-danger">*</i> Correo electrónico:</label>
                             <input minlength="8"  maxlength="40" type="email" name="correoElectronico" class="form-control"  value="{{old('correoElectronico',$edit->correoElectronico)}}" required>
-                            @if($errors->get('correoElectronico'))
+                            @if($errors->get('correoElectronico'))  
                             <div class="alert alert-danger">{{ $errors->get('correoElectronico')[0]}}</div>
                             @endif
                         </div>
