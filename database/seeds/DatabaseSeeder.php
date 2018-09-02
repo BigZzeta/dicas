@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
             'departamentos',
             'users',
             'empleados',
-            'cat_entidad_federativa'
             'cat_entidad_federativa',
             'puesto'
         ]);
