@@ -11,7 +11,7 @@ class userSeeder extends Seeder
      */
     public function run()
     {
-        /*DB::table('users')->insert([
+        DB::table('users')->insert([
             'name'=>'Eric',
             'apellidoPaterno'=>'Centeno',
             'apellidoMaterno'=>'Arcos',
@@ -20,7 +20,7 @@ class userSeeder extends Seeder
             'password'=> bcrypt('celeste12'),
             'idTipoUsuario' =>'1',
             'status'=>'1'
-        ]);*/
+        ]);
 
         DB::table('users')->insert([
             'name'=>'Jose',
@@ -142,68 +142,6 @@ class userSeeder extends Seeder
         //     'password'=> bcrypt('admin'),
         //     'status'=>'0'
         // ]);
-
-
-
-        DB::table('users')->insert([
-            'name'=>'Adrian',
-            'apellidoPaterno'=>'Uribe',
-            'apellidoMaterno'=>'Uribe',
-            'email'=>'adrianuribe@gmail.com',
-            'username'=>'adrianuribe',
-            'password'=> bcrypt('adrian'),
-            'status'=>'0'
-        ]);
-
-        DB::table('users')->insert([
-            'name'=>'Rosendo',
-            'apellidoPaterno'=>'Martinez',
-            'apellidoMaterno'=>'Yam',
-            'email'=>'rosendo@gmail.com',
-            'username'=>'rosendo',
-            'password'=> bcrypt('rosendo'),
-            'status'=>'0'
-        ]);
-
-        DB::table('users')->insert([
-            'name'=>'Martiniano',
-            'apellidoPaterno'=>'Sanchez',
-            'apellidoMaterno'=>'Esquivel',
-            'email'=>'martiniano@gmail.com',
-            'username'=>'martiniano',
-            'password'=> bcrypt('martiniano'),
-            'status'=>'0'
-        ]);
-
-        DB::table('users')->insert([
-            'name'=>'Luis Alfonso',
-            'apellidoPaterno'=>'Ceballos',
-            'apellidoMaterno'=>'Chable',
-            'email'=>'luisalfonso@gmail.com',
-            'username'=>'luisalfonso',
-            'password'=> bcrypt('luisalfonso'),
-            'status'=>'0'
-        ]);
-
-        DB::table('users')->insert([
-            'name'=>'Tomas Eduardo',
-            'apellidoPaterno'=>'Orozco',
-            'apellidoMaterno'=>'Ibarra',
-            'email'=>'tomasibarra@gmail.com',
-            'username'=>'tomasibarra',
-            'password'=> bcrypt('tomasi'),
-            'status'=>'0'
-        ]);
-
-        DB::table('users')->insert([
-            'name'=>'Lilia',
-            'apellidoPaterno'=>'De La Cuesta',
-            'apellidoMaterno'=>'Rivera',
-            'email'=>'liliarivera@gmail.com',
-            'username'=>'liliarivera',
-            'password'=> bcrypt('lilia'),
-            'status'=>'0'
-        ]);
 
 
 

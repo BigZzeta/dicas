@@ -58,6 +58,7 @@
                     <input type="text" class="form-control my-colorpicker1" name="apellidoMaterno" placeholder="Apellido Materno" value="{{ old('apellidoMaterno') }}" >
                   </div>
                 </div>
+
                 <!--foto -->
                 <div class="box-body">
                   <div class="form-group">
@@ -66,6 +67,7 @@
                     <input type="file" name="foto" value="{{ old('foto') }}">
                   </div>
                 </div>
+
                 <!--email -->
                 <div class="box-body">
                   <div class="form-group">
@@ -103,10 +105,14 @@
                     @endif
                   </div>
                 </div>
+
+
                 <!-- /.box-body -->
               </div>
               <!-- /.box -->
             </div>
+
+
             <div class="col-md-8">
               <p align="right">
                 <!--<button type="submit">Guardar usuario</button>-->
@@ -117,8 +123,11 @@
 
           </div>
           <!-- /.row -->
+
+
       </section>
       <!-- botones guardar y volver a usuarios-->
+
   </form>
 
 @endsection

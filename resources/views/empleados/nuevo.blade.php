@@ -27,7 +27,7 @@
                                 <p align="center">
                                     <label class="form-control-label">Fotografía:</label>
                                     <img id="imgSalida" src="{{asset('images/usr.png')}}"  height="15%" width="30%"/>
-                                    <input id="file-input" type="file" name="fotografia"/>  
+                                    <input id="file-input" type="file" name="fotografia"/>
                                 </p>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                             <div class="col-md-3">
                                 <label class="form-control-label">Codigo Empleado:</label>
                                 <input minlength="4" maxlength="30" type="text"  name="codigoEmpleado" class="form-control text text-uppercase" value="{{ old('codigoEmpleado') }}"  />
-                                @if($errors->get('codigoEmpleado'))  
+                                @if($errors->get('codigoEmpleado'))
                                 <div class="alert alert-danger">{{ $errors->get('codigoEmpleado')[0]}}</div>
                                 @endif
                             </div>
@@ -100,34 +100,29 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <label class=" form-control-label" ><i class="text-danger">*</i> Curp:</label>
-<<<<<<< HEAD
-                                <input minlength="18" maxlength="18"   name="curp" class="form-control text text-uppercase" value="{{ old('curp') }}"   required />
-                                @if($errors->get('curp'))
-=======
                                 <input minlength="18" maxlength="30"   name="curp" class="form-control text text-uppercase" value="{{ old('curp') }}"   required />
-                                @if($errors->get('curp'))  
->>>>>>> fdff1b17f5b0e4994f06510630b43a06be190efa
+                                @if($errors->get('curp'))
                                 <div class="alert alert-danger">{{ $errors->get('curp')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-3">
                                 <label class=" form-control-label" ><i class="text-danger">*</i> Rfc:</label>
                                 <input minlength="4" maxlength="12" type="text"  name="rfc" class="form-control text" value="{{ old('rfc') }}" required />
-                                @if($errors->get('rfc'))  
+                                @if($errors->get('rfc'))
                                 <div class="alert alert-danger">{{ $errors->get('rfc')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-3">
                                 <label class=" form-control-label" >Numero Seguro Social:</label>
                                 <input maxlength="15" type="text" name="numeroSeguroSocial" class="form-control text" value="{{ old('numeroSeguroSocial') }}" >
-                                @if($errors->get('numeroSeguroSocial'))  
+                                @if($errors->get('numeroSeguroSocial'))
                                 <div class="alert alert-danger">{{ $errors->get('numeroSeguroSocial')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-2">
                                 <label class=" form-control-label" >Umf:</label>
                                 <input  maxlength="11"  name="umf" class="form-control text" value="{{ old('umf') }}">
-                                @if($errors->get('umf'))  
+                                @if($errors->get('umf'))
                                 <div class="alert alert-danger">{{ $errors->get('umf')[0]}}</div>
                                 @endif
                             </div>
@@ -136,21 +131,21 @@
                             <div class="col-md-3">
                                 <label class=" form-control-label" >Numero de Afore :</label>
                                 <input maxlength="40" type="text" name="numeroAfore" class="form-control text" value="{{ old('numeroAfore') }}" >
-                                @if($errors->get('numeroAfore'))  
+                                @if($errors->get('numeroAfore'))
                                 <div class="alert alert-danger">{{ $errors->get('numeroAfore')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-3">
                                 <label class=" form-control-label" >Numero Fonacot :</label>
                                 <input  maxlength="40"  type="text" name="numeroFonacot" class="form-control text" value="{{ old('numeroFonacot') }}">
-                                @if($errors->get('numeroFonacot'))  
+                                @if($errors->get('numeroFonacot'))
                                 <div class="alert alert-danger">{{ $errors->get('numeroFonacot')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-3">
                                 <label class="form-control-label" >Clabe Interbancaria:</label>
                                 <input minlength="4" maxlength="25"  type="text"  name="clabeInterbancaria" class="form-control text" value="{{ old('clabeInterbancaria') }}" />
-                                @if($errors->get('clabeInterbancaria'))  
+                                @if($errors->get('clabeInterbancaria'))
                                 <div class="alert alert-danger">{{ $errors->get('clabeInterbancaria')[0]}}</div>
                                 @endif
                             </div>
@@ -200,7 +195,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <label class=" form-control-label" ><i class="text-danger">*</i> Código Postal:</label>
-                                <input minlength="5" maxlength="11" type="number" name="codigoPostal" class="form-control text text-uppercase" value="{{ old('codigoPostal') }}" required />
+                                <input minlength="5" maxlength="11" type="number" name="codigoPostal" class="form-control value="{{ old('codigoPostal') }}" required />
                             </div>
                             <div class="col-md-4">
                                 <label class=" form-control-label" ><i class="text-danger">*</i> Telefono :</label>
@@ -209,7 +204,7 @@
                             <div class="col-md-4">
                                 <label class=" form-control-label" ><i class="text-danger">*</i> Correo electrónico:</label>
                                 <input  maxlength="40"  type="email" name="correoElectronico" class="form-control" value="{{ old('correoElectronico') }}" required />
-                                @if($errors->get('correoElectronico'))  
+                                @if($errors->get('correoElectronico'))
                                 <div class="alert alert-danger">{{ $errors->get('correoElectronico')[0]}}</div>
                                 @endif
                             </div>

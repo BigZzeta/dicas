@@ -29,10 +29,10 @@ class UserRequest extends FormRequest
             'name' => 'required',
             'apellidoPaterno' => '',
             'apellidoMaterno' => '',
-            'foto' => '',          
+            'foto' => '',
             'email' => ['required', 'email', 'max:255', 'unique:users,email,$id'],
             'username'=>'required|unique:users,username',
-            'tipousuario'=>'required',
+            // 'tipousuario'=>'required',
             'password'=> 'required'
         ];
     }

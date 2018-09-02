@@ -69,10 +69,8 @@ class EmpleadosController extends Controller {
     static function refrescar(Request $request, $objeto) {
 
         $msj = array(
-<<<<<<< HEAD
-=======
+
             'codigoEmpleado.unique' => 'Valor Repetido',
->>>>>>> fdff1b17f5b0e4994f06510630b43a06be190efa
             'curp.unique' => 'Valor Repetido',
             'numeroSeguroSocial.unique' => 'Valor repetido',
             'umf.unique' => 'Valor repetido',
