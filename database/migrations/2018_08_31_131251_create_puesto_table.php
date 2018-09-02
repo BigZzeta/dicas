@@ -14,9 +14,6 @@ class CreatePuestoTable extends Migration
     public function up()
     {
         Schema::create('puesto', function (Blueprint $table) {
-            $table->increments('idpuesto');
-            $table->integer('numeropuesto');
-            $table->string('descripcion');
             $table->increments('idpuesto')->unique();
             $table->integer('numeropuesto')->unique();
             $table->string('descripcion')->unique();
