@@ -13,13 +13,14 @@ class CreatePuestoTable extends Migration
      */
     public function up()
     {
-        Schema::create('puesto', function (Blueprint $table) {
+        Schema::create('puestos', function (Blueprint $table) {
             $table->increments('idpuesto')->unique();
             $table->integer('numeropuesto')->unique();
-            $table->string('descripcion')->unique();
-            $table->string('cartatecnica');
-            $table->double('sueldominimo');
-            $table->double('sueldomaximo');
+            $table->string('nombre')->unique();
+            $table->longText('funciones')->nullable();
+            $table->string('cartatecnica')->nullable();
+            $table->double('sueldominimo')->default(1.0);
+            $table->double('sueldomaximo')->default(2.0);
             $table->timestamps();
         });
     }

@@ -11,34 +11,35 @@ class PuestosSeeder extends Seeder
      */
     public function run()
     {
-      // factory(puesto::class,10)->create();
+      // factory(puestos::class,10)->create();
 
-      DB::table('puesto')->insert([
+      DB::table('puestos')->insert([
           'numeropuesto'=>1,
-          'descripcion'=>'SISTEMAS',
-          'cartatecnica'=>'',
+          'nombre'=>'SISTEMAS',
+          // 'cartatecnica'=>'',
           'sueldominimo'=>'200.34',
           'sueldomaximo'=>'500.25'
       ]);
 
-      DB::table('puesto')->insert([
+      DB::table('puestos')->insert([
           'numeropuesto'=>2,
-          'descripcion'=>'CONTABILIDAD',
+          'nombre'=>'CONTABILIDAD',
           'cartatecnica'=>'',
+          'funciones'=>'realizar contratos',
           'sueldominimo'=>'150.34',
           'sueldomaximo'=>'400.25'
       ]);
-      DB::table('puesto')->insert([
+      DB::table('puestos')->insert([
           'numeropuesto'=>3,
-          'descripcion'=>'AUXILIAR ADMINISTRATIVO',
+          'nombre'=>'AUXILIAR ADMINISTRATIVO',
           'cartatecnica'=>'',
           'sueldominimo'=>'225.04',
           'sueldomaximo'=>'370.25'
       ]);
 
-      // DB::table('puesto')->insert([
+      // DB::table('puestos')->insert([
       //     'numeropuesto'=>4,
-      //     'descripcion'=>'AUXILIAR ADMINISTRATIVO', //mismo puesto debe marcar error
+      //     'nombre'=>'AUXILIAR ADMINISTRATIVO', //mismo puesto debe marcar error
       //     'cartatecnica'=>'',
       //     'sueldominimo'=>'225.04',
       //     'sueldomaximo'=>'370.25'

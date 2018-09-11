@@ -14,11 +14,11 @@ class CreateDepartamentoTable extends Migration
     public function up()
     {
         Schema::create('departamentos', function (Blueprint $table) {
-            $table->increments('id')->unique();
+            $table->increments('iddepartamento')->unique();
             $table->integer('numerodepartamento')->unique();
-            $table->string('nombre',150)->unique();
+            $table->string('nombre',50)->unique();
             $table->integer('numempleados');
-            $table->boolean('condicion')->default(1);
+            $table->boolean('estatus')->default(1);//activo o inectivo
             $table->timestamps();
         });
     }

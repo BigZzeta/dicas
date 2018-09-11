@@ -24,10 +24,18 @@ Route::get('/usuarios/nuevo', 'usuario\UserController@create')->name('users.crea
 Route::post('/usuarios/crear','usuario\UserController@store');
 Route::get('/usuarios/{user}/editar', 'usuario\UserController@editar')->name('users.editar');
 Route::any('/usuarios/update/{users}', 'usuario\UserController@update')->name('users.update');
-
 Route::get('/usuarios/{user}', 'usuario\UserController@show')
   ->where('user', '\w+')
   ->name('users.show');
+
+
+Route::get('/departamentos','DepartamentoController@index')->name('departamento');
+Route::get('/departamentos/editar/{id}', 'DepartamentoController@editar')->name('departamentos.editar');
+Route::post('/departamentos/update/{id?}', 'DepartamentoController@update')->name('departamentos.update');
+Route::get('/departamentos/{departamentos}', 'DepartamentoController@show')
+->where('departamento', '\w+')
+->name('departamentos.show');
+
 
 Auth::routes();
 

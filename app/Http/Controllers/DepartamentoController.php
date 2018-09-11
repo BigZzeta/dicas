@@ -15,7 +15,14 @@ class DepartamentoController extends Controller
     public function index()
     {
         $departamentos = Departamento::all();
-        return $departamentos;
+
+        // $users = User::all();
+
+        $title = 'Listado de departamentos';
+
+        return view('departamentos.index', compact('title', 'departamentos'));
+
+        // return $departamentos;
     }
 
     /**
@@ -51,7 +58,16 @@ class DepartamentoController extends Controller
      */
     public function show($id)
     {
-        //
+      $departamentos = Departamento::where('iddepartamento','=',$id)->firstOrFail();
+
+      if ($departamentos->estatus == 1) {
+        $departamentos->estatus = "Activo";
+      }
+      else{
+        $departamentos->estatus = "Inactivo";
+      }
+
+      return view('departamentos.show', compact('departamentos'));
     }
 
     /**
@@ -60,9 +76,19 @@ class DepartamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editar($id)
     {
-        //
+      $departamento = Departamento::where('iddepartamento','=',$id)->firstOrFail();
+      // return ($departamentos);
+      if ($departamento->estatus == 1) {
+        $departamento->estatus = "Activo";
+      }
+      else{
+        $departamento->estatus = "Inactivo";
+      }
+
+      return view('departamentos.editar', compact('departamento'));
+      // return view('departamentos.editar');
     }
 
     /**
@@ -72,13 +98,16 @@ class DepartamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        $departamento = Departamento::findOrfail($request->id);
-        $departamento->nombre = $request->nombre;
-        $departamento->descripcion = $request->descripcion;
-        $departamento->condicion = '1';
-        $departamento->save();
+        // $departamentos = Departamento::findOrfail($request->id);
+        // return($departamentos);
+        return("Hola");
+        //
+        // $departamento->nombre = $request->nombre;
+        // $departamento->descripcion = $request->descripcion;
+        // $departamento->condicion = '1';
+        // $departamento->save();
     }
 
     /**
