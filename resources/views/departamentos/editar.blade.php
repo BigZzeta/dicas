@@ -22,13 +22,8 @@
 @include('errors.error')
 
 
-  <form class="form-grup" method="POST" action="{{ url('departamentos/update').'/'.$departamento->id }}" enctype="multipart/form-data">
-    <!-- @method('PUT') -->
-      {{ method_field('PUT') }} <!-- Esto no es necesario, si lees un poco de laravel te vas a dar cuenta que no es necesario,
-      hay varias maneras de hacerlo, es decir, puedes tomar atajos en lugar de seguir todo el proceso, la idea es optimizar codigo -->
-
-    <!--{!! csrf_field() !!}-->
-
+  <form class="form-grup" method="POST" action="{{ url('departamentos/update').'/'.$departamento->iddepartamento }}" enctype="multipart/form-data">
+    
     {{ csrf_field() }}
 
         <!-- Main content -->

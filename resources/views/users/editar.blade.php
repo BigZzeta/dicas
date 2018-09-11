@@ -23,11 +23,6 @@
 
 
   <form class="form-grup" method="POST" action="{{ url('usuarios/update').'/'.$user->id }}" enctype="multipart/form-data">
-    <!-- @method('PUT') -->
-      {{ method_field('PUT') }} <!-- Esto no es necesario, si lees un poco de laravel te vas a dar cuenta que no es necesario,
-      hay varias maneras de hacerlo, es decir, puedes tomar atajos en lugar de seguir todo el proceso, la idea es optimizar codigo -->
-
-    <!--{!! csrf_field() !!}-->
 
     {{ csrf_field() }}
 
@@ -85,7 +80,7 @@
                       <input type="file" name="foto" accept="image/*" onchange="loadFile(event)"> <!-- el script esta en la pagina principal llamada inicio-->
                       <img id="output" alt="your image" width="100" height="100"/>
                   </div>
-                </div>                           
+                </div>
 
                 <!--email -->
                 <div class="box-body">

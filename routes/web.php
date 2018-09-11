@@ -23,7 +23,7 @@ Route::get('/usuarios', 'usuario\UserController@index')->name('users');
 Route::get('/usuarios/nuevo', 'usuario\UserController@create')->name('users.create');
 Route::post('/usuarios/crear','usuario\UserController@store');
 Route::get('/usuarios/{user}/editar', 'usuario\UserController@editar')->name('users.editar');
-Route::any('/usuarios/update/{users}', 'usuario\UserController@update')->name('users.update');
+Route::post('/usuarios/update/{users}', 'usuario\UserController@update')->name('users.update');
 Route::get('/usuarios/{user}', 'usuario\UserController@show')
   ->where('user', '\w+')
   ->name('users.show');
