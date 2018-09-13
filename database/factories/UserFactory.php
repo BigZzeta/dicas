@@ -25,9 +25,10 @@ $factory->define(App\User::class, function (Faker $faker) {
 
 $factory->define(App\Departamento::class, function (Faker $faker) {
     return [
-        'numerodepartamento' => $faker->unique()->randomDigit,
-        'nombre' => $faker->unique()->text(10),
-        'numempleados' => $faker->randomDigit,
+        'numerodepartamento' => $faker->unique()->numberBetween($min = 1, $max = 300),
+        'nombre' => $faker->unique()->text(20),
+        'numempleados' => $faker->numberBetween($min = 1, $max = 30),
+        'numerodepuestos' => $faker->numberBetween($min = 1, $max = 30),
 
     ];
 });

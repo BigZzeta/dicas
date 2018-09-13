@@ -15,8 +15,8 @@
       <li class="submenu">
         <a href="#"><i class="fa fa-fw fa-table"></i> <span> Catálogos </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
-          <li><a href="/puestos">Puestos</a></li>
-          <li><a href="/departamentos">Departamentos</a></li>
+          <li><a href="/puestos"><i class="fa fa-bars"></i>Puestos</a></li>
+          <li><a href="/departamentos"><i class="fa fa-building"></i>Departamentos</a></li>
         </ul>
       </li>
          <li class="submenu">
@@ -31,7 +31,7 @@
         <a href="#"><i class="fa fa-user-circle bigfonts"></i> <span> Accesos </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="/usuarios">Usuarios</a></li>
-          <li><a href="/usuarios/nuevo">Nuevo usuarios</a></li>
+          <!-- <li><a href="/usuarios/nuevo">Nuevo usuarios</a></li> -->
         </ul>
       </li>
 
@@ -99,7 +99,7 @@
               <li><a href="media-image-magnifier.html">Image Magnifier</a></li>
 
             </ul>
-                  </li>
+        </li>
 
                   <li class="submenu">
                       <a href="#"><span class="label radius-circle bg-danger float-right">20</span><i class="fa fa-fw fa-copy"></i><span> Example Pages </span></a>

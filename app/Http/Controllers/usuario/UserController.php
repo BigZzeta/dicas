@@ -72,7 +72,6 @@ class UserController extends Controller
 
   public function editar($username)
   {
-    // $tipou = tipousuario::all();
 
     $user = User::where('username','=',$username)->firstOrFail();
 

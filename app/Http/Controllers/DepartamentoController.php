@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Departamento;
+use App\Http\Requests\DepartamentoRequest;
 
 class DepartamentoController extends Controller
 {
@@ -22,7 +24,6 @@ class DepartamentoController extends Controller
 
         return view('departamentos.index', compact('title', 'departamentos'));
 
-        // return $departamentos;
     }
 
     /**
@@ -32,7 +33,7 @@ class DepartamentoController extends Controller
      */
     public function create()
     {
-        //
+        return view('departamentos.create');
     }
 
     /**
@@ -41,13 +42,17 @@ class DepartamentoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DepartamentoRequest $request)
     {
         $departamento = new Departamento();
-        $departamento->nombre = $request->nombre;
-        $departamento->descripcion = $request->descripcion;
-        $departamento->condicion = '1';
+
+        $departamento->numerodepartamento = $request->numerodepartamento;
+        $departamento->nombre = strtoupper($request->nombre);
+        $departamento->numempleados = $request->numempleados;
+
         $departamento->save();
+
+        return redirect()->route('departamentos');
     }
 
     /**
@@ -58,7 +63,7 @@ class DepartamentoController extends Controller
      */
     public function show($id)
     {
-      $departamentos = Departamento::where('iddepartamento','=',$id)->firstOrFail();
+      $departamentos = Departamento::where('id','=',$id)->firstOrFail();
 
       if ($departamentos->estatus == 1) {
         $departamentos->estatus = "Activo";
@@ -78,8 +83,8 @@ class DepartamentoController extends Controller
      */
     public function editar($id)
     {
-      $departamento = Departamento::where('iddepartamento','=',$id)->firstOrFail();
-      // return ($departamentos);
+      $departamento = Departamento::where('id','=',$id)->firstOrFail();
+
       if ($departamento->estatus == 1) {
         $departamento->estatus = "Activo";
       }
@@ -88,7 +93,7 @@ class DepartamentoController extends Controller
       }
 
       return view('departamentos.editar', compact('departamento'));
-      // return view('departamentos.editar');
+
     }
 
     /**
@@ -100,14 +105,27 @@ class DepartamentoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $departamentos = Departamento::findOrfail($request->id);
-        // return($departamentos);
-        return("Hola");
-        //
-        // $departamento->nombre = $request->nombre;
-        // $departamento->descripcion = $request->descripcion;
-        // $departamento->condicion = '1';
-        // $departamento->save();
+      $departamento=departamento::findOrFail($id);
+
+      $valida = $request->validate([
+        'numerodepartamento' => Rule::unique('departamentos')->ignore($departamento->id,'id'),
+        'nombre' => Rule::unique('departamentos')->ignore($departamento->id,'id'),
+        'numempleados' => 'required'
+      ]);
+
+      $departamento->numerodepartamento = $request->input('numerodepartamento');
+      $departamento ->nombre = strtoupper($request->input('nombre'));
+      $departamento ->numempleados = $request->input('numempleados');
+      // $data ->email = $request->input('email');
+      // $data ->username = $request->input('username');
+      // $data ->status = $request->input('status');
+      // $data ->idTipoUsuario = $request->input('tipousuario');
+      // $data ->password = bcrypt($request->input['password']);
+      // return $departamento;
+      $departamento -> save();
+
+      return redirect()->route('departamentos.show', compact('departamento'));
+
     }
 
     /**

@@ -27,13 +27,10 @@ class EmpleadoRequest extends FormRequest
     {
         return [
             'codigoEmpleado' => 'unique:empleados,codigoEmpleado',
-<<<<<<< HEAD
             'curp' => ['required', 'curp', 'max:18', 'unique:empleados,curp'],
             'curpi' => 'unique:empleados,curpi',
             'curpf' => 'unique:empleados,curpf',
-=======
             'curp' => 'unique:empleados,curp',
->>>>>>> fdff1b17f5b0e4994f06510630b43a06be190efa
             'numeroSeguroSocial' => 'unique:empleados,numeroSeguroSocial',
             'rfc' => 'unique:empleados,rfc',
             'numeroAfore' => 'unique:empleados,numeroAfore',
@@ -53,8 +50,8 @@ class EmpleadoRequest extends FormRequest
             'homoclave.unique' => 'Valor repetido',
             'numeroAfore.unique' => 'Valor repetido',
             'numeroFonacot.unique' => 'Valor repetido',
-            'correoElectronico.unique' => 'Valor repetido',   
-            'clabeInterbancaria.unique' => 'Valor repetido',  
+            'correoElectronico.unique' => 'Valor repetido',
+            'clabeInterbancaria.unique' => 'Valor repetido',
         ];
     }
 }

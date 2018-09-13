@@ -9,7 +9,7 @@
       <div class="card mb-3">
         <div class="card-header">
           <h3><i class="fa fa-table"></i> Departamentos
-          <a href="{{ url('/usuarios/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo departamento</a>
+          <a href="{{ url('/departamentos/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo departamento</a>
           </h3>
         </div>
 
@@ -30,12 +30,12 @@
 
             @foreach($departamentos as $departamento)
             <tr>
-              <td> {{ $departamento->iddepartamento }}</td>
+              <td> {{ $departamento->id }}</td>
               <td align="center">{{ $departamento->numerodepartamento}}</td>
               <td>{{ $departamento->nombre }}</td>
               <td align="center">{{ $departamento->numempleados}}</td>
 
-              <td><a href="{{ route('departamentos.show', ['id' => $departamento->iddepartamento]) }}">Ver detalles</a></td>
+              <td><a href="{{ route('departamentos.show', ['id' => $departamento->id]) }}">Ver detalles</a></td>
 
             </tr>
             @endforeach
@@ -49,7 +49,7 @@
         <div class="row">
           <div class="col">
             <div class="panel-heading">
-              <a href="{{ url('/usuarios/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo usuario</a>
+              <a href="{{ url('/departamentos/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo departamento</a>
             </div>
           </div>
         </div>

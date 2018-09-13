@@ -29,12 +29,23 @@ Route::get('/usuarios/{user}', 'usuario\UserController@show')
   ->name('users.show');
 
 
-Route::get('/departamentos','DepartamentoController@index')->name('departamento');
+Route::get('/departamentos','DepartamentoController@index')->name('departamentos');
+Route::get('/departamentos/nuevo','DepartamentoController@create')->name('departamentos.create');
+Route::post('/departamentos/crear', 'DepartamentoController@store');
 Route::get('/departamentos/editar/{id}', 'DepartamentoController@editar')->name('departamentos.editar');
 Route::post('/departamentos/update/{id?}', 'DepartamentoController@update')->name('departamentos.update');
 Route::get('/departamentos/{departamentos}', 'DepartamentoController@show')
 ->where('departamento', '\w+')
 ->name('departamentos.show');
+
+Route::get('/puestos','PuestosController@index')->name('puestos');
+Route::get('/departamentos/nuevo','DepartamentoController@create')->name('departamentos.create');
+Route::post('/departamentos/crear', 'DepartamentoController@store');
+Route::get('/departamentos/editar/{id}', 'DepartamentoController@editar')->name('departamentos.editar');
+Route::post('/departamentos/update/{id?}', 'DepartamentoController@update')->name('departamentos.update');
+Route::get('/puestos/{puestos}', 'PuestosController@show')
+->where('puesto', '\w+')
+->name('puestos.show');
 
 
 Auth::routes();

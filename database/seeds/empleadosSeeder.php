@@ -12,9 +12,9 @@ class empleadosSeeder extends Seeder {
      */
     public function run() {
         DB::table('empleados')->insert([
-            'codigoEmpleado' => 'XC01', 'nombre' => 'Perla', 'apellidoPaterno' => 'Gonzales',
+            'codigoEmpleado' => 'XC01', 'nombre' => 'José', 'apellidoPaterno' => 'Gonzales',
             'apellidoMaterno' => 'Altamirano', 'fechaNacimiento' => '1995-02-23', 'lugarNacimiento' => 'Tabasco',
-            'estadoCivil' => 'CASADO (A)', 'sexo' => 'FEMENINO', 'curp' => 'GOAP950223HTCNHL00',
+            'estadoCivil' => 'Casado (a)', 'sexo' => 'Masculino', 'curp' => 'GOAP950223HTCNHL00',
             'numeroSeguroSocial' => '123451234', 'umf' => '2131', 'rfc' => '12345623',
             'tipoContrato' => '2', 'expediente' => '...',
             'telefono' => '9341157918', 'codigoPostal' => '86934', 'direccion' => '...',
@@ -25,7 +25,7 @@ class empleadosSeeder extends Seeder {
         DB::table('empleados')->insert([
             'codigoEmpleado' => 'XC02', 'nombre' => 'Maria', 'apellidoPaterno' => 'Gonzales',
             'apellidoMaterno' => 'Altamirano', 'fechaNacimiento' => '1996-06-04', 'lugarNacimiento' => 'Tabasco',
-            'estadoCivil' => 'SOLTERO (A)', 'sexo' => 'FEMENINO', 'curp' => 'GOAM960604HTCNHL00',
+            'estadoCivil' => 'Soltero (a)', 'sexo' => 'Femenino', 'curp' => 'GOAM960604HTCNHL00',
             'numeroSeguroSocial' => '123451001', 'umf' => '2112', 'rfc' => '09867909',
             'tipoContrato' => '2', 'expediente' => '...',
             'telefono' => '9341157918', 'codigoPostal' => '86934', 'direccion' => '...',

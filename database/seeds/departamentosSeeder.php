@@ -12,23 +12,25 @@ class departamentosSeeder extends Seeder
      * @return void
      */
     public function run()
-    {        
-        
-        factory(departamento::class,10)->create();
-        
+    {
+
+        factory(departamento::class,5)->create();
+
         // DB::table('departamentos')->insert([
-        //     'numerodepartamento'=>1,
-        //     'nombre'=>'CPA',
-        //     'numempleados'=>20,
+        //   'numerodepartamento'=>11,
+        //   'nombre'=>'CPA',
+        //   'numempleados'=>20,
+        //   // 'condicion'=>'1'
+        // ]);
+        //
+        // DB::table('departamentos')->insert([
+        //     'numerodepartamento'=>12,
+        //     'nombre'=>'CCSA',
+        //     'numempleados'=>30,
         //     // 'condicion'=>'1'
         // ]);
 
 
-        // DB::table('departamentos')->insert([
-        //     'nombre'=>'Ventas',
-        //     'descripcion'=>'Contiene los puestos de vendedores',
-        //     'condicion'=>'1'
-        // ]);
         //
         // DB::table('departamentos')->insert([
         //     'nombre'=>'Contabilidad',
