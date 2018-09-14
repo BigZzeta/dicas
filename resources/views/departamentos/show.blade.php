@@ -1,20 +1,16 @@
+
 @extends('inicio')
-@section('title',"Mostrando departamento")
+@section('title',"Mostrando puestos")
 @section('content')
 <!-- Start content -->
 <div class="content">
-
     <div class="container-fluid">
-
             <div class="row">
                 <div class="col-xl-12">
-                    <div class="breadcrumb-holder">
-                        <h4 class="text text-primary">Departamento</h4>
-                        <ol class="breadcrumb float-right">
-                            <!-- <li class="breadcrumb-item">Home</li>
-                            <li class="breadcrumb-item active">Profile</li> -->
-                        </ol>
-                        <div class="clearfix"></div>
+                    <div class="card-header">
+                      <h3><i class="fa fa-table"></i> Departamentos
+                      <!-- <a href="{{ url('/departamentos/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo departamento</a> -->
+                      </h3>
                     </div>
                 </div>
             </div>
@@ -22,11 +18,8 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
               <div class="card mb-3">
-                  <div class="card-header">
-                      <h3><i class="fa fa-building"></i> Detalle</h3>
-                  </div>
-
                   <div class="card-body">
+                    <!--contenido aqui -->
                     <form action="#" method="post" enctype="multipart/form-data">
 
                       <div class="row">
@@ -78,6 +71,7 @@
                       </div>
                       <!-- finalizan botones -->
                     </form>
+                    <!--contenido aqui -->
                   </div>
                 <!-- end card-body -->
               </div>

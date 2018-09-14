@@ -17,6 +17,7 @@ class PuestosSeeder extends Seeder
           'numeropuesto'=>1,
           'nombre'=>'SISTEMAS',
           // 'cartatecnica'=>'',
+          'funciones'=>'venta de autos',
           'sueldominimo'=>'200.34',
           'sueldomaximo'=>'500.25'
       ]);
@@ -33,6 +34,7 @@ class PuestosSeeder extends Seeder
           'numeropuesto'=>3,
           'nombre'=>'AUXILIAR ADMINISTRATIVO',
           'cartatecnica'=>'',
+          'funciones'=>'pintar autos',
           'sueldominimo'=>'225.04',
           'sueldomaximo'=>'370.25'
       ]);

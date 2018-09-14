@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Puesto extends Model
 {
     //protected $table ='departamento';
-    //protected $primaryKey = 'id';
+    protected $primaryKey = 'idpuesto';
     protected $fillable = [
         'numeropuesto','descripcion','cartatecnica','sueldominimo','sueldomaximo'
     ];

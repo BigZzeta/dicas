@@ -9,6 +9,6 @@ class Departamento extends Model
     //protected $table ='departamento';
     //protected $primaryKey = 'id';
     protected $fillable = [
-        'numerodepartamento','nombre','numempleados',
+        'numerodepartamento','nombre','numempleados','numerodepuestos'
     ];
 }

@@ -49,6 +49,7 @@ class DepartamentoController extends Controller
         $departamento->numerodepartamento = $request->numerodepartamento;
         $departamento->nombre = strtoupper($request->nombre);
         $departamento->numempleados = $request->numempleados;
+        $departamento->numerodepuestos = $request->numerodepuestos;
 
         $departamento->save();
 
@@ -116,12 +117,7 @@ class DepartamentoController extends Controller
       $departamento->numerodepartamento = $request->input('numerodepartamento');
       $departamento ->nombre = strtoupper($request->input('nombre'));
       $departamento ->numempleados = $request->input('numempleados');
-      // $data ->email = $request->input('email');
-      // $data ->username = $request->input('username');
-      // $data ->status = $request->input('status');
-      // $data ->idTipoUsuario = $request->input('tipousuario');
-      // $data ->password = bcrypt($request->input['password']);
-      // return $departamento;
+
       $departamento -> save();
 
       return redirect()->route('departamentos.show', compact('departamento'));

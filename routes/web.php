@@ -39,11 +39,11 @@ Route::get('/departamentos/{departamentos}', 'DepartamentoController@show')
 ->name('departamentos.show');
 
 Route::get('/puestos','PuestosController@index')->name('puestos');
-Route::get('/departamentos/nuevo','DepartamentoController@create')->name('departamentos.create');
-Route::post('/departamentos/crear', 'DepartamentoController@store');
-Route::get('/departamentos/editar/{id}', 'DepartamentoController@editar')->name('departamentos.editar');
-Route::post('/departamentos/update/{id?}', 'DepartamentoController@update')->name('departamentos.update');
-Route::get('/puestos/{puestos}', 'PuestosController@show')
+Route::get('/puestos/nuevo','PuestosController@create')->name('puestos.create');
+Route::post('/puestos/crear', 'PuestosController@store');
+Route::get('/puestos/editar/{id?}', 'PuestosController@editar')->name('puestos.editar');
+Route::post('/puestos/update/{id?}', 'PuestosController@update')->name('puestos.update');
+Route::get('/puestos/{id}', 'PuestosController@show')
 ->where('puesto', '\w+')
 ->name('puestos.show');
 

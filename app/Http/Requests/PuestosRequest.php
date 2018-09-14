@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DepartamentoRequest extends FormRequest
+class PuestosRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,14 @@ class DepartamentoRequest extends FormRequest
     public function rules()
     {
         return [
-          'numerodepartamento' => 'required|unique:departamentos,numerodepartamento',
-          'nombre' => 'required|unique:departamentos,nombre',
-          'numempleados' => 'required',
-          'numerodepuestos' => 'required'
+          'numeropuesto' => 'required|unique:puestos,numeropuesto',
+          'nombre' => 'required|unique:puestos,nombre',
+          'funciones' => 'required',
+          'nivelestructural' => 'required',
+          // 'cartatecnica' => 'required',
+          'estatus' => '',
+          'sueldominimo' => 'required',
+          'sueldomaximo' => 'required'
         ];
     }
 }
