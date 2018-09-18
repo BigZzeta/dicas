@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             'cat_entidad_federativa',
             'puestos',
             'pagadora',
-            'periodos'
+            'periodos',
+            'unes'
         ]);
 
         $this->call(departamentosSeeder::class);
@@ -31,6 +32,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PuestosSeeder::class);
         $this->call(PagadoraSeeder::class);
         $this->call(PeriodoSeeder::class);
+        $this->call(UneSeeders::class);
 
     }
     protected function truncateTables(array $tables)

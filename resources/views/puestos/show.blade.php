@@ -1,6 +1,7 @@
 @extends('inicio')
-@section('title',"Mostrando puestos")
+
 @section('content')
+
 <!-- Start content -->
 <div class="content">
     <div class="container-fluid">

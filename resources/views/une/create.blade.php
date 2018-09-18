@@ -3,14 +3,13 @@
 @section('content')
 
 @include('errors.error')
-<!-- Start content -->
+
 <div class="content">
     <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card-header">
-                      <h3><i class="fa fa-table"></i> Editar Departamentos
-                      <!-- <a href="{{ url('/departamentos/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo</a> -->
+                      <h3><i class="fa fa-table"></i> UNE's
                       </h3>
                     </div>
                 </div>
@@ -20,38 +19,34 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
               <div class="card mb-3">
                   <div class="card-body">
-                    <form class="form-grup" method="POST" action="{{ url('departamentos/update').'/'.$departamento->iddepartamento }}" enctype="multipart/form-data">
-
-                      {{ csrf_field() }}
-
+                    <form class="form-grup" method="POST" action="{{ url('une/crear') }}" enctype="multipart/form-data">
+                        {{ csrf_field() }}
                           <!-- Main content -->
-                          <section class="content">
-
+                        <section class="content">
                             <div class="row">
                               <div class="col-md-8">
                                 <div class="box box-info">
-
-                                  <!--Numero de departamento -->
+                                  <!--Numero de UNE-->
                                   <div class="box-body">
                                     <!-- Color Picker -->
                                     <div class="form-group">
-                                      <label>Numero de Departamento:</label>
-                                      <input type="number" class="form-control my-colorpicker1" name="numerodepartamento" id="numerodepartamento" placeholder="Numero de departamento" value="{{ old('numerodepartamento', $departamento->numerodepartamento) }}" >
-                                      @if ($errors->has('numerodepartamento'))
+                                      <label>Numero de UNE:</label>
+                                      <input type="number" class="form-control my-colorpicker1" name="numeroune" id="numeroune" placeholder="Numero de UNE" value="{{ old('numeroune') }}" >
+                                      @if ($errors->has('numeroune'))
                                         <div class="text-danger">
-                                          <p>{{ $errors->first('numerodepartamento') }}</p>
+                                          <p>{{ $errors->first('numeroune') }}</p>
                                         </div>
                                       @endif
                                     </div>
                                     <!-- /.form group -->
-                                  </div>
 
-                                  <!--Nombre del departamento-->
+                                  </div>
+                                  <!--Nombre -->
                                   <div class="box-body">
                                     <!-- Color Picker -->
                                     <div class="form-group">
                                       <label>Nombre:</label>
-                                      <input type="text" class="form-control my-colorpicker1" name="nombre" id="nombre" placeholder="Nombre" value="{{ old('nombre', $departamento->nombre) }}" >
+                                      <input type="text" class="form-control my-colorpicker1" name="nombre" id="nombre" placeholder="nombre" value="{{ old('nombre') }}" >
                                       @if ($errors->has('nombre'))
                                         <div class="text-danger">
                                           <p>{{ $errors->first('nombre') }}</p>
@@ -61,59 +56,46 @@
                                     <!-- /.form group -->
                                   </div>
 
-                                  <!--Numero de empleados del departamento-->
+
+                                  <!-- Direccion -->
                                   <div class="box-body">
-                                    <!-- Color Picker -->
                                     <div class="form-group">
-                                      <label>Numero de empleados del departamento:</label>
-                                      <input type="number" class="form-control my-colorpicker1" name="numempleados" id="numempleados" placeholder="Total de empleados del departamento" value="{{ old('numempleados', $departamento->numempleados) }}" >
-                                      @if ($errors->has('numempleados'))
+                                      <label>Dirección:</label>
+                                      <input type="text" class="form-control my-colorpicker1" name="direccion" value="{{ old('direccion') }}" >
+                                      @if ($errors->has('direccion'))
                                         <div class="text-danger">
-                                          <p>{{ $errors->first('numempleados') }}</p>
+                                          <p>{{ $errors->first('direccion') }}</p>
                                         </div>
                                       @endif
                                     </div>
-                                    <!-- /.form group -->
+                                  </div>
+                                  <!-- Inventarios de puestos -->
+                                  <div class="box-body">
+                                    <div class="form-group">
+                                      <label>Total de Puestos de la UNE:</label>
+                                      <input type="number" class="form-control my-colorpicker1" name="inventariopuestos" value="{{ old('inventariopuestos') }}" >
+                                      @if ($errors->has('inventariopuestos'))
+                                        <div class="text-danger">
+                                          <p>{{ $errors->first('inventariopuestos') }}</p>
+                                        </div>
+                                      @endif
+                                    </div>
                                   </div>
 
-                                  <!-- Estatus del departamento-->
-                                  <div class="box-body">
-                                    <!-- Color Picker -->
-                                    <div class="form-group">
-                                      <label>Estatus del Departamento:</label>
-                                      <input type="text" class="form-control my-colorpicker1" name="estatus" id="estatus" placeholder="Estatus del departamento" value="{{ old('estatus', $departamento->estatus) }}" >
-                                      @if ($errors->has('estatus'))
-                                        <div class="text-danger">
-                                          <p>{{ $errors->first('estatus') }}</p>
-                                        </div>
-                                      @endif
-                                    </div>
-                                    <!-- /.form group -->
-                                  </div>
 
                                   <!-- /.box-body -->
                                 </div>
-                                <!-- /.box -->
                               </div>
 
                               <div class="col-md-8">
                                 <p align="right">
-                                  <!--<button type="submit">Guardar usuario</button>-->
-                                  <a href="{{ url("departamentos/{$departamento->iddepartamento}") }}" class="btn btn-primary btn-sm ml-auto">Volver</a>
-
-                                  <button type="submit" class="btn btn-primary btn-sm ml-auto" >Actualizar</button>
+                                  <a href="{{ url('/une') }}" class="btn btn-primary btn-sm ml-auto">Volver</a>
+                                  <button type="submit" href="{{ url('/une') }}" class="btn btn-primary btn-sm ml-auto">Guardar</button>
                                 </p>
                               </div>
-
                             </div>
-                            <!-- /.row -->
-
-
                         </section>
-                        <!-- botones guardar y volver a usuarios-->
-
                     </form>
-
                   </div>
                 <!-- end card-body -->
               </div>

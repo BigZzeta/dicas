@@ -19,6 +19,24 @@ Route::get('/loginx', function(){
 });
 
 
+Route::get('/empresa', 'EmpresaController@index')->name('empresas');
+Route::get('/empresas/editar/{id}', 'EmpresaController@editar')->name('empresas.editar');
+Route::post('/empresas/update/{id?}', 'EmpresaController@update')->name('empresas.update');
+Route::get('/empresas/{empresa}', 'EmpresaController@show')
+  ->where('empresa', '\w+')
+  ->name('empresas.show');
+
+
+Route::get('/une','UneController@index')->name('unes');
+Route::get('/une/nuevo','UneController@create')->name('unes.create');
+Route::post('/une/crear', 'UneController@store');
+Route::get('/une/editar/{id}', 'UneController@editar')->name('unes.editar');
+Route::post('/une/update/{id?}', 'UneController@update')->name('unes.update');
+Route::get('/une/{une}', 'UneController@show')
+->where('une', '\w+')
+->name('unes.show');
+
+
 Route::get('/usuarios', 'usuario\UserController@index')->name('users');
 Route::get('/usuarios/nuevo', 'usuario\UserController@create')->name('users.create');
 Route::post('/usuarios/crear','usuario\UserController@store');
@@ -57,3 +75,7 @@ Route::any('/empleados','empleados\EmpleadosController@index')->name('empleados'
 Route::any('/empleados/actualizar/{id?}/{id2?}','empleados\EmpleadosController@update')->name('updateEmpleados');
 Route::any('/empleados/eliminar/{id?}','empleados\EmpleadosController@delete')->name('deleteEmpleados');
 Route::any('/empleados/agregar/{id?}','empleados\EmpleadosController@add')->name('addEmpleados');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

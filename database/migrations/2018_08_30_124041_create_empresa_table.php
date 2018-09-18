@@ -13,14 +13,14 @@ class CreateEmpresaTable extends Migration
      */
     public function up()
     {
-        Schema::create('empresa', function (Blueprint $table) {
+        Schema::create('empresas', function (Blueprint $table) {
             $table->increments('idempresa');
-            $table->string('nombre')->nulllable();
-            $table->string('direccion')->nulllable();
-            $table->string('colonia')->nulllable();
-            $table->string('codigopostal')->nulllable();
-            $table->string('telefono1');
-            $table->string('telefono2');
+            $table->string('nombre');
+            $table->string('direccion');
+            $table->string('colonia');
+            $table->string('codigopostal');
+            $table->string('telefono1')->nullable();
+            $table->string('telefono2')->nullable();
             $table->string('siglas');
             $table->timestamps();
         });
@@ -33,6 +33,6 @@ class CreateEmpresaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empresa');
+        Schema::dropIfExists('empresas');
     }
 }

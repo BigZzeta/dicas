@@ -17,6 +17,7 @@
         <ul class="list-unstyled">
           <li><a href="/puestos"><i class="fa fa-bars"></i>Puestos</a></li>
           <li><a href="/departamentos"><i class="fa fa-building"></i>Departamentos</a></li>
+          <li><a href="/une"><i class="fa fa-globe"></i>UNE's</a></li>
         </ul>
       </li>
          <li class="submenu">
@@ -31,6 +32,14 @@
         <a href="#"><i class="fa fa-user-circle bigfonts"></i> <span> Accesos </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="/usuarios">Usuarios</a></li>
+          <!-- <li><a href="/usuarios/nuevo">Nuevo usuarios</a></li> -->
+        </ul>
+      </li>
+
+      <li class="submenu">
+        <a href="#"><i class="fa fa-user-circle bigfonts"></i> <span> Administrar </span> <span class="menu-arrow"></span></a>
+        <ul class="list-unstyled">
+          <li><a href="/empresa">Empresa</a></li>
           <!-- <li><a href="/usuarios/nuevo">Nuevo usuarios</a></li> -->
         </ul>
       </li>

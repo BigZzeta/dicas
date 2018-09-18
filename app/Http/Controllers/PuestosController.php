@@ -13,8 +13,6 @@ class PuestosController extends Controller
     {
         $puestos = Puesto::all();
 
-        // $users = User::all();
-
         $title = 'Listado de puestos';
 
         return view('puestos.index', compact('title', 'puestos'));
@@ -23,9 +21,10 @@ class PuestosController extends Controller
 
     public function show($id)
     {
-      // return "Show";
+      $title = 'Mostrando puesto';
+
       $puestos = Puesto::where('idpuesto','=',$id)->firstOrFail();
-      // return $puestos;
+
       if ($puestos->estatus == 1) {
         $puestos->estatus = "Activo";
       }
@@ -33,12 +32,11 @@ class PuestosController extends Controller
         $puestos->estatus = "Inactivo";
       }
 
-      return view('puestos.show', compact('puestos'));
+      return view('puestos.show', compact('title', 'puestos'));
     }
 
     public function create()
     {
-      // return "Crear puesto";
         return view('puestos.create');
     }
 
@@ -51,7 +49,6 @@ class PuestosController extends Controller
         $puestos->funciones = $request->funciones;
         $puestos->nivelestructural = $request->nivelestructural;
         $puestos->cartatecnica = $request->cartatecnica;
-        // $puestos->estatus = $request->estatus;
         $puestos->sueldominimo = $request->sueldominimo;
         $puestos->sueldomaximo = $request->sueldomaximo;
 
@@ -62,9 +59,12 @@ class PuestosController extends Controller
 
     public function editar($id)
     {
+
+      $title = 'Editar puesto';
+
       $puestos = Puesto::where('idpuesto','=',$id)->firstOrFail();
 
-      return view('puestos.editar', compact('puestos'));
+      return view('puestos.editar', compact('title', 'puestos'));
 
     }
 
@@ -89,10 +89,8 @@ class PuestosController extends Controller
       $puestos ->estatus = $request->input('estatus');
       $puestos ->sueldominimo = $request->input('sueldominimo');
       $puestos ->sueldomaximo = $request->input('sueldomaximo');
-      // return $puestos;
 
       $puestos -> save();
-      // return "Actualziado";
 
       return redirect()->route('puestos.show', compact('puestos'));
 

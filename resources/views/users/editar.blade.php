@@ -1,5 +1,4 @@
 @extends('inicio')
-@section('title',"Editar usuario")
 
 @section('content')
 

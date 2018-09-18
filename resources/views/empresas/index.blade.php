@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card-header">
-                      <h3><i class="fa fa-table"></i> Departamentos
-                      <a href="{{ url('/departamentos/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo</a>
+                      <h3><i class="fa fa-table"></i> Empresa
+                      <!-- <a href="{{ url('/empresa/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo</a> -->
                       </h3>
                     </div>
                 </div>
@@ -18,37 +18,45 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
               <div class="card mb-3">
                   <div class="card-body">
-                    @if ($departamentos->isNotEmpty())
+                    @if ($empresas->isNotEmpty())
                     <div class="card-body">
                       <div class="table-responsive">
                       <table id="example1" class="table table-bordered table-hover display">
                         <thead>
                           <tr>
-                            <th>Id</th>
-                            <th>Num. Depto</th>
+                            <!-- <th>Id</th> -->
                             <th>Nombre</th>
-                            <th>Total Empleados</th>
-                            <th>Detalle</th>
+                            <th>Dirección</th>
+                            <th>Colonia</th>
+                            <th>Código Postal</th>
+                            <th>Telefono</th>
+                            <th>Telefono</th>
+                            <th>Siglas</th>
+                            <th>Acciones</th>
                           </tr>
                         </thead>
                         <tbody>
 
-                        @foreach($departamentos as $departamento)
+                        @foreach($empresas as $empresa)
                         <tr>
-                          <td> {{ $departamento->iddepartamento }}</td>
-                          <td align="center">{{ $departamento->numerodepartamento}}</td>
-                          <td>{{ $departamento->nombre }}</td>
-                          <td align="center">{{ $departamento->numempleados}}</td>
+                          <!-- <td> {{ $empresa->idempresa }}</td> -->
+                          <td>{{ $empresa->nombre}}</td>
+                          <td>{{ $empresa->direccion }}</td>
+                          <td align="center">{{ $empresa->colonia}}</td>
+                          <td>{{ $empresa->codigopostal}}</td>
+                          <td>{{$empresa->telefono1}}</td>
+                          <td>{{$empresa->telefono2}}</td>
+                          <td>{{$empresa->siglas}}</td>
 
+                          <!-- <td><a href="{{ route('empresas.show', ['id' => $empresa->idempresa]) }}">Ver detalles</a></td> -->
                           <td>
-                            <!-- <a href="{{ route('departamentos.show', ['id' => $departamento->iddepartamento]) }}">Ver detalles</a> -->
-                            <div style="display: flex;">
+
+                          <div style="display: flex;">
                               <!-- <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="" >Ver</button> -->
-                              <a class="btn btn-primary btn-sm"  href="{{ route('departamentos.show', ['id' => $departamento->iddepartamento]) }}" style="margin-left: 3px;">Ver</a>
-                              <a class="btn btn-secondary btn-sm" href="{{ route('departamentos.editar', ['id' => $departamento->iddepartamento]) }}" style="margin-left: 3px;">Editar</a>
+                              <a class="btn btn-secondary btn-sm" href="{{ route('empresas.editar', ['id' => $empresa->idempresa]) }}" style="margin-left: 3px;">Editar</a>
                               <!-- <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#borrar" style="margin-left: 3px;" >Borrar</button> -->
-                            </div>
-                          </td>
+                          </div>
+                        </td>
 
                         </tr>
                         @endforeach
@@ -62,7 +70,7 @@
                     <div class="row">
                       <div class="col">
                         <div class="panel-heading">
-                          <a href="{{ url('/departamentos/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo</a>
+                          <!-- <a href="{{ url('/departamentos/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo</a> -->
                         </div>
                       </div>
                     </div>

@@ -1,7 +1,5 @@
 @extends('inicio')
 
-@section('title',"Crear Puesto")
-
 @section('content')
 
 @include('errors.error')

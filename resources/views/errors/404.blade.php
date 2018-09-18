@@ -14,7 +14,7 @@
           <h3><i class="fa fa-warning text-yellow"></i> Oops! Pagina no encontrada.</h3>
 
           <p>
-            No pudismos encontrar la página que busca.
+            No pudimos encontrar la página que busca.
             Quizás Necesita <a href="/">Regresar al inicio</a> o intente de nuevo.
           </p>
 

@@ -18,8 +18,6 @@ class DepartamentoController extends Controller
     {
         $departamentos = Departamento::all();
 
-        // $users = User::all();
-
         $title = 'Listado de departamentos';
 
         return view('departamentos.index', compact('title', 'departamentos'));
@@ -33,7 +31,9 @@ class DepartamentoController extends Controller
      */
     public function create()
     {
-        return view('departamentos.create');
+        $title = 'Crear departamento';
+
+        return view('departamentos.create', compact('title'));
     }
 
     /**
@@ -44,6 +44,8 @@ class DepartamentoController extends Controller
      */
     public function store(DepartamentoRequest $request)
     {
+        $title = 'Guardando departamento';
+
         $departamento = new Departamento();
 
         $departamento->numerodepartamento = $request->numerodepartamento;
@@ -53,7 +55,7 @@ class DepartamentoController extends Controller
 
         $departamento->save();
 
-        return redirect()->route('departamentos');
+        return redirect()->route('departamentos', compact('title'));
     }
 
     /**
@@ -64,7 +66,9 @@ class DepartamentoController extends Controller
      */
     public function show($id)
     {
-      $departamentos = Departamento::where('id','=',$id)->firstOrFail();
+      $title = 'Mostrando departamento';
+
+      $departamentos = Departamento::where('iddepartamento','=',$id)->firstOrFail();
 
       if ($departamentos->estatus == 1) {
         $departamentos->estatus = "Activo";
@@ -73,7 +77,7 @@ class DepartamentoController extends Controller
         $departamentos->estatus = "Inactivo";
       }
 
-      return view('departamentos.show', compact('departamentos'));
+      return view('departamentos.show', compact('title','departamentos'));
     }
 
     /**
@@ -84,7 +88,9 @@ class DepartamentoController extends Controller
      */
     public function editar($id)
     {
-      $departamento = Departamento::where('id','=',$id)->firstOrFail();
+      $title = 'Editar departamento';
+
+      $departamento = Departamento::where('iddepartamento','=',$id)->firstOrFail();
 
       if ($departamento->estatus == 1) {
         $departamento->estatus = "Activo";
@@ -93,7 +99,7 @@ class DepartamentoController extends Controller
         $departamento->estatus = "Inactivo";
       }
 
-      return view('departamentos.editar', compact('departamento'));
+      return view('departamentos.editar', compact('title', 'departamento'));
 
     }
 
@@ -106,11 +112,12 @@ class DepartamentoController extends Controller
      */
     public function update(Request $request, $id)
     {
+
       $departamento=departamento::findOrFail($id);
 
       $valida = $request->validate([
-        'numerodepartamento' => Rule::unique('departamentos')->ignore($departamento->id,'id'),
-        'nombre' => Rule::unique('departamentos')->ignore($departamento->id,'id'),
+        'numerodepartamento' => Rule::unique('departamentos')->ignore($departamento->iddepartamento,'iddepartamento'),
+        'nombre' => Rule::unique('departamentos')->ignore($departamento->iddepartamento,'iddepartamento'),
         'numempleados' => 'required'
       ]);
 

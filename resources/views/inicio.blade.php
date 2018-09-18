@@ -4,7 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>GTH</title>
+        @if (isset($title))
+          <title>{!!$title!!} - GTC</title>
+        @else
+          <title> - GTC</title>
+        @endif
+
         <!--<meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">-->
         <!-- <meta name="author" content="Pike Web Development - http://servisky.dyndns.org"> -->
 
@@ -273,7 +278,7 @@
 
         <!-- Counter-Up-->
         <script src="{{ asset ('assets/plugins/waypoints/lib/jquery.waypoints.min.js') }}"></script>
-        <script src="{{ asset ('assets/plugins/counterup/jquery.counterup.min.js') }}"></script>   
+        <script src="{{ asset ('assets/plugins/counterup/jquery.counterup.min.js') }}"></script>
         <script>
 $(document).ready(function () {
     // data-tables

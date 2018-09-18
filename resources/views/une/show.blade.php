@@ -7,9 +7,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card-header">
-                      <h3><i class="fa fa-table"></i> Departamentos
-                      <!-- <a href="{{ url('/departamentos/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo departamento</a> -->
-                      </h3>
+                      <h3><i class="fa fa-table"></i>UNE's</h3>
                     </div>
                 </div>
             </div>
@@ -18,16 +16,14 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
               <div class="card mb-3">
                   <div class="card-body">
-                    <!--contenido aqui -->
                     <form action="#" method="post" enctype="multipart/form-data">
-
                       <div class="row">
                         <div class="col-lg-12 col-xl-12 border-left">
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="form-group">
-                                        <label>Numero Departamento</label>
-                                        <input class="form-control" name="numerodepartamento" type="text" value="{{ $departamentos->numerodepartamento }} " readonly />
+                                        <label>Numero de UNE</label>
+                                        <input class="form-control" name="numeropuesto" type="text" value="{{ $unes->numeroune }} " readonly />
                                     </div>
                                 </div>
                             </div>
@@ -35,15 +31,24 @@
                                 <div class="col-lg-8">
                                   <div class="form-group">
                                     <label>Nombre</label>
-                                    <input class="form-control" name="nombre" type="text" value="{{ $departamentos->nombre }} " readonly />
+                                    <input class="form-control" name="nombre" type="text" value="{{ $unes->nombre }} " readonly />
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-8">
+                                  <div class="form-group">
+                                    <label>Direccion</label>
+                                    <input class="form-control" name="nivelestructural" type="text" value="{{ $unes->direccion }} " readonly />
                                   </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-8">
                                   <div class="form-group">
-                                    <label>Total de Empleados</label>
-                                    <input class="form-control" name="numempleados" type="text" value="{{ $departamentos->numempleados }} " readonly />
+                                    <label>Total de Puestos</label>
+                                    <input class="form-control" name="inventariopuestos" type="text" value="{{ $unes->inventariopuestos }} " readonly />
                                   </div>
                                 </div>
                             </div>
@@ -51,10 +56,11 @@
                                 <div class="col-md-8">
                                   <div class="form-group">
                                     <label>Estatus</label>
-                                    <input class="form-control" name="estatus" type="text" value="{{ $departamentos->estatus }} " readonly />
+                                    <input class="form-control" name="estatus" type="text" value="{{$unes->estatus}} " readonly />
                                   </div>
                                 </div>
                             </div>
+
                         </div>
                       </div>
                       <!-- inician botones -->
@@ -62,15 +68,14 @@
                         <div class="col-lg-8">
                           <div>
                             <p align="right">
-                              <a href="{{ url('/departamentos') }}" class="btn btn-primary">Volver</a>
-                              <a href="{{ route('departamentos.editar', ['id' => $departamentos->iddepartamento]) }}" class="btn btn-primary">Editar</a>
+                              <a href="{{ url('/une') }}" class="btn btn-primary">Volver</a>
+                              <a href="{{ route('unes.editar', ['id' => $unes->idune]) }}" class="btn btn-primary">Editar</a>
                             </p>
                           </div>
                         </div>
                       </div>
                       <!-- finalizan botones -->
                     </form>
-                    <!--contenido aqui -->
                   </div>
                 <!-- end card-body -->
               </div>
