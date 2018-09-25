@@ -138,6 +138,10 @@ class cat_entidad_federativa extends Seeder {
           'codigo' => '32',
           'estado' => 'ZACATECAS'
         ]);
+        DB::table('cat_entidad_federativa')->insert([
+          'codigo' => '33',
+          'estado' => 'EXTRANJERO'
+        ]);
 
     }
 

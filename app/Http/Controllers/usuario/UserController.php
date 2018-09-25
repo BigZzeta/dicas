@@ -20,7 +20,7 @@ class UserController extends Controller
 
   public function __construct()
   {
-    // $this->middleware('auth');
+    $this->middleware('auth');
   }
 
   public function index()
@@ -67,7 +67,7 @@ class UserController extends Controller
     $data ->apellidoMaterno = $request->input('apellidoMaterno');
     $data ->foto = $name;
     $data ->email = $request->input('email');
-    $data ->username = $request->input('username');    
+    $data ->username = $request->input('username');
     $data ->password = bcrypt($request->input['password']);
 
     $data -> save();

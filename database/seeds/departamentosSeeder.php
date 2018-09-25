@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Departamento;
+use App\CatDepartamento;
 
 class departamentosSeeder extends Seeder
 {
@@ -14,41 +14,44 @@ class departamentosSeeder extends Seeder
     public function run()
     {
 
-        factory(departamento::class,5)->create();
+        // factory(Catdepartamento::class,5)->create();
 
-        // DB::table('departamentos')->insert([
-        //   'numerodepartamento'=>11,
-        //   'nombre'=>'CPA',
-        //   'numempleados'=>20,
-        //   // 'condicion'=>'1'
-        // ]);
-        //
-        // DB::table('departamentos')->insert([
-        //     'numerodepartamento'=>12,
-        //     'nombre'=>'CCSA',
-        //     'numempleados'=>30,
-        //     // 'condicion'=>'1'
-        // ]);
+        DB::table('cat_departamentos')->insert([
+          'numerodepartamento'=>11,
+          'nombre'=>'CPA',
+          // 'numempleados'=>20,
+          // 'condicion'=>'1'
+        ]);
+
+        DB::table('cat_departamentos')->insert([
+            'numerodepartamento'=>12,
+            'nombre'=>'CCSA',
+            // 'numempleados'=>30,
+            // 'condicion'=>'1'
+        ]);
 
 
-        //
-        // DB::table('departamentos')->insert([
-        //     'nombre'=>'Contabilidad',
-        //     'descripcion'=>'departamento de contabilidad',
-        //     'condicion'=>'1'
-        // ]);
-        //
-        // DB::table('departamentos')->insert([
-        //     'nombre'=>'Sistemas',
-        //     'descripcion'=>'departamento de contabilidad',
-        //     'condicion'=>'1'
-        // ]);
-        //
-        // DB::table('departamentos')->insert([
-        //     'nombre'=>'Refacciones',
-        //
-        //     'condicion'=>'1'
-        // ]);
+
+        DB::table('cat_departamentos')->insert([
+            'numerodepartamento'=>13,
+            'nombre'=>'Contabilidad',
+            // 'descripcion'=>'departamento de contabilidad',
+            // 'condicion'=>'1'
+        ]);
+
+        DB::table('cat_departamentos')->insert([
+            'numerodepartamento'=>14,
+            'nombre'=>'Sistemas',
+            // 'descripcion'=>'departamento de contabilidad',
+            // 'condicion'=>'1'
+        ]);
+
+        DB::table('cat_departamentos')->insert([
+            'numerodepartamento'=>15,
+            'nombre'=>'Refacciones',
+
+            // 'condicion'=>'1'
+        ]);
 
 
     }

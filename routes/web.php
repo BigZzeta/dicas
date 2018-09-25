@@ -12,7 +12,13 @@ Route::get('/dashboard', function(){
   return view('contenido.dashboard');
 });
 
-
+//visitas o candidatos que se debe de registrar
+Route::get('/registrar', function(){
+  return view('candidatos.candidatos');
+});
+Route::get('/login', function(){
+  return view('login');
+});
 //probar esta ruta para el login
 Route::get('/loginx', function(){
   return view('login');
@@ -47,12 +53,12 @@ Route::get('/usuarios/{user}', 'usuario\UserController@show')
   ->name('users.show');
 
 
-Route::get('/departamentos','DepartamentoController@index')->name('departamentos');
-Route::get('/departamentos/nuevo','DepartamentoController@create')->name('departamentos.create');
-Route::post('/departamentos/crear', 'DepartamentoController@store');
-Route::get('/departamentos/editar/{id}', 'DepartamentoController@editar')->name('departamentos.editar');
-Route::post('/departamentos/update/{id?}', 'DepartamentoController@update')->name('departamentos.update');
-Route::get('/departamentos/{departamentos}', 'DepartamentoController@show')
+Route::get('/departamentos','CatDepartamentoController@index')->name('departamentos');
+Route::get('/departamentos/nuevo','CatDepartamentoController@create')->name('departamentos.create');
+Route::post('/departamentos/crear', 'CatDepartamentoController@store');
+Route::get('/departamentos/editar/{id}', 'CatDepartamentoController@editar')->name('departamentos.editar');
+Route::post('/departamentos/update/{id?}', 'CatDepartamentoController@update')->name('departamentos.update');
+Route::get('/departamentos/{departamentos}', 'CatDepartamentoController@show')
 ->where('departamento', '\w+')
 ->name('departamentos.show');
 
@@ -75,6 +81,10 @@ Route::any('/empleados','empleados\EmpleadosController@index')->name('empleados'
 Route::any('/empleados/actualizar/{id?}/{id2?}','empleados\EmpleadosController@update')->name('updateEmpleados');
 Route::any('/empleados/eliminar/{id?}','empleados\EmpleadosController@delete')->name('deleteEmpleados');
 Route::any('/empleados/agregar/{id?}','empleados\EmpleadosController@add')->name('addEmpleados');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

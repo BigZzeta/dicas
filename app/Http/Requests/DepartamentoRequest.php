@@ -24,10 +24,10 @@ class DepartamentoRequest extends FormRequest
     public function rules()
     {
         return [
-          'numerodepartamento' => 'required|unique:departamentos,numerodepartamento',
-          'nombre' => 'required|unique:departamentos,nombre',
-          'numempleados' => 'required',
-          'numerodepuestos' => 'required'
+          'numerodepartamento' => 'required|unique:cat_departamentos,numerodepartamento',
+          'nombre' => 'required|unique:cat_departamentos,nombre',
+          // 'numempleados' => 'required',
+          // 'numerodepuestos' => 'required'
         ];
     }
 }

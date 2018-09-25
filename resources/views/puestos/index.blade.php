@@ -29,7 +29,7 @@
                               <th>Nombre</th>
                               <!-- <th>Funciones</th>-->
                               <th>Nivel Estrucural</th>
-                              <!--<th>Carta Técnica</th> -->
+                              <!-- <th>Estatus</th> -->
                               <!-- <th>Sueldo Mínimo</th>
                               <th>Sueldo Máximo</th> -->
                               <th>Detalles</th>
@@ -43,6 +43,13 @@
                             <td align="center">{{ $puesto->numeropuesto}}</td>
                             <td>{{ $puesto->nombre }}</td>
                             <td align="center">{{ $puesto->nivelestructural }}</td>
+                            <!-- <td align="center">
+                              @if ($puesto->estatus === "1")
+                                  Activo
+                              @else
+                                  Inactivo
+                              @endif
+                            </td> -->
 
                             <td>
                               <!-- <a href="{{ route('puestos.show', ['id' => $puesto->idpuesto]) }}">Ver detalles</a> -->

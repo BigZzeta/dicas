@@ -18,13 +18,17 @@
           <li><a href="/puestos"><i class="fa fa-bars"></i>Puestos</a></li>
           <li><a href="/departamentos"><i class="fa fa-building"></i>Departamentos</a></li>
           <li><a href="/une"><i class="fa fa-globe"></i>UNE's</a></li>
+          <li><a href="/inventario"><i class="fa fa-database"></i>Inventario</a></li>
+          <li><a href="/pagadora"><i class="fa fa-american-sign-language-interpreting"></i>Pagadora</a></li>
+
+
         </ul>
       </li>
          <li class="submenu">
         <a href="#"><i class="fa fa-users"></i> <span> Empleados </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
-            <li><a href="{{route('empleados')}}"> <i class="fa fa-address-book"></i>Lista</a></li>
-            <li><a href="{{route('deleteEmpleados').'/2'}}"><i class="fa fa-user-times"></i> Boveda</a></li>
+            <li><a href="{{route('empleados')}}"> <i class="fa fa-address-book"></i>Empleados</a></li>
+            <li><a href="{{route('deleteEmpleados').'/2'}}"><i class="fa fa-user-times"></i>Bajas</a></li>
         </ul>
       </li>
 

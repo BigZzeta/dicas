@@ -20,7 +20,7 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
               <div class="card mb-3">
                   <div class="card-body">
-                    <form class="form-grup" method="POST" action="{{ url('departamentos/update').'/'.$departamento->iddepartamento }}" enctype="multipart/form-data">
+                    <form class="form-grup" method="POST" action="{{ url('departamentos/update').'/'.$departamento->idcatdepartamento }}" enctype="multipart/form-data">
 
                       {{ csrf_field() }}
 
@@ -62,8 +62,7 @@
                                   </div>
 
                                   <!--Numero de empleados del departamento-->
-                                  <div class="box-body">
-                                    <!-- Color Picker -->
+                                  <!-- <div class="box-body">
                                     <div class="form-group">
                                       <label>Numero de empleados del departamento:</label>
                                       <input type="number" class="form-control my-colorpicker1" name="numempleados" id="numempleados" placeholder="Total de empleados del departamento" value="{{ old('numempleados', $departamento->numempleados) }}" >
@@ -73,15 +72,24 @@
                                         </div>
                                       @endif
                                     </div>
-                                    <!-- /.form group -->
-                                  </div>
+                                  </div> -->
 
                                   <!-- Estatus del departamento-->
                                   <div class="box-body">
                                     <!-- Color Picker -->
                                     <div class="form-group">
-                                      <label>Estatus del Departamento:</label>
-                                      <input type="text" class="form-control my-colorpicker1" name="estatus" id="estatus" placeholder="Estatus del departamento" value="{{ old('estatus', $departamento->estatus) }}" >
+                                      <!-- <input type="text" class="form-control my-colorpicker1" name="estatus" id="estatus" placeholder="Estatus del departamento" value="{{ old('estatus', $departamento->estatus) }}" > -->
+
+                                      <label class="form-control-label" ><i class="text-danger">*</i> Estatus:</label>
+                                      <select name="estatus" class="form-control" readonly >
+                                          <option selected="selected"> {{ $departamento->estatus }} </option>
+                                            @if ($departamento->estatus === 'Activo')
+                                              <option value="0" {{old('estatus', $departamento->estatus)=='Inactivo' ? 'selected' : ''}} >Inactivo</option>
+                                            @elseif ($departamento->estatus === 'Inactivo')
+                                              <option value="1" {{old('estatus', $departamento->estatus)=='Activo' ? 'selected' : ''}}>Activo</option>
+                                            @endif
+                                      </select>
+
                                       @if ($errors->has('estatus'))
                                         <div class="text-danger">
                                           <p>{{ $errors->first('estatus') }}</p>
@@ -99,7 +107,7 @@
                               <div class="col-md-8">
                                 <p align="right">
                                   <!--<button type="submit">Guardar usuario</button>-->
-                                  <a href="{{ url("departamentos/{$departamento->iddepartamento}") }}" class="btn btn-primary btn-sm ml-auto">Volver</a>
+                                  <a href="{{ url("departamentos/{$departamento->idcatdepartamento}") }}" class="btn btn-primary btn-sm ml-auto">Volver</a>
 
                                   <button type="submit" class="btn btn-primary btn-sm ml-auto" >Actualizar</button>
                                 </p>

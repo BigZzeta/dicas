@@ -93,21 +93,6 @@
                       </div>
                     </div>
 
-                      <!-- estatus del puesto -->
-                      <div class="row">
-                        <div class="col-md-8">
-                          <div class="form-group">
-                          <label>Estatus del puesto:</label>
-                          <input type="text" class="form-control my-colorpicker1" name="estatus" id="estatus" placeholder="Estatus del puesto" value="{{ old('estatus', $puestos->estatus) }}" >
-                          @if ($errors->has('estatus'))
-                            <div class="text-danger">
-                              <p>{{ $errors->first('estatus') }}</p>
-                            </div>
-                          @endif
-                        </div>
-                      </div>
-                    </div>
-
                       <!-- sueldo minimo -->
                       <div class="row">
                         <div class="col-md-8">
@@ -140,6 +125,35 @@
                       </div>
                     </div>
 
+                    <!-- estatus del puesto -->
+                    <!-- <div class="row">
+                      <div class="col-md-8">
+                        <div class="form-group">
+                        <label>Estatus del puesto:</label>
+                        <input type="text" class="form-control my-colorpicker1" name="estatus" id="estatus" placeholder="Estatus del puesto" value="{{ old('estatus', $puestos->estatus) }}" >
+                        @if ($errors->has('estatus'))
+                          <div class="text-danger">
+                            <p>{{ $errors->first('estatus') }}</p>
+                          </div>
+                        @endif
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="row">
+                    <div class="col-md-8">
+                        <label class="form-control-label" ><i class="text-danger">*</i> Estatus:</label>
+                        <select name="estatus" class="form-control" readonly >
+                            <option selected="selected"> {{ $puestos->estatus }} </option>
+                              @if ($puestos->estatus === 'Activo')
+                                <option value="0" {{old('estatus', $puestos->estatus)=='Inactivo' ? 'selected' : ''}} >Inactivo</option>
+                              @elseif ($puestos->estatus === 'Inactivo')
+                                <option value="1" {{old('estatus', $puestos->estatus)=='Activo' ? 'selected' : ''}}>Activo</option>
+                              @endif
+                        </select>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
                     <div class="col-md-8">
                       <p align="right">
                         <!--<button type="submit">Guardar usuario</button>-->
@@ -147,8 +161,9 @@
                         <button type="submit" class="btn btn-primary btn-sm ml-auto" >Actualizar</button>
                       </p>
                     </div>
+                  </div>
 
-                    </form>
+                  </form>
                   </div>
                 <!-- end card-body -->
               </div>

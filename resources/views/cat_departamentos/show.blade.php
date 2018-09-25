@@ -39,14 +39,14 @@
                                   </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-lg-8">
                                   <div class="form-group">
                                     <label>Total de Empleados</label>
                                     <input class="form-control" name="numempleados" type="text" value="{{ $departamentos->numempleados }} " readonly />
                                   </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="row">
                                 <div class="col-md-8">
                                   <div class="form-group">
@@ -63,7 +63,7 @@
                           <div>
                             <p align="right">
                               <a href="{{ url('/departamentos') }}" class="btn btn-primary">Volver</a>
-                              <a href="{{ route('departamentos.editar', ['id' => $departamentos->iddepartamento]) }}" class="btn btn-primary">Editar</a>
+                              <a href="{{ route('departamentos.editar', ['id' => $departamentos->idcatdepartamento]) }}" class="btn btn-primary">Editar</a>
                             </p>
                           </div>
                         </div>

@@ -27,7 +27,7 @@
                             <th>Id</th>
                             <th>Num. Depto</th>
                             <th>Nombre</th>
-                            <th>Total Empleados</th>
+                            <!-- <th>Total Empleados</th> -->
                             <th>Detalle</th>
                           </tr>
                         </thead>
@@ -35,18 +35,15 @@
 
                         @foreach($departamentos as $departamento)
                         <tr>
-                          <td> {{ $departamento->iddepartamento }}</td>
+                          <td align="center"> {{ $departamento->idcatdepartamento }}</td>
                           <td align="center">{{ $departamento->numerodepartamento}}</td>
                           <td>{{ $departamento->nombre }}</td>
-                          <td align="center">{{ $departamento->numempleados}}</td>
+                          <!-- <td align="center">{{ $departamento->numempleados}}</td> -->
 
                           <td>
-                            <!-- <a href="{{ route('departamentos.show', ['id' => $departamento->iddepartamento]) }}">Ver detalles</a> -->
                             <div style="display: flex;">
-                              <!-- <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="" >Ver</button> -->
-                              <a class="btn btn-primary btn-sm"  href="{{ route('departamentos.show', ['id' => $departamento->iddepartamento]) }}" style="margin-left: 3px;">Ver</a>
-                              <a class="btn btn-secondary btn-sm" href="{{ route('departamentos.editar', ['id' => $departamento->iddepartamento]) }}" style="margin-left: 3px;">Editar</a>
-                              <!-- <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#borrar" style="margin-left: 3px;" >Borrar</button> -->
+                              <a class="btn btn-primary btn-sm"  href="{{ route('departamentos.show', ['id' => $departamento->idcatdepartamento]) }}" style="margin-left: 3px;">Ver</a>
+                              <a class="btn btn-secondary btn-sm" href="{{ route('departamentos.editar', ['id' => $departamento->idcatdepartamento]) }}" style="margin-left: 3px;">Editar</a>
                             </div>
                           </td>
 

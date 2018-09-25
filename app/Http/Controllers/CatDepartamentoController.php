@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use App\Departamento;
+use App\CatDepartamento;
 use App\Http\Requests\DepartamentoRequest;
 
-class DepartamentoController extends Controller
+class CatDepartamentoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +16,11 @@ class DepartamentoController extends Controller
      */
     public function index()
     {
-        $departamentos = Departamento::all();
+        $departamentos = CatDepartamento::all();
 
         $title = 'Listado de departamentos';
 
-        return view('departamentos.index', compact('title', 'departamentos'));
+        return view('cat_departamentos.index', compact('title', 'departamentos'));
 
     }
 
@@ -33,7 +33,7 @@ class DepartamentoController extends Controller
     {
         $title = 'Crear departamento';
 
-        return view('departamentos.create', compact('title'));
+        return view('cat_departamentos.create', compact('title'));
     }
 
     /**
@@ -46,12 +46,12 @@ class DepartamentoController extends Controller
     {
         $title = 'Guardando departamento';
 
-        $departamento = new Departamento();
+        $departamento = new CatDepartamento();
 
         $departamento->numerodepartamento = $request->numerodepartamento;
         $departamento->nombre = strtoupper($request->nombre);
-        $departamento->numempleados = $request->numempleados;
-        $departamento->numerodepuestos = $request->numerodepuestos;
+        // $departamento->numempleados = $request->numempleados;
+        // $departamento->numerodepuestos = $request->numerodepuestos;
 
         $departamento->save();
 
@@ -68,7 +68,7 @@ class DepartamentoController extends Controller
     {
       $title = 'Mostrando departamento';
 
-      $departamentos = Departamento::where('iddepartamento','=',$id)->firstOrFail();
+      $departamentos = CatDepartamento::where('idcatdepartamento','=',$id)->firstOrFail();
 
       if ($departamentos->estatus == 1) {
         $departamentos->estatus = "Activo";
@@ -77,7 +77,7 @@ class DepartamentoController extends Controller
         $departamentos->estatus = "Inactivo";
       }
 
-      return view('departamentos.show', compact('title','departamentos'));
+      return view('cat_departamentos.show', compact('title','departamentos'));
     }
 
     /**
@@ -90,7 +90,7 @@ class DepartamentoController extends Controller
     {
       $title = 'Editar departamento';
 
-      $departamento = Departamento::where('iddepartamento','=',$id)->firstOrFail();
+      $departamento = CatDepartamento::where('idcatdepartamento','=',$id)->firstOrFail();
 
       if ($departamento->estatus == 1) {
         $departamento->estatus = "Activo";
@@ -99,7 +99,7 @@ class DepartamentoController extends Controller
         $departamento->estatus = "Inactivo";
       }
 
-      return view('departamentos.editar', compact('title', 'departamento'));
+      return view('cat_departamentos.editar', compact('title', 'departamento'));
 
     }
 
@@ -113,17 +113,24 @@ class DepartamentoController extends Controller
     public function update(Request $request, $id)
     {
 
-      $departamento=departamento::findOrFail($id);
+      $departamento=Catdepartamento::findOrFail($id);
 
       $valida = $request->validate([
-        'numerodepartamento' => Rule::unique('departamentos')->ignore($departamento->iddepartamento,'iddepartamento'),
-        'nombre' => Rule::unique('departamentos')->ignore($departamento->iddepartamento,'iddepartamento'),
-        'numempleados' => 'required'
+        'numerodepartamento' => Rule::unique('cat_departamentos')->ignore($departamento->idcatdepartamento,'idcatdepartamento'),
+        'nombre' => Rule::unique('cat_departamentos')->ignore($departamento->idcatdepartamento,'idcatdepartamento'),
+        // 'numempleados' => 'required'
       ]);
+
+      if ($request->estatus==='Activo'){
+        $request->estatus = '1';
+      }
+      else{
+        $request->estatus=='0';
+      }
 
       $departamento->numerodepartamento = $request->input('numerodepartamento');
       $departamento ->nombre = strtoupper($request->input('nombre'));
-      $departamento ->numempleados = $request->input('numempleados');
+      $departamento ->estatus = $request->estatus;
 
       $departamento -> save();
 

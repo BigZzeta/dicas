@@ -64,6 +64,12 @@ class PuestosController extends Controller
 
       $puestos = Puesto::where('idpuesto','=',$id)->firstOrFail();
 
+      if($puestos->estatus==1){
+        $puestos->estatus='Activo';
+      }else{
+        $puestos->estatus='Inactivo';
+      }
+
       return view('puestos.editar', compact('title', 'puestos'));
 
     }
@@ -81,12 +87,19 @@ class PuestosController extends Controller
         'sueldomaximo' => 'required'
       ]);
 
+      if ($request->estatus==='Activo'){
+        $request->estatus = '1';
+      }
+      else{
+        $request->estatus=='0';
+      }
+
       $puestos ->numeropuesto = $request->input('numeropuesto');
       $puestos ->nombre = strtoupper($request->input('nombre'));
       $puestos ->funciones = $request->input('funciones');
       $puestos ->nivelestructural = $request->input('nivelestructural');
       $puestos ->cartatecnica = $request->input('cartatecnica');
-      $puestos ->estatus = $request->input('estatus');
+      $puestos ->estatus = $request->estatus;
       $puestos ->sueldominimo = $request->input('sueldominimo');
       $puestos ->sueldomaximo = $request->input('sueldomaximo');
 
