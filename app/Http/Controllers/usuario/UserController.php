@@ -18,10 +18,10 @@ class UserController extends Controller
 
 {
 
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
+  // public function __construct()
+  // {
+  //   $this->middleware('auth');
+  // }
 
   public function index()
   {
@@ -126,7 +126,7 @@ class UserController extends Controller
     $data ->username = $request->input('username');
     $data ->status = $request->input('status');
     $data ->idTipoUsuario = $request->input('tipousuario');
-    $data ->password = bcrypt($request->input['password']);
+    // $data ->password = bcrypt($request->input['password']);
 
     $data -> save();
 

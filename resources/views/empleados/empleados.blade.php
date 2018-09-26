@@ -32,7 +32,7 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL','4'
                         <tbody>
                             @foreach($empleados as $item)
                             <tr>
-                                <td>{{$item->codigoEmpleado}}</td>
+                                <td>{{$item->codigoempleado}}</td>
                                 <td>{{$item->nombre}}</td>
                                 <td>{{$item->apellidoPaterno.' '.$item->apellidoMaterno}}</td>
                              <!--   <td>
@@ -61,9 +61,9 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL','4'
                                 </td>
                                 <td>
                                     <div style="display: flex;">
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ver{{$item->idEmpleado}}" >Ver</button>
-                                        <a class="btn btn-secondary btn-sm" href="{{route('updateEmpleados').'/'.$item->idEmpleado}}" style="margin-left: 3px;">Editar</a>
-                                        <button type="button" onclick="javascript:pasar({{$item->idEmpleado}})" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#borrar" style="margin-left: 3px;" >Baja</button>
+                                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ver{{$item->idempleado}}" >Ver</button>
+                                        <a class="btn btn-secondary btn-sm" href="{{route('updateEmpleados').'/'.$item->idempleado}}" style="margin-left: 3px;">Editar</a>
+                                        <button type="button" onclick="javascript:pasar({{$item->idempleado}})" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#borrar" style="margin-left: 3px;" >Borrar</button>
                                     </div>
                                 </td>
                             </tr>
@@ -95,7 +95,7 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL','4'
                     <div class="container-fluid">
                         <h4>¿Esta seguro de eliminar este registro?</h4>
                         <input type="hidden" name="_token" value="{{csrf_token()}}" id="token"/>
-                        <input type="hidden" name="idEmpleado"  id="id"/>
+                        <input type="hidden" name="idempleado"  id="id"/>
                     </div>
                 </div>
                 <div class="modal-footer" >
@@ -109,7 +109,7 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL','4'
 
 <!-- Modal para vista de datos-->
 @foreach($empleados as $item)
-<div class="modal fade" id="ver{{$item->idEmpleado}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="ver{{$item->idempleado}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header" style="background: steelblue;">
@@ -125,11 +125,11 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL','4'
                     <div class="col-md-6"><!-- mostrar -->
                         @if(!$item->fotografia)
                         <p align="center">
-                            <img src="/images/usr.png" alt="{{$item->idEmpleado}}" height="15%" width="30%"/>
+                            <img src="/images/usr.png" alt="{{$item->idempleado}}" height="15%" width="30%"/>
                         </p>
                         @else
                         <p align="center">
-                            <img src="/img/empleados/{{$item->fotografia}}" alt="{{$item->idEmpleado}}" height="15%" width="30%"/>
+                            <img src="/img/empleados/{{$item->fotografia}}" alt="{{$item->idempleado}}" height="15%" width="30%"/>
                         </p>
                         @endif
                     </div>
@@ -138,7 +138,7 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL','4'
                     <div class="col-md-4"></div>
                     <div class="col-md-4 alert alert-success">
                         <label class="form-control-label">Código Empleado:</label>
-                        <input type="text"  name="codigoEmpleado" class="form-control text text-uppercase" value="{{$item->codigoEmpleado}}" readonly>
+                        <input type="text"  name="codigoempleado" class="form-control text text-uppercase" value="{{$item->codigoempleado}}" readonly>
                     </div>
                 </div>
                 <!--DATOS PERSONALES -->
@@ -273,9 +273,9 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL','4'
                     <div class="col-md-4">
                         <label class=" form-control-label" >Estado :</label>
                         @if($item->estado=='A')
-                        <input type="text" name="estado" class="form-control text-success"  value="Alta" readonly />
+                        <input type="text" name="estado" class="form-control text-success"  value="ACTIVO" readonly />
                         @else
-                        <input type="text" name="estado" class="form-control text-danger"  value="Baja" title="Solo un administrador puede volver activar este empleado" readonly />
+                        <input type="text" name="estado" class="form-control text-danger"  value="INACTIVO" title="Solo un administrador puede volver activar este empleado" readonly />
                         @endif
                     </div>
                     <div class="col-md-4">

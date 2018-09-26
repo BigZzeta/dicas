@@ -15,11 +15,11 @@
                 <a class="pull-right" href="{{route('empleados')}}">Regresar</a>
             </div>
             <div class="card-body">
-                <form id="add" action="{{route('updateEmpleados').'/update/'.$edit->idEmpleado}}" method="post" enctype="multipart/form-data" >
+                <form id="add" action="{{route('updateEmpleados').'/update/'.$edit->idempleado}}" method="post" enctype="multipart/form-data" >
                    <!-- <input id="token" name="_token" value="{{csrf_token()}}" hidden="true"/>-->
                     {{ csrf_field() }}
                     <!-- Aqui vamos a empezar a poner esto bonito-->
-                    <input name='idEmpleado' value="{{$edit->idEmpleado}}" type="hidden"/>
+                    <input name='idempleado' value="{{$edit->idempleado}}" type="hidden"/>
                     <div class="container">
                         <i>NOTA: Los campos con <i class="text-danger">*</i> son obligatorios.</i>
                         <div class="row">
@@ -30,11 +30,11 @@
                                 </p>
                                 @if(!$edit->fotografia)
                                 <p align="center">
-                                    <img id="imgSalida" src="/images/usr.png" alt="{{$edit->idEmpleado}}" height="15%" width="30%"/>
+                                    <img id="imgSalida" src="/images/usr.png" alt="{{$edit->idempleado}}" height="15%" width="30%"/>
                                 </p>
                                 @else
                                 <p align="center">
-                                    <img id="imgSalida" src="/img/empleados/{{$edit->fotografia}}" alt="{{$edit->idEmpleado}}" height="15%" width="30%"/>
+                                    <img id="imgSalida" src="/img/empleados/{{$edit->fotografia}}" alt="{{$edit->idempleado}}" height="15%" width="30%"/>
                                 </p>
                                 @endif
                                 <input id="file-input" type="file" name="fotografia"/>
@@ -45,9 +45,9 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <label class="form-control-label" for="text-input">Codigo Empleado:</label>
-                                <input minlength="4"  maxlength="30" type="text"  name="codigoEmpleado" class="form-control text text-uppercase" value="{{old('codigoEmpleado',$edit->codigoEmpleado)}}" >
-                                  @if($errors->get('codigoEmpleado'))  
-                                <div class="alert alert-danger">{{ $errors->get('codigoEmpleado')[0]}}</div>
+                                <input minlength="4"  maxlength="30" type="text"  name="codigoempleado" class="form-control text text-uppercase" value="{{old('codigoempleado',$edit->codigoempleado)}}" >
+                                  @if($errors->get('codigoempleado'))
+                                <div class="alert alert-danger">{{ $errors->get('codigoempleado')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-3">
@@ -109,28 +109,28 @@
                             <div class="col-md-4">
                                 <label class="form-control-label" ><i class="text-danger">*</i> Curp:</label>
                                 <input   minlength="18"  maxlength="30" name="curp" class="form-control text text-uppercase" value="{{old('curp',$edit->curp)}}"required />
-                                @if($errors->get('curp'))  
+                                @if($errors->get('curp'))
                                 <div class="alert alert-danger">{{ $errors->get('curp')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-3">
                                 <label class=" form-control-label" ><i class="text-danger">*</i> Rfc:</label>
                                 <input minlength="4"  maxlength="12" type="text"  name="rfc" class="form-control text" value="{{old('rfc',$edit->rfc)}}" required>
-                                @if($errors->get('rfc'))  
+                                @if($errors->get('rfc'))
                                 <div class="alert alert-danger">{{ $errors->get('rfc')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-3">
                                 <label class=" form-control-label" >Numero Seguro Social:</label>
                                 <input maxlength="15" type="text" name="numeroSeguroSocial" class="form-control text" value="{{old('numeroSeguroSocial',$edit->numeroSeguroSocial)}}">
-                                @if($errors->get('numeroSeguroSocial'))  
+                                @if($errors->get('numeroSeguroSocial'))
                                 <div class="alert alert-danger">{{ $errors->get('numeroSeguroSocial')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-2">
                                 <label class="form-control-label" >Umf:</label>
                                 <input maxlength="11" type="number"  name="umf" class="form-control text" value="{{old('umf',$edit->umf)}}">
-                                @if($errors->get('umf'))  
+                                @if($errors->get('umf'))
                                 <div class="alert alert-danger">{{ $errors->get('umf')[0]}}</div>
                                 @endif
                             </div>
@@ -146,14 +146,14 @@
                             <div class="col-md-3">
                                 <label class="form-control-label" >Numero Fonacot :</label>
                                 <input minlength="4"  maxlength="40" type="text" name="numeroFonacot" class="form-control text"  value="{{old('numeroFonacot',$edit->numeroFonacot)}}">
-                                @if($errors->get('numeroFonacot'))  
+                                @if($errors->get('numeroFonacot'))
                                 <div class="alert alert-danger">{{ $errors->get('numeroFonacot')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-3">
                                 <label class=" form-control-label" >Clabe Interbancaria:</label>
                                 <input  minlength="18"  maxlength="25" type="text"  name="clabeInterbancaria" class="form-control text"  value="{{old('clabeInterbancaria',$edit->clabeInterbancaria)}}" >
-                                @if($errors->get('clabeInterbancaria'))  
+                                @if($errors->get('clabeInterbancaria'))
                                 <div class="alert alert-danger">{{ $errors->get('clabeInterbancaria')[0]}}</div>
                                 @endif
                             </div>
@@ -174,7 +174,7 @@
                             <div class="col-md-6">
                                 <label class=" form-control-label" >Expediente :</label>
                                 <textarea maxlength="500" type="text"  name="expediente" class="form-control text">{{old('expediente',$edit->expediente)}}</textarea>
-                            </div> 
+                            </div>
                         </div>
                         <hr/>
                         <h4 class="text text-primary">Domicilio Actual</h4>
@@ -210,14 +210,24 @@
                         <div class="col-md-4">
                             <label class="form-control-label" ><i class="text-danger">*</i> Correo electrónico:</label>
                             <input minlength="8"  maxlength="40" type="email" name="correoElectronico" class="form-control"  value="{{old('correoElectronico',$edit->correoElectronico)}}" required>
-                            @if($errors->get('correoElectronico'))  
+                            @if($errors->get('correoElectronico'))
                             <div class="alert alert-danger">{{ $errors->get('correoElectronico')[0]}}</div>
                             @endif
                         </div>
                     </div>
                     <hr/>
-                    <a  href="/empleados" class="btn btn-secondary" >Regresar</a>
-                    <button type="submit"    class="btn btn-success" >Guardar</button>
+
+
+                    <div class="row">
+                      <div class="col">
+                        <div class="panel-heading">
+                          <button type="submit"    class="btn btn-success pull-right" >Guardar </button>
+                          <a  href="/empleados" class="btn btn-secondary pull-right" > Regresar</a>
+                          <!-- <a href="{{ url('/puestos/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo</a> -->
+                        </div>
+                      </div>
+                    </div>
+
                     <!-- fin de lo chido -->
             </form>
         </div>

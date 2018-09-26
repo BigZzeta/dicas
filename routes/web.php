@@ -1,11 +1,15 @@
 <?php
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 /*Route::get('/', 'usuario\UserController@index')
   ->name('users');*/
 /*Ruta de inicio de la aplicacion*/
 Route::get('/','Login\LoginController@index')->name('start');
 /*fin de la ruta de inicio de la aplicacion*/
 Route::any('/validar','Login\LoginController@valida')->name('validar');
+
 Route::get('/inicio', function (){return view('inicio');})->name('inicio');
 
 Route::get('/dashboard', function(){
@@ -15,13 +19,6 @@ Route::get('/dashboard', function(){
 //visitas o candidatos que se debe de registrar
 Route::get('/registrar', function(){
   return view('candidatos.candidatos');
-});
-Route::get('/login', function(){
-  return view('login');
-});
-//probar esta ruta para el login
-Route::get('/loginx', function(){
-  return view('login');
 });
 
 
@@ -71,21 +68,8 @@ Route::get('/puestos/{id}', 'PuestosController@show')
 ->where('puesto', '\w+')
 ->name('puestos.show');
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 /*empleados*/
 Route::any('/empleados','empleados\EmpleadosController@index')->name('empleados');
 Route::any('/empleados/actualizar/{id?}/{id2?}','empleados\EmpleadosController@update')->name('updateEmpleados');
 Route::any('/empleados/eliminar/{id?}','empleados\EmpleadosController@delete')->name('deleteEmpleados');
 Route::any('/empleados/agregar/{id?}','empleados\EmpleadosController@add')->name('addEmpleados');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

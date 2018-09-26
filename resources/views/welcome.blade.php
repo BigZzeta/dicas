@@ -35,7 +35,7 @@
                             <a class="nav-link" href="#">Informacion</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="/registrar">Registrarse</a>
+                            <a class="nav-link disabled" href="#">Registrarse</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled" href="/login">Login</a>
