@@ -98,11 +98,11 @@ class DepartamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id=0)
     {
         // $departamentos = Departamento::findOrfail($request->id);
         // return($departamentos);
-        return("Hola");
+        return("Hola".$id);
         //
         // $departamento->nombre = $request->nombre;
         // $departamento->descripcion = $request->descripcion;
