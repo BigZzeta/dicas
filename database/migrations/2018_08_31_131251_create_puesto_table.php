@@ -17,8 +17,10 @@ class CreatePuestoTable extends Migration
             $table->increments('idpuesto')->unique();
             $table->integer('numeropuesto')->unique();
             $table->string('nombre')->unique();
-            $table->longText('funciones')->nullable();
+            $table->longText('funciones');
+            $table->integer('nivelestructural')->nullable()->default(1);
             $table->string('cartatecnica')->nullable();
+            $table->string('estatus')->default(1);
             $table->double('sueldominimo')->default(1.0);
             $table->double('sueldomaximo')->default(2.0);
             $table->timestamps();

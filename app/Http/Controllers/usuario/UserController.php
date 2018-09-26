@@ -18,10 +18,10 @@ class UserController extends Controller
 
 {
 
-  public function __construct()
-  {
-    // $this->middleware('auth');
-  }
+  // public function __construct()
+  // {
+  //   $this->middleware('auth');
+  // }
 
   public function index()
   {
@@ -34,18 +34,25 @@ class UserController extends Controller
 
   public function show($id)
   {
+    $title = 'Mostrando usuario';
+
     $user = User::where('username','=',$id)->firstOrFail();
-    return view('users.show', compact('user'));
+
+    return view('users.show', compact('title','user'));
 
   }
 
   public function create()
   {
-    return view('users.create');
+    $title = 'Crear usuario';
+
+    return view('users.create', compact('title'));
   }
 
   public function store(UserRequest $request)
   {
+    $title = 'Guardar Usuario';
+
     if($request->hasFile('foto')){
         $file = $request->file('foto');
         $name  = time().$file->getClientOriginalName();
@@ -61,22 +68,23 @@ class UserController extends Controller
     $data ->foto = $name;
     $data ->email = $request->input('email');
     $data ->username = $request->input('username');
-    // $data ->tipousuario = $request->input('tipousuario');
     $data ->password = bcrypt($request->input['password']);
 
     $data -> save();
 
-    return redirect()->route('users');
+    $title = 'Listado de usuarios';
+
+    return redirect()->route('users', compact('title'));
 
     }
 
   public function editar($username)
   {
-    // $tipou = tipousuario::all();
+    $title = 'Editar usuario';
 
     $user = User::where('username','=',$username)->firstOrFail();
 
-    return view('users.editar', compact('user'));
+    return view('users.editar', compact('title','user'));
   }
 
 
@@ -118,7 +126,7 @@ class UserController extends Controller
     $data ->username = $request->input('username');
     $data ->status = $request->input('status');
     $data ->idTipoUsuario = $request->input('tipousuario');
-    $data ->password = bcrypt($request->input['password']);
+    // $data ->password = bcrypt($request->input['password']);
 
     $data -> save();
 

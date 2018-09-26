@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Departamento;
+use Illuminate\Validation\Rule;
+use App\CatDepartamento;
+use App\Http\Requests\DepartamentoRequest;
 
-class DepartamentoController extends Controller
+class CatDepartamentoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,15 +16,12 @@ class DepartamentoController extends Controller
      */
     public function index()
     {
-        $departamentos = Departamento::all();
-
-        // $users = User::all();
+        $departamentos = CatDepartamento::all();
 
         $title = 'Listado de departamentos';
 
-        return view('departamentos.index', compact('title', 'departamentos'));
+        return view('cat_departamentos.index', compact('title', 'departamentos'));
 
-        // return $departamentos;
     }
 
     /**
@@ -32,7 +31,9 @@ class DepartamentoController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'Crear departamento';
+
+        return view('cat_departamentos.create', compact('title'));
     }
 
     /**
@@ -41,13 +42,20 @@ class DepartamentoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DepartamentoRequest $request)
     {
-        $departamento = new Departamento();
-        $departamento->nombre = $request->nombre;
-        $departamento->descripcion = $request->descripcion;
-        $departamento->condicion = '1';
+        $title = 'Guardando departamento';
+
+        $departamento = new CatDepartamento();
+
+        $departamento->numerodepartamento = $request->numerodepartamento;
+        $departamento->nombre = strtoupper($request->nombre);
+        // $departamento->numempleados = $request->numempleados;
+        // $departamento->numerodepuestos = $request->numerodepuestos;
+
         $departamento->save();
+
+        return redirect()->route('departamentos', compact('title'));
     }
 
     /**
@@ -58,7 +66,9 @@ class DepartamentoController extends Controller
      */
     public function show($id)
     {
-      $departamentos = Departamento::where('iddepartamento','=',$id)->firstOrFail();
+      $title = 'Mostrando departamento';
+
+      $departamentos = CatDepartamento::where('idcatdepartamento','=',$id)->firstOrFail();
 
       if ($departamentos->estatus == 1) {
         $departamentos->estatus = "Activo";
@@ -67,7 +77,7 @@ class DepartamentoController extends Controller
         $departamentos->estatus = "Inactivo";
       }
 
-      return view('departamentos.show', compact('departamentos'));
+      return view('cat_departamentos.show', compact('title','departamentos'));
     }
 
     /**
@@ -78,8 +88,10 @@ class DepartamentoController extends Controller
      */
     public function editar($id)
     {
-      $departamento = Departamento::where('iddepartamento','=',$id)->firstOrFail();
-      // return ($departamentos);
+      $title = 'Editar departamento';
+
+      $departamento = CatDepartamento::where('idcatdepartamento','=',$id)->firstOrFail();
+
       if ($departamento->estatus == 1) {
         $departamento->estatus = "Activo";
       }
@@ -87,8 +99,8 @@ class DepartamentoController extends Controller
         $departamento->estatus = "Inactivo";
       }
 
-      return view('departamentos.editar', compact('departamento'));
-      // return view('departamentos.editar');
+      return view('cat_departamentos.editar', compact('title', 'departamento'));
+
     }
 
     /**
@@ -100,14 +112,28 @@ class DepartamentoController extends Controller
      */
     public function update(Request $request, $id=0)
     {
-        // $departamentos = Departamento::findOrfail($request->id);
-        // return($departamentos);
-        return("Hola".$id);
-        //
-        // $departamento->nombre = $request->nombre;
-        // $departamento->descripcion = $request->descripcion;
-        // $departamento->condicion = '1';
-        // $departamento->save();
+      $departamento=Catdepartamento::findOrFail($id);
+
+      $valida = $request->validate([
+        'numerodepartamento' => Rule::unique('cat_departamentos')->ignore($departamento->idcatdepartamento,'idcatdepartamento'),
+        'nombre' => Rule::unique('cat_departamentos')->ignore($departamento->idcatdepartamento,'idcatdepartamento'),
+        // 'numempleados' => 'required'
+      ]);
+
+      if ($request->estatus==='Activo'){
+        $request->estatus = '1';
+      }
+      else{
+        $request->estatus=='0';
+      }
+
+      $departamento->numerodepartamento = $request->input('numerodepartamento');
+      $departamento ->nombre = strtoupper($request->input('nombre'));
+      $departamento ->estatus = $request->estatus;
+
+      $departamento -> save();
+
+      return redirect()->route('departamentos.show', compact('departamento'));
     }
 
     /**

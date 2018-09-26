@@ -15,8 +15,11 @@ class Empleados extends Migration
     public function up()
     {
          Schema::create('empleados', function (Blueprint $table) {
-            $table->increments('idEmpleado')->unique();
-            $table->string('codigoEmpleado',30)->nullable()->unique();
+            $table->increments('idempleado')->unique();
+            $table->integer('idpuesto');
+            $table->integer('idhorario');
+            $table->integer('cat_entidad_federativa_id');
+            $table->string('codigoempleado',30)->nullable()->unique();
             $table->string('nombre',40)->nullable();
             $table->string('fotografia',100)->nullable();
             $table->string('apellidoPaterno',40)->nullable();
@@ -25,8 +28,8 @@ class Empleados extends Migration
             $table->string('lugarNacimiento',40)->nullable();
             $table->string('estadoCivil',15)->nullable();
             $table->string('sexo',10)->nullable();
-            $table->string('curp',18)->nullable()->unique();
             $table->string('rfc',12)->nullable()->unique();
+            $table->string('curp',18)->nullable()->unique();
             $table->string('numeroSeguroSocial',15)->nullable()->unique();
             $table->integer('umf')->nullable()->unique();
             $table->string('tipoContrato',2)->nullable();
@@ -39,7 +42,7 @@ class Empleados extends Migration
             $table->string('nombrePadre',40)->nullable();
             $table->string('nombreMadre',40)->nullable();
             $table->string('numeroAfore',40)->nullable()->unique();
-            $table->string('numeroFonacot',40)->nullable()->unique();
+            $table->string('NumeroFonacot',40)->nullable()->unique();
             $table->string('correoElectronico',40)->nullable()->unique();
             $table->string('clabeInterbancaria',25)->nullable()->unique();
             $table->string('entidadFederativa',2)->nullable();

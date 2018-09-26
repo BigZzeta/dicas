@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>GTC</title>
         <link rel="shortcut icon" href="{{asset('img/icon.png')}}" />
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -22,20 +22,23 @@
         <!--Una barra de navegacion-->
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                <a class="navbar-brand" href="index.html#">Tendencias</a>
+                <a class="navbar-brand" href="#">Tendencias</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html#">Contacto</a>
+                            <a class="nav-link" href="#">Contacto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html#">Informacion</a>
+                            <a class="nav-link" href="#">Informacion</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="index.html#">Registrarse</a>
+                            <a class="nav-link disabled" href="#">Registrarse</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="/login">Login</a>
                         </li>
                     </ul>
                     <form class="form-inline mt-2 mt-md-0">

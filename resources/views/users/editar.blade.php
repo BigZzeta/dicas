@@ -1,5 +1,4 @@
 @extends('inicio')
-@section('title',"Editar usuario")
 
 @section('content')
 
@@ -138,32 +137,6 @@
                   </div>
                 @endif
                 </div>
-
-                <!--Tipo de Usuario 2 -->
-                <div >
-                <label>Tipo de Usuario 2do metodo:</label>
-                <div class="form-control">
-                  {!! Form::select('tipousuario') !!}
-
-                  {{ Form::open() }}
-                  <?php
-                  $opciones = ['1' => '1', '2' => '2', '3' => '3'];
-                  $seleccionadas = ['1','3'];
-                  ?>
-                  {{ Form::select('mi_select', $opciones, $seleccionadas) }}
-                  {{ Form::close() }}
-                </div>
-
-                @if ($errors->has('tipousuario'))
-                  <div class="text-danger">
-                    <p>{{ $errors->first('tipousuario') }}</p>
-                  </div>
-                @endif
-
-
-                </div>
-
-
 
                 <!--Contarseña -->
                 <div class="box-body">

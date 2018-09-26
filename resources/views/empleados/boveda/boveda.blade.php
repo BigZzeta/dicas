@@ -22,11 +22,11 @@
                         <tbody>
                             @foreach($empleados as $item)
                             <tr>
-                                <td>{{$item->codigoEmpleado}}</td>
+                                <td>{{$item->codigoempleado}}</td>
                                 <td>{{$item->nombre.' '.$item->apellidoPaterno.' '.$item->apellidoMaterno}}</td>
                                 <td>{{$item->correoElectronico}}</td>
-                                <td><button type="button" onclick="activar({{$item->idEmpleado}})" class="btn btn-sm btn-success" data-toggle='modal' data-target='#activar' >Activar</button></td>
-                            </tr>  
+                                <td><button type="button" onclick="activar({{$item->idempleado}})" class="btn btn-sm btn-success" data-toggle='modal' data-target='#activar' >Activar</button></td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -56,7 +56,7 @@
                     <div class="container-fluid">
                         <h4>¿Esta seguro de activar este empleado?</h4>
                         <input type="hidden" name="_token" value="{{csrf_token()}}" id="token"/>
-                        <input type="hidden" name="idEmpleado"  id="id"/>
+                        <input type="hidden" name="idempleado"  id="id"/>
                     </div>
                 </div>
                 <div class="modal-footer" >

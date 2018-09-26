@@ -4,7 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>GTH</title>
+        @if (isset($title))
+          <title>{!!$title!!} - GTC</title>
+        @else
+          <title> - GTC</title>
+        @endif
+
         <!--<meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">-->
         <!-- <meta name="author" content="Pike Web Development - http://servisky.dyndns.org"> -->
 
@@ -175,12 +180,14 @@
 
                         <li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="{{ asset('assets/images/avatars/admin.png') }}" alt="Profile image" class="avatar-rounded">
+                                <img src="../../img/avatars/8.jpg" alt="Profile image" class="avatar-rounded">
+                                <!-- <img src="../../img/user/Auth::user()->foto" alt="Profile image" class="avatar-rounded"> -->
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5 class="text-overflow"><small>Hola, admin</small> </h5>
+                                  <h5 class="text-overflow"><small>Hola, Admin</small> </h5>
+                                    <!-- <h5 class="text-overflow"><small>Hola, Auth::user()->name</small> </h5> -->
                                 </div>
 
                                 <!-- item-->
@@ -273,7 +280,7 @@
 
         <!-- Counter-Up-->
         <script src="{{ asset ('assets/plugins/waypoints/lib/jquery.waypoints.min.js') }}"></script>
-        <script src="{{ asset ('assets/plugins/counterup/jquery.counterup.min.js') }}"></script>   
+        <script src="{{ asset ('assets/plugins/counterup/jquery.counterup.min.js') }}"></script>
         <script>
 $(document).ready(function () {
     // data-tables

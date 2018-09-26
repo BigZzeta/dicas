@@ -1,8 +1,7 @@
 @extends('inicio')
 
-<!--@section('title',"Crear usuario")-->
-
 @section('content')
+
   <h2>Alta de Nuevo Usuario</h2>
 
   @include('errors.error')

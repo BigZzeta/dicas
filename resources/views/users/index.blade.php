@@ -1,6 +1,6 @@
 @extends('inicio')
-@section('content')
 
+@section('content')
 
 <!-- nueva tabla -->
 <div class="row">
@@ -51,7 +51,15 @@
                 </span>
 
                 </td>
-                  <td><a href="{{ route('users.show', ['username' => $user->username]) }}">Ver detalles</a></td>
+                <td>
+                  <!-- <a href="{{ route('users.show', ['username' => $user->username]) }}">Ver detalles</a> -->
+                  <div style="display: flex;">
+                    <!-- <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="" >Ver</button> -->
+                    <a class="btn btn-primary btn-sm"  href="{{ route('users.show', ['username' => $user->username]) }}" style="margin-left: 3px;">Ver</a>
+                    <a class="btn btn-secondary btn-sm" href="{{ route('users.editar', ['username' => $user->username]) }}" style="margin-left: 3px;">Editar</a>
+                    <!-- <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#borrar" style="margin-left: 3px;" >Borrar</button> -->
+                  </div>
+                </td>
                 </tr>
               @endforeach
 
