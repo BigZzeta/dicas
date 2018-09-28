@@ -23,20 +23,20 @@ class DatabaseSeeder extends Seeder
             'unes',
             'empresas',
             'horario',
-            'empleados'
+            'empleados',
+            'Empresas'
         ]);
 
         $this->call(departamentosSeeder::class);
         $this->call(userSeeder::class);
         $this->call(cat_entidad_federativa::class);
-        $this->call(EmpresaSeeder::class);
         $this->call(PuestosSeeder::class);
         $this->call(PagadoraSeeder::class);
         $this->call(PeriodoSeeder::class);
         $this->call(UneSeeders::class);
         $this->call(HorarioSeeder::class);
         $this->call(empleadosSeeder::class);
-
+        $this->call(EmpresasSeeder::class);
     }
     protected function truncateTables(array $tables)
     {
