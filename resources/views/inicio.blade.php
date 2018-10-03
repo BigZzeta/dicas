@@ -52,44 +52,45 @@
                             <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
 
                                 <!--<div class="dropdown-item noti-title">
-    <h5><small>Help and Support</small></h5>
-</div>
+                                <h5><small>Help and Support</small></h5>
+                            </div>
 
 
-<a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
-    <p class="notify-details ml-0">
-        <b>Do you want custom development to integrate this theme?</b>
-        <span>Contact Us</span>
-    </p>
-</a>
+                            <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
+                                <p class="notify-details ml-0">
+                                    <b>Do you want custom development to integrate this theme?</b>
+                                    <span>Contact Us</span>
+                                </p>
+                            </a>
 
 
-<a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">
-    <p class="notify-details ml-0">
-        <b>Do you want PHP version of the theme that save dozens of hours of work?</b>
-        <span>Try Pike Admin PRO</span>
-    </p>
-</a>
+                            <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">
+                                <p class="notify-details ml-0">
+                                    <b>Do you want PHP version of the theme that save dozens of hours of work?</b>
+                                    <span>Try Pike Admin PRO</span>
+                                </p>
+                            </a>
 
 
-<a title="Clcik to visit Pike Admin Website" target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item notify-all">
-    <i class="fa fa-link"></i> Visit Pike Admin Website
-</a>-->
+                            <a title="Clcik to visit Pike Admin Website" target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item notify-all">
+                                <i class="fa fa-link"></i> Visit Pike Admin Website
+                            </a>-->
 
                             </div>
                         </li>
+                        <!--
 
                         <li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fa fa-fw fa-envelope-o"></i><span class="notif-bullet"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
-                                <!-- item-->
+
                                 <div class="dropdown-item noti-title">
                                     <h5><small><span class="label label-danger pull-xs-right">12</span>Contact Messages</small></h5>
                                 </div>
 
-                                <!-- item-->
+
                                 <a href="#" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Jokn Doe</b>
@@ -98,7 +99,7 @@
                                     </p>
                                 </a>
 
-                                <!-- item-->
+
                                 <a href="#" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Michael Jackson</b>
@@ -107,7 +108,7 @@
                                     </p>
                                 </a>
 
-                                <!-- item-->
+
                                 <a href="#" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Foxy Johnes</b>
@@ -116,25 +117,27 @@
                                     </p>
                                 </a>
 
-                                <!-- All-->
+
                                 <a href="#" class="dropdown-item notify-item notify-all">
                                     View All
                                 </a>
 
                             </div>
-                        </li>
+                        </li> -->
+
+                        <!--
 
                         <li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fa fa-fw fa-bell-o"></i><span class="notif-bullet"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg">
-                                <!-- item-->
+
                                 <div class="dropdown-item noti-title">
                                     <h5><small><span class="label label-danger pull-xs-right">5</span>Allerts</small></h5>
                                 </div>
 
-                                <!-- item-->
+
                                 <a href="#" class="dropdown-item notify-item">
                                     <div class="notify-icon bg-faded">
                                         <img src="{{ asset('assets/images/avatars/avatar2.png') }}" alt="img" class="rounded-circle img-fluid">
@@ -146,7 +149,7 @@
                                     </p>
                                 </a>
 
-                                <!-- item-->
+
                                 <a href="#" class="dropdown-item notify-item">
                                     <div class="notify-icon bg-faded">
                                         <img src="{{ asset('assets/images/avatars/avatar3.png') }}" alt="img" class="rounded-circle img-fluid">
@@ -158,7 +161,7 @@
                                     </p>
                                 </a>
 
-                                <!-- item-->
+
                                 <a href="#" class="dropdown-item notify-item">
                                     <div class="notify-icon bg-faded">
                                         <img src="{{ asset('assets/images/avatars/avatar4.png') }}" alt="img" class="rounded-circle img-fluid">
@@ -170,37 +173,46 @@
                                     </p>
                                 </a>
 
-                                <!-- All-->
+
                                 <a href="#" class="dropdown-item notify-item notify-all">
                                     View All Allerts
                                 </a>
 
                             </div>
-                        </li>
+                        </li> -->
 
                         <li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="../../img/avatars/8.jpg" alt="Profile image" class="avatar-rounded">
-                                <!-- <img src="../../img/user/Auth::user()->foto" alt="Profile image" class="avatar-rounded"> -->
+                                <img src="../../img/user/{{Auth::user()->foto}}" alt="Profile image" class="avatar-rounded">
+
+                                <!-- asset('assets/css/style.css')  -->
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                  <h5 class="text-overflow"><small>Hola, Admin</small> </h5>
-                                    <!-- <h5 class="text-overflow"><small>Hola, Auth::user()->name</small> </h5> -->
+                                    <h5 class="text-overflow"><small>Hola,  {{Auth::user()->name}}  </small> </h5>
                                 </div>
 
                                 <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">
+                                <a href=" {{route('users.show', ['username' => Auth::user()->username]) }}" class="dropdown-item notify-item">
                                     <i class="fa fa-user"></i> <span>Perfil</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">
-                                    <i class="fa fa-power-off"></i> <span>Salir</span>
-                                </a>
+                                <!-- <form action="{{ route('logout') }}" method="post" >
+                                  {{ csrf_field() }}
+                                  <button>Cerrar Sesion</button>
+                                </form> -->
 
-                                <!-- item-->		<!--
+                                <a href="{{ route('logout') }}" class="dropdown-item notify-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                  {{ csrf_field() }}
+                                  <i class="fa fa-power-off"></i> <span>Salir</span>
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}
+                                </form>
+
+                                <!-- item-->
+                                <!--
                                     <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
                                         <i class="fa fa-external-link"></i> <span>Pike Admin</span>
                                     </a>-->

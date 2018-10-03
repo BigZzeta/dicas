@@ -17,7 +17,7 @@ class CreateInventariopuestosTable extends Migration
             $table->increments('idinventariopuestos');
             $table->integer('iddepartamento');
             $table->integer('idpuesto');
-            $table->timestamps();
+            $table->timestamp('timestamp')->default(DB::raw('CURRENT_TIMESTAMP'));
 
         });
     }

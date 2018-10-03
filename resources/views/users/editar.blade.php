@@ -1,4 +1,5 @@
 @extends('inicio')
+@section('title',"Editar usuario")
 
 @section('content')
 
@@ -22,7 +23,6 @@
 
 
   <form class="form-grup" method="POST" action="{{ url('usuarios/update').'/'.$user->id }}" enctype="multipart/form-data">
-
     {{ csrf_field() }}
 
         <!-- Main content -->
@@ -138,7 +138,7 @@
                 @endif
                 </div>
 
-                <!--Contarseña -->
+                <!--Contraseña -->
                 <div class="box-body">
                   <div class="form-group">
                     <label>Contraseña:</label>

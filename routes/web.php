@@ -2,25 +2,23 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-/*Route::get('/', 'usuario\UserController@index')
-  ->name('users');*/
-/*Ruta de inicio de la aplicacion*/
-Route::get('/','Login\LoginController@index')->name('start');
-/*fin de la ruta de inicio de la aplicacion*/
+Route::post('/login', 'Auth\LoginController@login')->name('login');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('/', function (){
+  return view('welcome');
+})->name('inicio');
+
+Route::get('/inicio', function (){
+  return view('inicio');
+})->name('inicio');
+
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
 Route::any('/validar','Login\LoginController@valida')->name('validar');
 
-Route::get('/inicio', function (){return view('inicio');})->name('inicio');
-
-Route::get('/dashboard', function(){
-  return view('contenido.dashboard');
-});
-
-//visitas o candidatos que se debe de registrar
-Route::get('/registrar', function(){
-  return view('candidatos.candidatos');
-});
-
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('/empresa', 'EmpresaController@index')->name('empresas');
 Route::get('/empresas/editar/{id}', 'EmpresaController@editar')->name('empresas.editar');
@@ -73,3 +71,31 @@ Route::any('/empleados','empleados\EmpleadosController@index')->name('empleados'
 Route::any('/empleados/actualizar/{id?}/{id2?}','empleados\EmpleadosController@update')->name('updateEmpleados');
 Route::any('/empleados/eliminar/{id?}','empleados\EmpleadosController@delete')->name('deleteEmpleados');
 Route::any('/empleados/agregar/{id?}','empleados\EmpleadosController@add')->name('addEmpleados');
+
+
+Route::get('/pagadora','PagadoraController@index')->name('pagadora');
+Route::get('/pagadora/nuevo','PagadoraController@create')->name('pagadoras.create');
+Route::post('/pagadora/crear', 'PagadoraController@store');
+Route::get('/pagadora/editar/{id}', 'PagadoraController@editar')->name('pagadoras.editar');
+Route::post('/pagadora/update/{id?}', 'PagadoraController@update')->name('pagadoras.update');
+Route::get('/pagadora/{pagadora}', 'PagadoraController@show')
+->where('pagadora', '\w+')
+->name('pagadoras.show');
+
+Route::get('/horarios','HorarioController@index')->name('horarios');
+Route::get('/horarios/nuevo','HorarioController@create')->name('horarios.create');
+Route::post('/horarios/crear', 'HorarioController@store');
+Route::get('/horarios/editar/{id}', 'HorarioController@editar')->name('horarios.editar');
+Route::post('/horarios/update/{id?}', 'HorarioController@update')->name('horarios.update');
+Route::get('/horarios/{horario}', 'HorarioController@show')
+->where('horario', '\w+')
+->name('horarios.show');
+
+Route::get('/incidencias','IncidenciasController@index')->name('incidencias');
+Route::get('/incidencias/nuevo','IncidenciasController@create')->name('incidencias.create');
+Route::post('/incidencias/crear', 'IncidenciasController@store');
+Route::get('/incidencias/editar/{id}', 'IncidenciasController@editar')->name('incidencias.editar');
+Route::post('/incidencias/update/{id?}', 'IncidenciasController@update')->name('incidencias.update');
+Route::get('/incidencias/{horario}', 'IncidenciasController@show')
+->where('incidencia', '\w+')
+->name('incidencias.show');

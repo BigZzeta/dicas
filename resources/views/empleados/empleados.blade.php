@@ -1,7 +1,7 @@
 @extends('inicio')
 <?php
 /* Colecciones de datos */
-$tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL','4'=>'POR TIEMPO DETERMINADO','5'=>'INDETERMINADO');
+$tipoContrato = array('1' => 'DETERMINADO', '2' => 'INDETERMINADO', '3' => 'ANUAL','4'=>'POR TIEMPO DETERMINADO','5'=>'INDETERMINADO');
 ?>
 @section('content')
 <div class="row">
@@ -53,7 +53,7 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL','4'
                                     {{$item->sexo}}
                                 </td>
                                 <td>
-                                    @if($item->estado=='A')
+                                    @if($item->estadoempleado=='A')
                                     <p class="badge badge-success" >Alta</p>
                                     @else
                                     <p class="badge badge-danger" title="Solo un administrador puede volver activar este empleado" >Baja</p>
@@ -63,7 +63,7 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL','4'
                                     <div style="display: flex;">
                                         <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ver{{$item->idempleado}}" >Ver</button>
                                         <a class="btn btn-secondary btn-sm" href="{{route('updateEmpleados').'/'.$item->idempleado}}" style="margin-left: 3px;">Editar</a>
-                                        <button type="button" onclick="javascript:pasar({{$item->idempleado}})" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#borrar" style="margin-left: 3px;" >Borrar</button>
+                                        <button type="button" onclick="javascript:pasar({{$item->idempleado}})" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#borrar" style="margin-left: 3px;" >Baja</button>
                                     </div>
                                 </td>
                             </tr>
@@ -93,7 +93,7 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL','4'
             <form  action="{{route('deleteEmpleados')}}" method="POST" >
                 <div class="modal-body" >
                     <div class="container-fluid">
-                        <h4>¿Esta seguro de eliminar este registro?</h4>
+                        <h4>¿Dar de Baja este registro?</h4>
                         <input type="hidden" name="_token" value="{{csrf_token()}}" id="token"/>
                         <input type="hidden" name="idempleado"  id="id"/>
                     </div>
@@ -217,8 +217,8 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL','4'
                         <input type="text" name="numeroFonacot" class="form-control text text-uppercase"  value="{{$item->numeroFonacot}}"  readonly />
                     </div>
                     <div class="col-md-3">
-                        <label class=" form-control-label" >Clabe Interbancaria:</label>
-                        <input type="text"  name="clabeInterbancaria" class="form-control"  value="{{$item->clabeInterbancaria}}"readonly />
+                        <label class=" form-control-label" >Cuenta (Banorte):</label>
+                        <input type="text"  name="cuentapagoelectronico" class="form-control"  value="{{$item->cuentapagoelectronico}}"readonly />
                     </div>
                     <div class="col-md-3">
                         <label class="form-control-label" >Tipo contrato:</label>
@@ -272,10 +272,10 @@ $tipoContrato = array('1' => 'BIMESTRAL', '2' => 'SEMESTRAL', '3' => 'ANUAL','4'
                 <div class="row">
                     <div class="col-md-4">
                         <label class=" form-control-label" >Estado :</label>
-                        @if($item->estado=='A')
-                        <input type="text" name="estado" class="form-control text-success"  value="ACTIVO" readonly />
+                        @if($item->estadoempleado=='A')
+                        <input type="text" name="estadoempleado" class="form-control text-success"  value="ACTIVO" readonly />
                         @else
-                        <input type="text" name="estado" class="form-control text-danger"  value="INACTIVO" title="Solo un administrador puede volver activar este empleado" readonly />
+                        <input type="text" name="estadoempleado" class="form-control text-danger"  value="INACTIVO" title="Solo un administrador puede volver activar este empleado" readonly />
                         @endif
                     </div>
                     <div class="col-md-4">

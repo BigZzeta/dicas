@@ -60,14 +60,14 @@
                                   </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-8">
-                                  <div class="form-group">
-                                    <label>Carta Técnica</label>
-                                    <input class="form-control" name="cartatecnica" type="text" value="{{ $puestos->cartatecnica }} " readonly />
-                                  </div>
-                                </div>
+                            
+                            <div class="box-body">
+                              <div class="form-group">
+                                <label>Carta Técnica:</label>
+                                <a class="fa fa-file-word-o" href="../../cartatecnica/doc/{{ $puestos->cartatecnica }}">Descargar</a>
+                              </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-8">
                                   <div class="form-group">

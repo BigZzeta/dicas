@@ -16,7 +16,7 @@ class CreateTipousuariosTable extends Migration
         Schema::create('tipousuarios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tipousuario');
-            $table->timestamps();
+            $table->timestamp('timestamp')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

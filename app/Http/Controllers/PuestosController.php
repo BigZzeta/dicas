@@ -9,6 +9,12 @@ use App\Http\Requests\PuestosRequest;
 
 class PuestosController extends Controller
 {
+
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
+
     public function index()
     {
         $puestos = Puesto::all();
@@ -42,19 +48,29 @@ class PuestosController extends Controller
 
     public function store(PuestosRequest $request)
     {
-        $puestos = new Puesto();
+      $puestos = new Puesto();
 
-        $puestos->numeropuesto = $request->numeropuesto;
-        $puestos->nombre = strtoupper($request->nombre);
-        $puestos->funciones = $request->funciones;
-        $puestos->nivelestructural = $request->nivelestructural;
-        $puestos->cartatecnica = $request->cartatecnica;
-        $puestos->sueldominimo = $request->sueldominimo;
-        $puestos->sueldomaximo = $request->sueldomaximo;
+      if($request->hasFile('cartatecnica')){
+          $file = $request->file('cartatecnica');
+          $name  = time().$file->getClientOriginalName();
+          $file->move(public_path().'/cartatecnica/doc/',$name);
+          $puestos->cartatecnica = $name;
+      }else{
+        // $name = '';
+      }
 
-        $puestos->save();
 
-        return redirect()->route('puestos');
+      $puestos->numeropuesto = $request->numeropuesto;
+      $puestos->nombre = strtoupper($request->nombre);
+      $puestos->funciones = $request->funciones;
+      $puestos->nivelestructural = $request->nivelestructural;
+      // $puestos->cartatecnica = $name;
+      $puestos->sueldominimo = $request->sueldominimo;
+      $puestos->sueldomaximo = $request->sueldomaximo;
+
+      $puestos->save();
+
+      return redirect()->route('puestos');
     }
 
     public function editar($id)
@@ -87,6 +103,15 @@ class PuestosController extends Controller
         'sueldomaximo' => 'required'
       ]);
 
+      if($request->hasFile('cartatecnica')){
+          $file = $request->file('cartatecnica');
+          $name  = time().$file->getClientOriginalName();
+          $file->move(public_path().'/cartatecnica/doc/',$name);
+          $puestos->cartatecnica = $name;
+      }else{
+        // $name = '';
+      }
+
       if ($request->estatus==='Activo'){
         $request->estatus = '1';
       }
@@ -98,7 +123,7 @@ class PuestosController extends Controller
       $puestos ->nombre = strtoupper($request->input('nombre'));
       $puestos ->funciones = $request->input('funciones');
       $puestos ->nivelestructural = $request->input('nivelestructural');
-      $puestos ->cartatecnica = $request->input('cartatecnica');
+      // $puestos ->cartatecnica = $request->input('cartatecnica');
       $puestos ->estatus = $request->estatus;
       $puestos ->sueldominimo = $request->input('sueldominimo');
       $puestos ->sueldomaximo = $request->input('sueldomaximo');

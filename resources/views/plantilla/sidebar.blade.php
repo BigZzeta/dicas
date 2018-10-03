@@ -19,9 +19,9 @@
           <li><a href="/departamentos"><i class="fa fa-building"></i>Departamentos</a></li>
           <li><a href="/une"><i class="fa fa-globe"></i>UNE's</a></li>
           <li><a href="/inventario"><i class="fa fa-database"></i>Inventario</a></li>
+          <li><a href="/horarios"><i class="fa fa-clock-o" aria-hidden="true"></i>Horarios</a></li>
+          <li><a href="/incidencias"><i class="fa fa-id-card"></i>Incidencias</a></li>
           <li><a href="/pagadora"><i class="fa fa-american-sign-language-interpreting"></i>Pagadora</a></li>
-
-
         </ul>
       </li>
          <li class="submenu">
@@ -33,6 +33,14 @@
       </li>
 
       <li class="submenu">
+        <a href="#"><i class="fa fa-building"></i><span> Administrar </span> <span class="menu-arrow"></span></a>
+        <ul class="list-unstyled">
+          <li><a href="/empresa"><i class="fa fa-building"></i>Empresa</a></li>
+
+        </ul>
+      </li>
+
+      <li class="submenu">
         <a href="#"><i class="fa fa-user-circle bigfonts"></i> <span> Accesos </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="/usuarios">Usuarios</a></li>
@@ -40,13 +48,6 @@
         </ul>
       </li>
 
-      <li class="submenu">
-        <a href="#"><i class="fa fa-user-circle bigfonts"></i> <span> Administrar </span> <span class="menu-arrow"></span></a>
-        <ul class="list-unstyled">
-          <li><a href="/empresa">Empresa</a></li>
-          <!-- <li><a href="/usuarios/nuevo">Nuevo usuarios</a></li> -->
-        </ul>
-      </li>
 
 
 <!--

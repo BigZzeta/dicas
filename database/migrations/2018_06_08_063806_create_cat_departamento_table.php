@@ -20,7 +20,7 @@ class CreateCatDepartamentoTable extends Migration
             // $table->integer('numempleados');
             // $table->integer('numerodepuestos');
             $table->boolean('estatus')->default(1);//activo o inectivo
-            $table->timestamps();
+            $table->timestamp('timestamp')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

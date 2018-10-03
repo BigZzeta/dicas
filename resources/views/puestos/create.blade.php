@@ -82,11 +82,12 @@
                                       @endif
                                     </div>
                                   </div>
-                                  <!-- Carta técnica -->
+                                  <!-- Carta técnica -->                                
                                   <div class="box-body">
                                     <div class="form-group">
                                       <label>Carta Técnica:</label>
-                                      <input type="text" class="form-control my-colorpicker1" name="cartatecnica" value="{{ old('cartatecnica') }}" >
+                                      <input type="file" class="form-control my-colorpicker1" id="cartatecnica" multiple="multiple" name="cartatecnica" placeholder="cartatecnica" value="{{ old('cartatecnica') }}">
+                                      <!-- <input type="file" name="cartatecnica" value="{{ old('cartatecnica') }}"> -->
                                       @if ($errors->has('cartatecnica'))
                                         <div class="text-danger">
                                           <p>{{ $errors->first('cartatecnica') }}</p>
@@ -94,6 +95,7 @@
                                       @endif
                                     </div>
                                   </div>
+
                                   <!-- Sueldo Mínimo -->
                                   <div class="box-body">
                                     <div class="form-group">

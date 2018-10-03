@@ -23,7 +23,8 @@ class CreatePuestoTable extends Migration
             $table->string('estatus')->default(1);
             $table->double('sueldominimo')->default(1.0);
             $table->double('sueldomaximo')->default(2.0);
-            $table->timestamps();
+            // $table->timestamps();
+            $table->timestamp('timestamp')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

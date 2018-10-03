@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->boolean('idTipoUsuario')->default('2');
             $table->boolean('status')->default('0');
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestamp('timestamp')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

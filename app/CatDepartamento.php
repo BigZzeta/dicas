@@ -11,4 +11,6 @@ class CatDepartamento extends Model
     protected $fillable = [
         'numerodepartamento','nombre','numempleados','numerodepuestos'
     ];
+
+    public $timestamps=false;
 }

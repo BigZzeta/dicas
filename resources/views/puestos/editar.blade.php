@@ -48,20 +48,24 @@
                       </div>
                     </div>
 
-                      <!--funciones del puesto -->
+                      <!--Funciones -->
                       <div class="row">
                         <div class="col-md-8">
                           <div class="form-group">
-                            <label>Funciones:</label>
-                            <input type="text" class="form-control my-colorpicker1" name="funciones" id="funciones" placeholder="Funciones del puesto" value="{{ old('funciones', $puestos->funciones) }}" >
+                            <label>Funciones del puesto:</label>
+                            <div class="form-row">
+                              <div class="col">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="funciones" placeholder="Actividades a realizar por el colaborador">{{ old('funciones', $puestos->funciones) }}</textarea>
+                              </div>
+                            </div>
                             @if ($errors->has('funciones'))
                               <div class="text-danger">
                                 <p>{{ $errors->first('funciones') }}</p>
                               </div>
                             @endif
+                          </div>
                         </div>
                       </div>
-                    </div>
 
                       <!-- nivel estructural -->
                       <div class="row">
@@ -82,8 +86,9 @@
                       <div class="row">
                         <div class="col-md-8">
                           <div class="form-group">
-                          <label>Carta Técnica:</label>
-                          <input type="text" class="form-control my-colorpicker1" name="cartatecnica" id="cartatecnica" value="{{ old('cartatecnica', $puestos->cartatecnica) }}" >
+                          <label>Nivel Estructural:</label>
+                          <input type="file" class="form-control my-colorpicker1" id="cartatecnica" multiple="multiple" name="cartatecnica" placeholder="cartatecnica" value="{{ old('cartatecnica') }}">
+                          <!-- <input type="file" name="cartatecnica" value="{{ old('cartatecnica') }}"> -->
                           @if ($errors->has('cartatecnica'))
                             <div class="text-danger">
                               <p>{{ $errors->first('cartatecnica') }}</p>

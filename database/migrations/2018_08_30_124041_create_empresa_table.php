@@ -22,7 +22,7 @@ class CreateEmpresaTable extends Migration
             $table->string('telefono1')->nullable();
             $table->string('telefono2')->nullable();
             $table->string('siglas');
-            $table->timestamps();
+            $table->timestamp('timestamp')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
