@@ -118,6 +118,7 @@ class PuestosController extends Controller
       else{
         $request->estatus=='0';
       }
+      // return $request;
 
       $puestos ->numeropuesto = $request->input('numeropuesto');
       $puestos ->nombre = strtoupper($request->input('nombre'));

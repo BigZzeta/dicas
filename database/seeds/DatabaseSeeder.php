@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         //dd('departamentoSeeder');
         $this->truncateTables([
             'cat_departamentos',
+            'tipousuarios',
             'users',
             'cat_entidad_federativa',
             'puestos',
@@ -24,10 +25,12 @@ class DatabaseSeeder extends Seeder
             'empresas',
             'horarios',
             'incidencias',
-            'empleados'
+            'empleados',
+            'expedientes'
         ]);
 
         $this->call(departamentosSeeder::class);
+        $this->call(TipoUsuario::class);
         $this->call(userSeeder::class);
         $this->call(cat_entidad_federativa::class);
         $this->call(EmpresaSeeder::class);
@@ -38,6 +41,7 @@ class DatabaseSeeder extends Seeder
         $this->call(HorarioSeeder::class);
         $this->call(IncidenciasSeeder::class);
         $this->call(empleadosSeeder::class);
+        $this->call(ExpedientesSeeder::class);
 
     }
     protected function truncateTables(array $tables)

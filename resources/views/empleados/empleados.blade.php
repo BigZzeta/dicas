@@ -283,6 +283,15 @@ $tipoContrato = array('1' => 'DETERMINADO', '2' => 'INDETERMINADO', '3' => 'ANUA
                         <input type="text" name="registro" class="form-control" value="{{$item->registro}}" readonly />
                     </div>
                 </div>
+                <hr/>
+                <h4 class="tex text-primary">Expediente</h4>
+                <hr/>
+                <div class="row">
+                    <div class="col-md-4">
+                      <a href="{{ route('expedientes.show', ['id' => $item->idempleado]) }}">Ver Expedientes</a>                        
+                    </div>
+
+                </div>
             </div>
             <div class="modal-footer" >
                 <button  type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

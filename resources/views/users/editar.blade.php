@@ -106,14 +106,35 @@
                   </div>
                 </div>
 
+                <!--Tipo de Usuario -->
+                <div class="box-body">
+                <label for="inputState">Tipo de Usuario:</label>
+                <select id="tipousuario" name="tipousuario" class="form-control" readonly >
+                    <option selected="selected"> {{ $user->idTipoUsuario }} </option>
+                      @if ($user->idTipoUsuario === 'Administrador')
+                        <option value="2" {{old('idTipoUsuario', $user->idTipoUsuario)=='Usuario' ? 'selected' : ''}} >Usuario</option>
+                      @elseif ($user->idTipoUsuario === 'Usuario')
+                        <option value="1" {{old('idTipoUsuario', $user->idTipoUsuario)=='Administrador' ? 'selected' : ''}}>Administrador</option>
+                      @endif
+                </select>
+                @if ($errors->has('idTipoUsuario'))
+                  <div class="text-danger">
+                    <p>{{ $errors->first('idTipoUsuario') }}</p>
+                  </div>
+                @endif
+                </div>
+
                 <!--Estatus del Usuario -->
                 <div class="box-body">
                   <div class="form-group">
                     <label>Estatus del usuario:</label>
-                      <select id="status" class="form-control" name= "status">
-                        <option> {{ old('status',$user->status) }} </option>
-                        <option>0</option>
-                        <option>1</option>
+                      <select id="status" name="status" class="form-control" readonly >
+                          <option selected="selected"> {{ $user->status }} </option>
+                            @if ($user->status === 'Activo')
+                              <option value="0" {{old('status', $user->status)=='Inactivo' ? 'selected' : ''}} >Inactivo</option>
+                            @elseif ($user->status === 'Inactivo')
+                              <option value="1" {{old('status', $user->status)=='Activo' ? 'selected' : ''}}>Activo</option>
+                            @endif
                       </select>
                       @if ($errors->has('status'))
                       <div class="text-danger">
@@ -121,21 +142,6 @@
                       </div>
                       @endif
                   </div>
-                </div>
-
-                <!--Tipo de Usuario -->
-                <div class="box-body">
-                <label for="inputState">Tipo de Usuario:</label>
-                <select id="inputState" class="form-control" name= "tipousuario">
-                  <option> {{ old('tipousuario',$user->idTipoUsuario, $user->name) }} </option>
-                  <option>1</option>
-                  <option>2</option>
-                </select>
-                @if ($errors->has('tipousuario'))
-                  <div class="text-danger">
-                    <p>{{ $errors->first('tipousuario') }}</p>
-                  </div>
-                @endif
                 </div>
 
                 <!--Contraseña -->

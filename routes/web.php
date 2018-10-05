@@ -99,3 +99,12 @@ Route::post('/incidencias/update/{id?}', 'IncidenciasController@update')->name('
 Route::get('/incidencias/{horario}', 'IncidenciasController@show')
 ->where('incidencia', '\w+')
 ->name('incidencias.show');
+
+Route::get('/expedientes','ExpedientesController@index')->name('expedientes');
+Route::get('/expedientes/nuevo/{id}','ExpedientesController@create')->name('expedientes.create');
+Route::post('/expedientes/crear', 'ExpedientesController@store');
+Route::get('/expedientes/editar/{id}', 'ExpedientesController@editar')->name('expedientes.editar');
+Route::post('/expedientes/update/{id?}', 'ExpedientesController@update')->name('expedientes.update');
+Route::get('/expedientes/{expediente}', 'ExpedientesController@show')
+->where('expediente', '\w+')
+->name('expedientes.show');

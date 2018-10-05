@@ -76,6 +76,18 @@ class UserController extends Controller
 
     $user = User::where('username','=',$username)->firstOrFail();
 
+    if($user->idTipoUsuario==1){
+      $user->idTipoUsuario='Administrador';
+    }else{
+      $user->idTipoUsuario='Usuario';
+    }
+    // return $user;
+    if($user->status==1){
+      $user->status='Activo';
+    }else{
+      $user->status='Inactivo';
+    }
+
     return view('users.editar', compact('user'));
   }
 
@@ -103,12 +115,46 @@ class UserController extends Controller
         $data ->foto = $namefoto;
     }
 
+    if ($request->tipousuario=='Usuario')
+    {
+      $tipou = 2;
+    }
+    elseif($request->tipousuario==2)
+    {
+      $tipou = 2;
+    }
+    elseif($request->tipousuario=='Administrador')
+    {
+      $tipou = 1;
+    }
+    else
+    {
+      $tipou = 1;
+    }
+
+
+    if($request->status=='Activo') {
+      $estatus = 1;
+    }elseif($request->status=='Inactivo')
+    {
+      $estatus = 0;
+    }elseif($request->status==0)
+    {
+      $estatus = 0;
+    }
+    else {
+      $estatus = 1;
+    }
+    // return $request;
+
+    // return $estatus;
+
     if ($request['password'] != null) {
         $data->password = bcrypt($request['password']);
     } else {
 
     }
-  
+
     /*Aqui va todo el rollo de la edita en la bd */
     /*Listo, el unico pex que da es el del request, ahi checalo, ya esta solucionado ese rollo*/
 
@@ -117,8 +163,8 @@ class UserController extends Controller
     $data ->apellidoMaterno = ucwords(strtolower($request->input('apellidoMaterno')));
     $data ->email = $request->input('email');
     $data ->username = $request->input('username');
-    $data ->status = $request->input('status');
-    $data ->idTipoUsuario = $request->input('tipousuario');
+    $data ->idTipoUsuario = $tipou;
+    $data ->status = $estatus;
 
     $data -> save();
 

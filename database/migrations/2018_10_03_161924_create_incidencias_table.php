@@ -14,7 +14,7 @@ class CreateIncidenciasTable extends Migration
     public function up()
     {
         Schema::create('incidencias', function (Blueprint $table) {
-            $table->increments('idincidencias')->unique();
+            $table->increments('idincidencia')->unique();
             $table->string('nombre')->unique();
             $table->timestamp('timestamp')->default(DB::raw('CURRENT_TIMESTAMP'));
         });

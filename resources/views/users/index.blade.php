@@ -25,6 +25,7 @@
                 <th>Apellidos</th>
                 <th>Correo</th>
                 <th>Usuario</th>
+                <th>TipoUsuario</th>
                 <th>Status</th>
                 <th>Detalles</th>
               </tr>
@@ -40,7 +41,16 @@
                 <td>{{ $user->apellidoPaterno}} {{$user->apellidoMaterno}}</td>
                 <td>{{ $user->email}}</td>
                 <td>{{ $user->username}}</td>
-                <td>
+                <td align="center">
+                  <span class="badge badge-success">
+                    @if($user->idTipoUsuario==1)
+                      Administrador
+                    @else
+                      Usuario
+                    @endif
+                  </span>
+                </td>
+                <td align="center">
                 <span class="badge badge-success">
                     @if($user->status==1)
                       Activo
