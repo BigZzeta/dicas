@@ -45,6 +45,8 @@
         <ul class="list-unstyled">
           <li><a href="/empresa">Empresa</a></li>
           <!-- <li><a href="/usuarios/nuevo">Nuevo usuarios</a></li> -->
+          <li><a href="/empresa/asignaDepartamentos">Asignar Departamento</a></li>
+          <li><a href="/empresa/asignaPuestos">Asignar Puestos</a></li>
         </ul>
       </li>
 

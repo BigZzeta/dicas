@@ -73,3 +73,9 @@ Route::any('/empleados','empleados\EmpleadosController@index')->name('empleados'
 Route::any('/empleados/actualizar/{id?}/{id2?}','empleados\EmpleadosController@update')->name('updateEmpleados');
 Route::any('/empleados/eliminar/{id?}','empleados\EmpleadosController@delete')->name('deleteEmpleados');
 Route::any('/empleados/agregar/{id?}','empleados\EmpleadosController@add')->name('addEmpleados');
+
+/*Administracion de las Une*/
+/*Departamentos*/
+Route::get('/empresa/asignaDepartamentos','Empresa\Departamentos\DepartamentosController@index')->name('asignaDepaEmpresa');
+/*Puestos*/
+Route::get('/empresa/asignaPuestos','Empresa\Puestos\PuestosEmpresaController@index')->name('asignaDepaEmpresa');
