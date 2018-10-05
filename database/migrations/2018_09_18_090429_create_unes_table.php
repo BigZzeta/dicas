@@ -20,7 +20,7 @@ class CreateUnesTable extends Migration
           $table->string('direccion');
           $table->integer('inventariopuestos');
           $table->integer('estatus')->default(1);
-          $table->timestamps();
+          $table->timestamp('tiemstamp')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

@@ -36,7 +36,7 @@ class EmpleadoRequest extends FormRequest
             'numeroAfore' => 'unique:empleados,numeroAfore',
             'numeroFonacot' => 'unique:empleados,numeroFonacot',
             'correoElectronico' => 'unique:empleados,correoElectronico',
-            'clabeInterbancaria' => 'unique:empleados,clabeInterbancaria',
+            'cuentapagoelectronico' => 'unique:empleados,cuentapagoelectronico',
         ];
     }
      public function messages()
@@ -51,7 +51,7 @@ class EmpleadoRequest extends FormRequest
             'numeroAfore.unique' => 'Valor repetido',
             'numeroFonacot.unique' => 'Valor repetido',
             'correoElectronico.unique' => 'Valor repetido',
-            'clabeInterbancaria.unique' => 'Valor repetido',
+            'cuentapagoelectronico.unique' => 'Valor repetido',
         ];
     }
 }

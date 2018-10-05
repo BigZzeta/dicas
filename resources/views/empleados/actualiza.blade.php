@@ -151,21 +151,21 @@
                                 @endif
                             </div>
                             <div class="col-md-3">
-                                <label class=" form-control-label" >Clabe Interbancaria:</label>
-                                <input  minlength="18"  maxlength="25" type="text"  name="clabeInterbancaria" class="form-control text"  value="{{old('clabeInterbancaria',$edit->clabeInterbancaria)}}" >
-                                @if($errors->get('clabeInterbancaria'))
-                                <div class="alert alert-danger">{{ $errors->get('clabeInterbancaria')[0]}}</div>
+                                <label class=" form-control-label" >Cuenta (Banorte):</label>
+                                <input  minlength="10"  maxlength="18" type="text"  name="cuentapagoelectronico" class="form-control text"  value="{{old('cuentapagoelectronico',$edit->cuentapagoelectronico)}}" >
+                                @if($errors->get('cuentapagoelectronico'))
+                                <div class="alert alert-danger">{{ $errors->get('cuentapagoelectronico')[0]}}</div>
                                 @endif
                             </div>
                             <div class="col-md-3">
                                 <label class=" form-control-label" ><i class="text-danger">*</i> Tipo contrato:</label>
                                 <select name="tipoContrato" class="form-control" required />
                                 <option></option>
-                                <option  value="1" {{old('tipoContrato',$edit->tipoContrato)==1 ? 'selected' : ''}}>Bimestral</option>
-                                <option  value="2" {{old('tipoContrato',$edit->tipoContrato)==2 ? 'selected' : ''}}>Semestral</option>
-                                <option  value="3" {{old('tipoContrato',$edit->tipoContrato)==3 ? 'selected' : ''}}>Anual</option>
-                                <option  value="4" {{old('tipoContrato',$edit->tipoContrato)==4 ? 'selected' : ''}}>Por tiempo determinado</option>
-                                <option  value="5" {{old('tipoContrato',$edit->tipoContrato)==5 ? 'selected' : ''}}>Indeterminado</option>
+                                <option  value="1" {{old('tipoContrato',$edit->tipoContrato)==1 ? 'selected' : ''}}>Determinado</option>
+                                <option  value="2" {{old('tipoContrato',$edit->tipoContrato)==2 ? 'selected' : ''}}>Indeterminado</option>
+                                <!-- <option  value="3" {{old('tipoContrato',$edit->tipoContrato)==3 ? 'selected' : ''}}>Anual</option> -->
+                                <!-- <option  value="4" {{old('tipoContrato',$edit->tipoContrato)==4 ? 'selected' : ''}}>Por tiempo determinado</option> -->
+                                <!-- <option  value="5" {{old('tipoContrato',$edit->tipoContrato)==5 ? 'selected' : ''}}>Indeterminado</option> -->
                                 </select>
                             </div>
                         </div>

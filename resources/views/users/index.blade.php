@@ -1,6 +1,6 @@
 @extends('inicio')
-
 @section('content')
+
 
 <!-- nueva tabla -->
 <div class="row">
@@ -25,6 +25,7 @@
                 <th>Apellidos</th>
                 <th>Correo</th>
                 <th>Usuario</th>
+                <th>TipoUsuario</th>
                 <th>Status</th>
                 <th>Detalles</th>
               </tr>
@@ -40,26 +41,25 @@
                 <td>{{ $user->apellidoPaterno}} {{$user->apellidoMaterno}}</td>
                 <td>{{ $user->email}}</td>
                 <td>{{ $user->username}}</td>
-                <td>
-
+                <td align="center">
+                  <span class="badge badge-success">
+                    @if($user->idTipoUsuario==1)
+                      Administrador
+                    @else
+                      Usuario
+                    @endif
+                  </span>
+                </td>
+                <td align="center">
                 <span class="badge badge-success">
-                    @if($user->status===1)
+                    @if($user->status==1)
                       Activo
                     @else
                       Inactivo
                     @endif
                 </span>
-
                 </td>
-                <td>
-                  <!-- <a href="{{ route('users.show', ['username' => $user->username]) }}">Ver detalles</a> -->
-                  <div style="display: flex;">
-                    <!-- <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="" >Ver</button> -->
-                    <a class="btn btn-primary btn-sm"  href="{{ route('users.show', ['username' => $user->username]) }}" style="margin-left: 3px;">Ver</a>
-                    <a class="btn btn-secondary btn-sm" href="{{ route('users.editar', ['username' => $user->username]) }}" style="margin-left: 3px;">Editar</a>
-                    <!-- <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#borrar" style="margin-left: 3px;" >Borrar</button> -->
-                  </div>
-                </td>
+                  <td><a href="{{ route('users.show', ['username' => $user->username]) }}">Ver detalles</a></td>
                 </tr>
               @endforeach
 

@@ -19,9 +19,15 @@ class empleadosSeeder extends Seeder {
             'numerosegurosocial' => '123451234', 'umf' => '2131', 'rfc' => '12345623',
             'tipocontrato' => '2', 'expediente' => 'ninguno',
             'telefono' => '9341157918', 'codigopostal' => '86934', 'direccion' => '...',
-            'poblacion' => '...','estado'=>'A', 'nombrepadre' => 'Roberto Gonzales Nahum', 'nombremadre' => 'Reyna Altamirano Morales',
-            'numeroafore' => '43968', 'numeroFonacot' => '0097', 'correoElectronico' => 'pgn@hotmail.com',
-            'clabeinterbancaria' => '12088827298456', 'entidadFederativa' => '5'
+            'poblacion' => '...','estadoempleado'=>'A', 'nombrepadre' => 'Roberto Gonzales Nahum', 'nombremadre' => 'Reyna Altamirano Morales',
+            'numeroafore' => '43968', 'numeroFonacot' => '0097', 'correoElectronico' => 'ericcenteno1@gmail.com',
+            'cuentapagoelectronico' => '1208882729845615', 'entidadFederativa' => '5',
+            'sueldofijo'=>120.56,
+            'fechasueldofijo'=>'2018-09-01',
+            'sueldovariable'=>200.45,
+            'fechasueldovariable'=>'2018-09-01',
+            'fechaalta'=>'2018-09-01',
+            'password'=> bcrypt('celeste1'),
         ]);
         DB::table('empleados')->insert([
             'idpuesto' => 2, 'idhorario'=>1,'cat_entidad_federativa_id'=>2,
@@ -31,9 +37,15 @@ class empleadosSeeder extends Seeder {
             'numeroSeguroSocial' => '123451001', 'umf' => '2112', 'rfc' => '09867909',
             'tipoContrato' => '2', 'expediente' => '...',
             'telefono' => '9341157918', 'codigoPostal' => '86934', 'direccion' => '...',
-            'poblacion' => '...', 'estado' => 'B', 'nombrePadre' => 'Roberto Gonzales Nahum', 'nombreMadre' => 'Reyna Altamirano Morales',
+            'poblacion' => '...', 'estadoempleado' => 'B', 'nombrePadre' => 'Roberto Gonzales Nahum', 'nombreMadre' => 'Reyna Altamirano Morales',
             'numeroAfore' => '42968', 'numeroFonacot' => '2307', 'correoElectronico' => 'mga@hotmail.com',
-            'clabeInterbancaria' => '12088809828456', 'entidadFederativa' => '10'
+            'cuentapagoelectronico' => '12088809828456', 'entidadFederativa' => '10',
+            'sueldofijo'=>120.56,
+            'fechasueldofijo'=>'2018-09-01',
+            'sueldovariable'=>200.45,
+            'fechasueldovariable'=>'2018-09-01',
+            'fechaalta'=>'2018-09-01',
+            'password'=> bcrypt('celeste12'),
         ]);
     }
 

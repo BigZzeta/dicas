@@ -18,10 +18,10 @@ class UserController extends Controller
 
 {
 
-  // public function __construct()
-  // {
-  //   $this->middleware('auth');
-  // }
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
 
   public function index()
   {
@@ -34,25 +34,18 @@ class UserController extends Controller
 
   public function show($id)
   {
-    $title = 'Mostrando usuario';
-
     $user = User::where('username','=',$id)->firstOrFail();
-
-    return view('users.show', compact('title','user'));
+    return view('users.show', compact('user'));
 
   }
 
   public function create()
   {
-    $title = 'Crear usuario';
-
-    return view('users.create', compact('title'));
+    return view('users.create');
   }
 
   public function store(UserRequest $request)
   {
-    $title = 'Guardar Usuario';
-
     if($request->hasFile('foto')){
         $file = $request->file('foto');
         $name  = time().$file->getClientOriginalName();
@@ -68,23 +61,34 @@ class UserController extends Controller
     $data ->foto = $name;
     $data ->email = $request->input('email');
     $data ->username = $request->input('username');
+    // $data ->tipousuario = $request->input('tipousuario');
     $data ->password = bcrypt($request->input['password']);
 
     $data -> save();
 
-    $title = 'Listado de usuarios';
-
-    return redirect()->route('users', compact('title'));
+    return redirect()->route('users');
 
     }
 
   public function editar($username)
   {
-    $title = 'Editar usuario';
+    // $tipou = tipousuario::all();
 
     $user = User::where('username','=',$username)->firstOrFail();
 
-    return view('users.editar', compact('title','user'));
+    if($user->idTipoUsuario==1){
+      $user->idTipoUsuario='Administrador';
+    }else{
+      $user->idTipoUsuario='Usuario';
+    }
+    // return $user;
+    if($user->status==1){
+      $user->status='Activo';
+    }else{
+      $user->status='Inactivo';
+    }
+
+    return view('users.editar', compact('user'));
   }
 
 
@@ -99,6 +103,7 @@ class UserController extends Controller
       'foto' => '',
       'email' => Rule::unique('users')->ignore($data->id,'id'),
       'username' => Rule::unique('users')->ignore($data->id,'id'),
+      'status' => 'required',
       'tipousuario' => 'required'
     ]);
 
@@ -110,10 +115,44 @@ class UserController extends Controller
         $data ->foto = $namefoto;
     }
 
-    if ($data['password'] != null) {
-        $data['password'] = bcrypt($data['password']);
+    if ($request->tipousuario=='Usuario')
+    {
+      $tipou = 2;
+    }
+    elseif($request->tipousuario==2)
+    {
+      $tipou = 2;
+    }
+    elseif($request->tipousuario=='Administrador')
+    {
+      $tipou = 1;
+    }
+    else
+    {
+      $tipou = 1;
+    }
+
+
+    if($request->status=='Activo') {
+      $estatus = 1;
+    }elseif($request->status=='Inactivo')
+    {
+      $estatus = 0;
+    }elseif($request->status==0)
+    {
+      $estatus = 0;
+    }
+    else {
+      $estatus = 1;
+    }
+    // return $request;
+
+    // return $estatus;
+
+    if ($request['password'] != null) {
+        $data->password = bcrypt($request['password']);
     } else {
-        unset($data['password']);
+
     }
 
     /*Aqui va todo el rollo de la edita en la bd */
@@ -124,9 +163,8 @@ class UserController extends Controller
     $data ->apellidoMaterno = ucwords(strtolower($request->input('apellidoMaterno')));
     $data ->email = $request->input('email');
     $data ->username = $request->input('username');
-    $data ->status = $request->input('status');
-    $data ->idTipoUsuario = $request->input('tipousuario');
-    // $data ->password = bcrypt($request->input['password']);
+    $data ->idTipoUsuario = $tipou;
+    $data ->status = $estatus;
 
     $data -> save();
 

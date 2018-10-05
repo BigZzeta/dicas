@@ -11,4 +11,6 @@ class Empresa extends Model
   protected $fillable = [
       'nombre','direccion','colonia','codigopostal','telefono1','telefono2','siglas'
   ];
+
+  public $timestamps=false;
 }

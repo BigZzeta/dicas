@@ -11,4 +11,6 @@ class Une extends Model
   protected $fillable = [
       'numeroune','nombre','direccion','inventariopuestos','estatus'
   ];
+  
+  public $timestamps=false;
 }

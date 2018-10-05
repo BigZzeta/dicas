@@ -12,6 +12,11 @@ use Illuminate\Validation\Validator;
 
 class EmpleadosController extends Controller {
 
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
+
     public function index() {
         $datos = Empleado::all();
         /* Catalagos */
@@ -43,7 +48,7 @@ class EmpleadosController extends Controller {
             EmpleadosController::refrescar($request, $objeto);
             return redirect()->route('empleados');
         } else {
-            $edit = Empleado::where('idempleado', '=', $id)->firstOrFail();
+            $edit = Empleado::where('idEmpleado', '=', $id)->firstOrFail();
             /* Catalagos */
             $estados = \Illuminate\Support\Facades\DB::table('cat_entidad_federativa')->get();
             return view('empleados.actualiza', compact('edit', 'estados'));
@@ -51,7 +56,7 @@ class EmpleadosController extends Controller {
     }
 
     public function delete(Request $request, $id = 0) {
-        $borrar = ($id < 2) ? Empleado::findOrFail($request->idempleado) : '';
+        $borrar = ($id < 2) ? Empleado::findOrFail($request->idEmpleado) : '';
         if ($id == 0) {
             $borrar->estado = 'B';
         } else if ($id == 1) {
@@ -70,7 +75,7 @@ class EmpleadosController extends Controller {
 
         $msj = array(
 
-            'codigoempleado.unique' => 'Valor Repetido',
+            'codigoEmpleado.unique' => 'Valor Repetido',
             'curp.unique' => 'Valor Repetido',
             'numeroSeguroSocial.unique' => 'Valor repetido',
             'umf.unique' => 'Valor repetido',
@@ -81,18 +86,18 @@ class EmpleadosController extends Controller {
         );
 
         $valida = $request->validate([
-            'curp' => Rule::unique('empleados')->ignore($objeto->idempleado, 'idempleado'),
-            ($request->codigoempleado !='')?'codigoempleado':'' => Rule::unique('empleados')->ignore($objeto->codigoempleado, 'codigoempleado'),
-            ($request->numeroSeguroSocial != '') ? 'numeroSeguroSocial' : '' => Rule::unique('empleados')->ignore($objeto->idempleado, 'idempleado'),
-            ($request->umf != '') ? 'umf' : '' => Rule::unique('empleados')->ignore($objeto->idempleado, 'idempleado'),
-            'rfc' => Rule::unique('empleados')->ignore($objeto->idempleado, 'idempleado'),
-            ($request->numeroAfore != '') ? 'numeroAfore' : '' => Rule::unique('empleados')->ignore($objeto->idempleado, 'idempleado'),
-            ($request->numeroFonacot != '') ? 'numeroFonacot' : '' => Rule::unique('empleados')->ignore($objeto->idempleado, 'idempleado'),
-            'correoElectronico' => Rule::unique('empleados')->ignore($objeto->idempleado, 'idempleado'),
-            ($request->clabeInterbancaria != '') ? 'clabeInterbancaria':'' => Rule::unique('empleados')->ignore($objeto->idempleado, 'idempleado')
+            'curp' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado'),
+            ($request->codigoEmpleado !='')?'codigoEmpleado':'' => Rule::unique('empleados')->ignore($objeto->codigoEmpleado, 'codigoEmpleado'),
+            ($request->numeroSeguroSocial != '') ? 'numeroSeguroSocial' : '' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado'),
+            ($request->umf != '') ? 'umf' : '' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado'),
+            'rfc' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado'),
+            ($request->numeroAfore != '') ? 'numeroAfore' : '' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado'),
+            ($request->numeroFonacot != '') ? 'numeroFonacot' : '' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado'),
+            'correoElectronico' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado'),
+            ($request->clabeInterbancaria != '') ? 'clabeInterbancaria':'' => Rule::unique('empleados')->ignore($objeto->idEmpleado, 'idEmpleado')
             ], $msj);
 
-        $objeto->codigoempleado = ($request->input('codigoempleado') == '') ? null : strtoupper($request->input('codigoempleado'));
+        $objeto->codigoEmpleado = ($request->input('codigoEmpleado') == '') ? null : strtoupper($request->input('codigoEmpleado'));
         $objeto->nombre = $request->input('nombre');
 
         if ($request->hasFile('fotografia')) {

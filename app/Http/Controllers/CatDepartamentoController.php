@@ -14,6 +14,12 @@ class CatDepartamentoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+     {
+       $this->middleware('auth');
+     }
+     
     public function index()
     {
         $departamentos = CatDepartamento::all();
@@ -110,8 +116,9 @@ class CatDepartamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id=0)
+    public function update(Request $request, $id)
     {
+
       $departamento=Catdepartamento::findOrFail($id);
 
       $valida = $request->validate([
@@ -134,6 +141,7 @@ class CatDepartamentoController extends Controller
       $departamento -> save();
 
       return redirect()->route('departamentos.show', compact('departamento'));
+
     }
 
     /**

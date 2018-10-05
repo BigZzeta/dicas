@@ -11,4 +11,6 @@ class Puesto extends Model
     protected $fillable = [
         'numeropuesto','descripcion','cartatecnica','sueldominimo','sueldomaximo'
     ];
+
+    public $timestamps=false;
 }
