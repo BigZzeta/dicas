@@ -183,20 +183,33 @@
 
                         <li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                              @if(Auth::user())
                                 <img src="../../img/user/{{Auth::user()->foto}}" alt="Profile image" class="avatar-rounded">
+                              @else
+
+                              @endif
 
                                 <!-- asset('assets/css/style.css')  -->
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
+                                  @if(Auth::user())
                                     <h5 class="text-overflow"><small>Hola,  {{Auth::user()->name}}  </small> </h5>
+                                  @else
+
+                                  @endif
                                 </div>
 
                                 <!-- item-->
-                                <a href=" {{route('users.show', ['username' => Auth::user()->username]) }}" class="dropdown-item notify-item">
-                                    <i class="fa fa-user"></i> <span>Perfil</span>
-                                </a>
+                                @if(Auth::user())
+                                  <a href=" {{route('users.show', ['username' => Auth::user()->username]) }}" class="dropdown-item notify-item">
+                                      <i class="fa fa-user"></i> <span>Perfil</span>
+                                  </a>
+                                @else
+
+                                @endif
+
 
                                 <!-- item-->
                                 <!-- <form action="{{ route('logout') }}" method="post" >
