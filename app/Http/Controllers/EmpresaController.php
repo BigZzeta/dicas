@@ -10,11 +10,11 @@ use App\Empresa;
 class EmpresaController extends Controller
 {
 
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
-  
+  // public function __construct()
+  // {
+  //   $this->middleware('auth');
+  // }
+
   public function index()
   {
       $empresas = Empresa::all();

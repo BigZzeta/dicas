@@ -10,11 +10,11 @@ use Illuminate\Validation\Rule;
 class PagadoraController extends Controller
 {
 
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
-  
+  // public function __construct()
+  // {
+  //   $this->middleware('auth');
+  // }
+
   public function index()
   {
       $pagadoras = Pagadora::all();

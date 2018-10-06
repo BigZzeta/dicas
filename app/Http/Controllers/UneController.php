@@ -9,11 +9,11 @@ use App\Http\Requests\UneRequest;
 class UneController extends Controller
 {
 
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
-  
+  // public function __construct()
+  // {
+  //   $this->middleware('auth');
+  // }
+
   public function index()
   {
       $unes = Une::all();

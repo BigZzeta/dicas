@@ -12,10 +12,10 @@ use Illuminate\Validation\Validator;
 
 class EmpleadosController extends Controller {
 
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
+  // public function __construct()
+  // {
+  //   $this->middleware('auth');
+  // }
 
     public function index() {
         $datos = Empleado::all();
