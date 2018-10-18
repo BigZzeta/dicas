@@ -51,7 +51,12 @@
                                 <div class="col-md-8">
                                   <div class="form-group">
                                     <label>Estatus</label>
-                                    <input class="form-control" name="estatus" type="text" value="{{ $departamentos->estatus }} " readonly />
+                                    @if($departamentos->estatus==1)
+                                      <input class="form-control" name="estatus" type="text" value="Activo" readonly />
+                                    @else
+                                      <input class="form-control" name="estatus" type="text" value="Inactivo" readonly />
+                                    @endif
+
                                   </div>
                                 </div>
                             </div>

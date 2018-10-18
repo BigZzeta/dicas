@@ -18,7 +18,7 @@
                     </div>
                 </div>
             </div>
-            <!-- end row -->            
+            <!-- end row -->
             <div class="row">
 
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -45,7 +45,7 @@
 
                                         <div id="avatar_image">
                                             <img style="height: 120px; width: 120px; background-color: #EFEFEFEF;" class="profile-user-img img-responsive rounded-circle mx-auto d-block"
-                                            src="../../img/user/{{ $user->foto }}" alt="imagen">
+                                            src="../../img/user/{{ $user->foto }}" alt="imagen">                                            
 
                                             <!-- <i class="fa fa-trash-o fa-fw"></i><a class="delete_image" href="#">Eliminar avatar</a> -->
                                         </div>

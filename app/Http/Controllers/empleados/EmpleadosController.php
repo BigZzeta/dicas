@@ -133,4 +133,14 @@ class EmpleadosController extends Controller {
         $objeto->save();
     }
 
+    public function show($id)
+    {
+      $empleados = Empleado::where('idempleado','=',$id)->firstOrFail();
+      // return $empleados;
+      return view('empleados.verempleado', compact('empleados'));
+
+        // return view(empleados.verempleado";
+    }
+
+
 }

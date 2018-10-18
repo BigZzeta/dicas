@@ -8,7 +8,7 @@
                 <div class="col-xl-12">
                     <div class="card-header">
                       <h3><i class="fa fa-table"></i> Expedientes
-                        <a href="{{ url('/expedientes/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo</a>
+                        <!-- <a href="{{ url('/expedientes/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo</a> -->
                       </h3>
                     </div>
                 </div>
@@ -27,8 +27,9 @@
                               <!-- <th>Id</th> -->
                               <th>ID. Expediente</th>
                               <th>ID. Empleado</th>
-                              <th>Nombre</th>
-                              <th>Observaciones</th>
+                              <th>ID. CatExpediente</th>
+                              <th>Nombre Empleado</th>
+                              <th>Documento</th>
                               <th>Detalles</th>
                             </tr>
                           </thead>
@@ -36,18 +37,18 @@
 
                           @foreach($expedientes as $expediente)
                           <tr>
-                            <td> {{ $expediente->idexpediente }}</td>
-                            <td align="center">{{ $expediente->idexpediente}}</td>
-                            <td align="center">{{ $expediente->empelado_idempleado }}</td>
-                            <td>{{ $expediente->observaciones }}</td>
+                            <td align="center">{{ $expediente->idexpediente }}</td>
+                            <td align="center">{{ $expediente->idempleado }}</td>
+                            <td align="center">{{ $expediente->idcatexpediente }}</td>
+                            <td align="center">{{ $expediente->nombreEmpleado }} {{ $expediente->apellidoPaterno }} {{ $expediente->apellidoMaterno }}</td>
+                            <td>{{ $expediente->nombreDocumento }}</td>
+                            <!-- <td align="center">{{ $expediente->documento}}</td> -->
+
                             <td>
-                              <!-- <a href="{{ route('expedientes.show', ['id' => $expediente->idexpediente]) }}">Ver detalles</a> -->
-                              <div style="display: flex;">
-                                <!-- <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="" >Ver</button> -->
+                              <!-- <div style="display: flex;">
                                 <a class="btn btn-primary btn-sm"  href="{{ route('expedientes.show', ['id' => $expediente->idexpediente]) }}" style="margin-left: 3px;">Ver</a>
                                 <a class="btn btn-secondary btn-sm" href="{{ route('expedientes.editar', ['id' => $expediente->idexpediente]) }}" style="margin-left: 3px;">Editar</a>
-                                <!-- <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#borrar" style="margin-left: 3px;" >Borrar</button> -->
-                              </div>
+                              </div> -->
                             </td>
 
                           </tr>
@@ -62,7 +63,7 @@
                       <div class="row">
                         <div class="col">
                           <div class="panel-heading">
-                            <a href="{{ url('/expedientes/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo</a>
+                            <!-- <a href="{{ url('/expedientes/nuevo') }}" class="btn btn-primary btn-sm ml-auto pull-right">Nuevo</a> -->
                           </div>
                         </div>
                       </div>

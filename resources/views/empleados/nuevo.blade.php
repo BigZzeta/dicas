@@ -195,7 +195,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <label class=" form-control-label" ><i class="text-danger">*</i> Código Postal:</label>
-                                <input minlength="5" maxlength="11" type="number" name="codigoPostal" class="form-control value="{{ old('codigoPostal') }}" required />
+                                <input minlength="5" maxlength="11" type="number" name="codigoPostal" class="form-control" value="{{ old('codigoPostal') }}" required />
                             </div>
                             <div class="col-md-4">
                                 <label class=" form-control-label" ><i class="text-danger">*</i> Telefono :</label>

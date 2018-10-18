@@ -8,7 +8,7 @@
         <title>GTC</title>
         <link rel="shortcut icon" href="{{asset('img/icon.png')}}" />
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> -->
         <!--Bootstrap 4.1-->
         <link href=" {{ asset('assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
         <link href=" {{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">

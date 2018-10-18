@@ -71,6 +71,9 @@ Route::any('/empleados','empleados\EmpleadosController@index')->name('empleados'
 Route::any('/empleados/actualizar/{id?}/{id2?}','empleados\EmpleadosController@update')->name('updateEmpleados');
 Route::any('/empleados/eliminar/{id?}','empleados\EmpleadosController@delete')->name('deleteEmpleados');
 Route::any('/empleados/agregar/{id?}','empleados\EmpleadosController@add')->name('addEmpleados');
+Route::any('/empleados/{id}','empleados\EmpleadosController@show')
+->where('empleados','\w+')
+->name('empleados.show');
 
 
 Route::get('/pagadora','PagadoraController@index')->name('pagadora');
@@ -100,11 +103,22 @@ Route::get('/incidencias/{horario}', 'IncidenciasController@show')
 ->where('incidencia', '\w+')
 ->name('incidencias.show');
 
+Route::get('/catexpedientes','CatexpedientesController@index')->name('catexpedientes');
+Route::get('/catexpedientes/nuevo','CatexpedientesController@create')->name('catexpedientes.create');
+Route::post('/catexpedientes/crear', 'CatexpedientesController@store');
+Route::get('/catexpedientes/editar/{id}', 'CatexpedientesController@editar')->name('catexpedientes.editar');
+Route::post('/catexpedientes/update/{id?}', 'CatexpedientesController@update')->name('catexpedientes.update');
+Route::get('/catexpedientes/{expediente}', 'CatexpedientesController@show')
+->where('catexpediente', '\w+')
+->name('catexpedientes.show');
+
 Route::get('/expedientes','ExpedientesController@index')->name('expedientes');
-Route::get('/expedientes/nuevo/{id}','ExpedientesController@create')->name('expedientes.create');
+Route::get('/expedientes/nuevo','ExpedientesController@create')->name('expedientes.create');
+Route::get('/expedientes/agregar/{id}','ExpedientesController@agregar')->name('expedientes.agregar');
 Route::post('/expedientes/crear', 'ExpedientesController@store');
 Route::get('/expedientes/editar/{id}', 'ExpedientesController@editar')->name('expedientes.editar');
 Route::post('/expedientes/update/{id?}', 'ExpedientesController@update')->name('expedientes.update');
-Route::get('/expedientes/{expediente}', 'ExpedientesController@show')
+Route::any('/expedientes/eliminar/{id?}','ExpedientesController@delete')->name('deleteExpediente');
+Route::get('/expedientes/{id}', 'ExpedientesController@show')
 ->where('expediente', '\w+')
 ->name('expedientes.show');

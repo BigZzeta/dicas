@@ -55,9 +55,7 @@ class CatDepartamentoController extends Controller
         $departamento = new CatDepartamento();
 
         $departamento->numerodepartamento = $request->numerodepartamento;
-        $departamento->nombre = strtoupper($request->nombre);
-        // $departamento->numempleados = $request->numempleados;
-        // $departamento->numerodepuestos = $request->numerodepuestos;
+        $departamento->nombre = strtoupper($request->nombre);      
 
         $departamento->save();
 
@@ -76,13 +74,6 @@ class CatDepartamentoController extends Controller
 
       $departamentos = CatDepartamento::where('idcatdepartamento','=',$id)->firstOrFail();
 
-      if ($departamentos->estatus == 1) {
-        $departamentos->estatus = "Activo";
-      }
-      else{
-        $departamentos->estatus = "Inactivo";
-      }
-
       return view('cat_departamentos.show', compact('title','departamentos'));
     }
 
@@ -97,13 +88,6 @@ class CatDepartamentoController extends Controller
       $title = 'Editar departamento';
 
       $departamento = CatDepartamento::where('idcatdepartamento','=',$id)->firstOrFail();
-
-      if ($departamento->estatus == 1) {
-        $departamento->estatus = "Activo";
-      }
-      else{
-        $departamento->estatus = "Inactivo";
-      }
 
       return view('cat_departamentos.editar', compact('title', 'departamento'));
 
@@ -124,15 +108,7 @@ class CatDepartamentoController extends Controller
       $valida = $request->validate([
         'numerodepartamento' => Rule::unique('cat_departamentos')->ignore($departamento->idcatdepartamento,'idcatdepartamento'),
         'nombre' => Rule::unique('cat_departamentos')->ignore($departamento->idcatdepartamento,'idcatdepartamento'),
-        // 'numempleados' => 'required'
       ]);
-
-      if ($request->estatus==='Activo'){
-        $request->estatus = '1';
-      }
-      else{
-        $request->estatus=='0';
-      }
 
       $departamento->numerodepartamento = $request->input('numerodepartamento');
       $departamento ->nombre = strtoupper($request->input('nombre'));

@@ -30,13 +30,6 @@ class UneController extends Controller
 
     $unes = Une::where('idune','=',$id)->firstOrFail();
 
-    if ($unes->estatus == 1) {
-      $unes->estatus = "Activo";
-    }
-    else{
-      $unes->estatus = "Inactivo";
-    }
-
     return view('une.show', compact('title', 'unes'));
   }
 
@@ -48,13 +41,6 @@ class UneController extends Controller
   public function store(UneRequest $request)
   {
       $unes = new Une();
-
-      // $valida = $request->validate([
-      //   'numeroune' => Rule::unique('unes')->ignore($unes->idune,'idune'),
-      //   'nombre' => Rule::unique('unes')->ignore($unes->idune,'idune'),
-      //   'direccion' => 'required',
-      //   'inventariopuestos' => 'required'
-      // ]);
 
       $unes->numeroune = $request->numeroune;
       $unes->nombre = strtoupper($request->nombre);
@@ -73,13 +59,6 @@ class UneController extends Controller
 
     $unes = Une::where('idune','=',$id)->firstOrFail();
 
-    if ($unes->estatus == 1) {
-      $unes->estatus = "Activo";
-    }
-    else{
-      $unes->estatus = "Inactivo";
-    }
-
     return view('une.editar', compact('title', 'unes'));
 
   }
@@ -92,13 +71,6 @@ class UneController extends Controller
       'numeroune' => Rule::unique('unes')->ignore($unes->idune,'idune'),
       'nombre' => Rule::unique('unes')->ignore($unes->idune,'idune'),
     ]);
-
-    if ($request->estatus==='Activo'){
-      $request->estatus = '1';
-    }
-    else{
-      $request->estatus=='0';
-    }
 
     $unes ->numeroune = $request->input('numeroune');
     $unes ->nombre = strtoupper($request->input('nombre'));
