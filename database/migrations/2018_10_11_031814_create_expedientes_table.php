@@ -15,11 +15,18 @@ class CreateExpedientesTable extends Migration
     {
         Schema::create('expedientes', function (Blueprint $table) {
             $table->increments('idexpediente')->unique();
-            $table->integer('idempleado');
-            $table->integer('idcatexpediente');
+
+            $table->unsignedInteger('idempleado');
+            $table->foreign('idempleado')->references('idempleado')->on('empleados');
+
+            $table->unsignedInteger('idcatexpediente');
+            $table->foreign('idcatexpediente')->references('idcatexpediente')->on('catexpedientes');
+
             $table->string('documento');
-            $table->string('observaciones')->nullable();            
+            $table->string('observaciones')->nullable();
             $table->timestamp('timestamp')->default(DB::raw('CURRENT_TIMESTAMP'));
+
+        
         });
     }
 
