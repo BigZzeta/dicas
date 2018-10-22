@@ -76,8 +76,10 @@ Route::any('/empleados/agregar/{id?}','empleados\EmpleadosController@add')->name
 /*Administracion de las Une*/
 /*Departamentos*/
 Route::get('/empresa/asignaDepartamentos','Empresa\Departamentos\DepartamentosController@index')->name('asignaDepaEmpresa');
-/*Puestos*/
-Route::get('/empresa/asignaPuestos','Empresa\Puestos\PuestosEmpresaController@index')->name('asignaDepaEmpresa');
+Route::post('/empresa/creaDepaEmp','Empresa\Departamentos\DepartamentosController@create')->name('creaDepaEmpresa');
+Route::post('/empresa/validaDepa','Empresa\Departamentos\DepartamentosController@validaDepa')->name('validaDepa'); //ajax validacion
+Route::get('/empresa/asignaP','Empresa\Departamentos\DepartamentosController@asignaPuesto')->name('asignaPuesto'); //asigna Puesto
+Route::post('/empresa/vp_depa','Empresa\Departamentos\DepartamentosController@validaP_depa')->name('validaP_depa'); //ajax_valida_departamentos para asignar puestos
 
 
 Route::get('/pagadora','PagadoraController@index')->name('pagadora');

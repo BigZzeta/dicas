@@ -13,4 +13,9 @@ class Une extends Model
   ];
   
   public $timestamps=false;
+  
+  /*relacion con departamentos*/
+  public function departamentos(){
+      return $this->hasMany('\App\Modelos\Departamentos','unes_idune','idune');
+  }
 }

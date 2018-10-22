@@ -13,4 +13,10 @@ class CatDepartamento extends Model
     ];
 
     public $timestamps=false;
+    
+    /*La relacion con la tabla departamentos*/
+    public function departamentos(){
+        return $this->hasMany('App\Modelos\Departamentos','catDepa_id','idcatdepartamento');
+    }
 }
+

@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/rhxaero/resources/views/empresas/asignaDepartamentos/asignaDepartamentos.blade.php</file>
+            <file>file:/C:/xampp/htdocs/rhxaero/database/migrations/2018_10_10_024009_relacion_departamentos_has_puestos.php</file>
+            <file>file:/C:/xampp/htdocs/rhxaero/routes/web.php</file>
+            <file>file:/C:/xampp/htdocs/rhxaero/database/migrations/2018_10_08_224443_departamentos_has_puestos.php</file>
+            <file>file:/C:/xampp/htdocs/rhxaero/app/Http/Controllers/Empresa/Departamentos/DepartamentosController.php</file>
+        </group>
     </open-files>
 </project-private>

@@ -46,7 +46,7 @@
           <li><a href="/usuarios">Usuarios</a></li>
           <!-- <li><a href="/usuarios/nuevo">Nuevo usuarios</a></li> -->
           <li><a href="/empresa/asignaDepartamentos">Asignar Departamento</a></li>
-          <li><a href="/empresa/asignaPuestos">Asignar Puestos</a></li>
+          <li><a href="/empresa/asignaP">Asignar Puestos</a></li>
         </ul>
       </li>
 
