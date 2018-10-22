@@ -80,12 +80,6 @@ class PuestosController extends Controller
 
       $puestos = Puesto::where('idpuesto','=',$id)->firstOrFail();
 
-      if($puestos->estatus==1){
-        $puestos->estatus='Activo';
-      }else{
-        $puestos->estatus='Inactivo';
-      }
-
       return view('puestos.editar', compact('title', 'puestos'));
 
     }
@@ -106,19 +100,11 @@ class PuestosController extends Controller
       if($request->hasFile('cartatecnica')){
           $file = $request->file('cartatecnica');
           $name  = time().$file->getClientOriginalName();
-          $file->move(public_path().'/cartatecnica/doc/',$name);
+          $file->move(public_path().'/documentos/cartatecnica/',$name);
           $puestos->cartatecnica = $name;
       }else{
         // $name = '';
       }
-
-      if ($request->estatus==='Activo'){
-        $request->estatus = '1';
-      }
-      else{
-        $request->estatus=='0';
-      }
-      // return $request;
 
       $puestos ->numeropuesto = $request->input('numeropuesto');
       $puestos ->nombre = strtoupper($request->input('nombre'));

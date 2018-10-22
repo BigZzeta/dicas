@@ -417,17 +417,34 @@ $(document).ready(function () {
         </script>
 
 
-        <!-- script para mostrar preview de la imagena  subir -->
-        <script>
-            var loadFile = function (event) {
-                var reader = new FileReader();
-                reader.onload = function () {
-                    var output = document.getElementById('output');
-                    output.src = reader.result;
-                };
-                reader.readAsDataURL(event.target.files[0]);
-            };
-        </script>
+<!-- script para mostrar preview de la imagena  subir -->
+<script>
+    var loadFile = function (event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var output = document.getElementById('output');
+            output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    };
+</script>
+
+<!-- script para mostrar y guardar varios registros -->
+<script>
+  $(function(){
+    // Clona la fila oculta que tiene los campos base, y la agrega al final de la tabla
+    $("#adicional").on('click', function(){
+      $("#tabla tbody tr:eq(0)").clone().removeClass('fila-fija').appendTo("#tabla");
+    });
+
+    // Evento que selecciona la fila y la elimina
+    $(document).on("click",".eliminar",function(){
+      var parent = $(this).parents().get(0);
+      $(parent).remove();
+    });
+  });
+</script>
+
         <!-- END Java Script for this page -->
 
     </body>

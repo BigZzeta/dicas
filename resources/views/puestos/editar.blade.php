@@ -86,7 +86,7 @@
                       <div class="row">
                         <div class="col-md-8">
                           <div class="form-group">
-                          <label>Nivel Estructural:</label>
+                          <label>Carta Tecnica:</label>
                           <input type="file" class="form-control my-colorpicker1" id="cartatecnica" multiple="multiple" name="cartatecnica" placeholder="cartatecnica" value="{{ old('cartatecnica') }}">
                           <!-- <input type="file" name="cartatecnica" value="{{ old('cartatecnica') }}"> -->
                           @if ($errors->has('cartatecnica'))
@@ -130,30 +130,12 @@
                       </div>
                     </div>
 
-                    <!-- estatus del puesto -->
-                    <!-- <div class="row">
-                      <div class="col-md-8">
-                        <div class="form-group">
-                        <label>Estatus del puesto:</label>
-                        <input type="text" class="form-control my-colorpicker1" name="estatus" id="estatus" placeholder="Estatus del puesto" value="{{ old('estatus', $puestos->estatus) }}" >
-                        @if ($errors->has('estatus'))
-                          <div class="text-danger">
-                            <p>{{ $errors->first('estatus') }}</p>
-                          </div>
-                        @endif
-                      </div>
-                    </div>
-                  </div> -->
                   <div class="row">
                     <div class="col-md-8">
                         <label class="form-control-label" ><i class="text-danger">*</i> Estatus:</label>
                         <select name="estatus" class="form-control" readonly >
-                            <option selected="selected"> {{ $puestos->estatus }} </option>
-                              @if ($puestos->estatus === 'Activo')
-                                <option value="0" {{old('estatus', $puestos->estatus)=='Inactivo' ? 'selected' : ''}} >Inactivo</option>
-                              @elseif ($puestos->estatus === 'Inactivo')
-                                <option value="1" {{old('estatus', $puestos->estatus)=='Activo' ? 'selected' : ''}}>Activo</option>
-                              @endif
+                            <option value="1" {{$puestos->estatus == 1 ? 'selected' : ''}}>Activo</option>
+                            <option value="0" {{$puestos->estatus == 0 ? 'selected' : ''}}>No activo</option>                              
                         </select>
                     </div>
                   </div>

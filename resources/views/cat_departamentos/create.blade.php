@@ -62,7 +62,7 @@
                                   </div>
 
                                   <!-- Numero de Empleados para el departamento -->
-                                  <div class="box-body">
+                                  <!-- <div class="box-body">
                                     <div class="form-group">
                                       <label>Numero de colaboradores del Departamento:</label>
                                       <input type="number" class="form-control my-colorpicker1" name="numempleados" value="{{ old('numempleados') }}" >
@@ -72,10 +72,10 @@
                                         </div>
                                       @endif
                                     </div>
-                                  </div>
+                                  </div> -->
 
                                   <!-- Numero de puestos del departamento -->
-                                  <div class="box-body">
+                                  <!-- <div class="box-body">
                                     <div class="form-group">
                                       <label>Numero de puestos:</label>
                                       <input type="number" class="form-control my-colorpicker1" name="numerodepuestos" value="{{ old('numerodepuestos') }}" >
@@ -85,7 +85,7 @@
                                         </div>
                                       @endif
                                     </div>
-                                  </div>
+                                  </div> -->
 
                                   <!-- /.box-body -->
                                 </div>

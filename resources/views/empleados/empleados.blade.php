@@ -64,6 +64,7 @@ $tipoContrato = array('1' => 'DETERMINADO', '2' => 'INDETERMINADO', '3' => 'ANUA
                                         <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ver{{$item->idempleado}}" >Ver</button>
                                         <a class="btn btn-secondary btn-sm" href="{{route('updateEmpleados').'/'.$item->idempleado}}" style="margin-left: 3px;">Editar</a>
                                         <button type="button" onclick="javascript:pasar({{$item->idempleado}})" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#borrar" style="margin-left: 3px;" >Baja</button>
+                                        <a class="btn btn-success btn-sm ml-auto pull-right" href="{{route('empleados.show', [$item->idempleado]) }}" >Ver</a>
                                     </div>
                                 </td>
                             </tr>
@@ -288,7 +289,7 @@ $tipoContrato = array('1' => 'DETERMINADO', '2' => 'INDETERMINADO', '3' => 'ANUA
                 <hr/>
                 <div class="row">
                     <div class="col-md-4">
-                      <a href="{{ route('expedientes.show', ['id' => $item->idempleado]) }}">Ver Expedientes</a>                        
+                      <a href="{{ route('expedientes.show', ['id' => $item->idempleado]) }}">Ver Expedientes</a>
                     </div>
 
                 </div>

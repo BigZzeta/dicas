@@ -60,11 +60,11 @@
                                   </div>
                                 </div>
                             </div>
-                            
+
                             <div class="box-body">
                               <div class="form-group">
                                 <label>Carta Técnica:</label>
-                                <a class="fa fa-file-word-o" href="../../cartatecnica/doc/{{ $puestos->cartatecnica }}">Descargar</a>
+                                <a class="fa fa-file-word-o" href="../../documentos/cartatecnica/{{ $puestos->cartatecnica }}">Descargar</a>
                               </div>
                             </div>
 
@@ -92,7 +92,6 @@
                                   </div>
                                 </div>
                             </div>
-
 
                         </div>
                       </div>

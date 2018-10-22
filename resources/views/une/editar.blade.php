@@ -89,12 +89,8 @@
                         <div class="form-group">
                           <label class="form-control-label" ><i class="text-danger">*</i> Estatus:</label>
                           <select name="estatus" class="form-control" readonly >
-                              <option selected="selected"> {{ $unes->estatus }} </option>
-                                @if ($unes->estatus === 'Activo')
-                                  <option value="0" {{old('estatus', $unes->estatus)=='Inactivo' ? 'selected' : ''}} >Inactivo</option>
-                                @elseif ($unes->estatus === 'Inactivo')
-                                  <option value="1" {{old('estatus', $unes->estatus)=='Activo' ? 'selected' : ''}}>Activo</option>
-                                @endif
+                            <option value="1" {{$unes->estatus == 1 ? 'selected' : ''}}>Activo</option>
+                            <option value="0" {{$unes->estatus == 0 ? 'selected' : ''}}>No activo</option>   
                           </select>
                           @if ($errors->has('estatus'))
                           <div class="text-danger">

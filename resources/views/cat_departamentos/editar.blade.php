@@ -61,19 +61,6 @@
                                     <!-- /.form group -->
                                   </div>
 
-                                  <!--Numero de empleados del departamento-->
-                                  <!-- <div class="box-body">
-                                    <div class="form-group">
-                                      <label>Numero de empleados del departamento:</label>
-                                      <input type="number" class="form-control my-colorpicker1" name="numempleados" id="numempleados" placeholder="Total de empleados del departamento" value="{{ old('numempleados', $departamento->numempleados) }}" >
-                                      @if ($errors->has('numempleados'))
-                                        <div class="text-danger">
-                                          <p>{{ $errors->first('numempleados') }}</p>
-                                        </div>
-                                      @endif
-                                    </div>
-                                  </div> -->
-
                                   <!-- Estatus del departamento-->
                                   <div class="box-body">
                                     <!-- Color Picker -->
@@ -82,12 +69,8 @@
 
                                       <label class="form-control-label" ><i class="text-danger">*</i> Estatus:</label>
                                       <select name="estatus" class="form-control" readonly >
-                                          <option selected="selected"> {{ $departamento->estatus }} </option>
-                                            @if ($departamento->estatus === 'Activo')
-                                              <option value="0" {{old('estatus', $departamento->estatus)=='Inactivo' ? 'selected' : ''}} >Inactivo</option>
-                                            @elseif ($departamento->estatus === 'Inactivo')
-                                              <option value="1" {{old('estatus', $departamento->estatus)=='Activo' ? 'selected' : ''}}>Activo</option>
-                                            @endif
+                                        <option value="1" {{$departamento->estatus == 1 ? 'selected' : ''}}>Activo</option>
+                                        <option value="0" {{$departamento->estatus == 0 ? 'selected' : ''}}>No activo</option> 
                                       </select>
 
                                       @if ($errors->has('estatus'))

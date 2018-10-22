@@ -26,7 +26,8 @@ class DatabaseSeeder extends Seeder
             'horarios',
             'incidencias',
             'empleados',
-            'expedientes'
+            'expedientes',
+            'catexpedientes'
         ]);
 
         $this->call(departamentosSeeder::class);
@@ -41,7 +42,8 @@ class DatabaseSeeder extends Seeder
         $this->call(HorarioSeeder::class);
         $this->call(IncidenciasSeeder::class);
         $this->call(empleadosSeeder::class);
-        $this->call(ExpedientesSeeder::class);
+        $this->call(CatexpedientesSeeder::Class);
+        // $this->call(ExpedientesSeeder::class);
 
     }
     protected function truncateTables(array $tables)

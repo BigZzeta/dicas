@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePagadoraTable extends Migration
+class CreateCatexpedientesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreatePagadoraTable extends Migration
      */
     public function up()
     {
-        Schema::create('pagadora', function (Blueprint $table) {
-            $table->increments('idpagadora')->unique();
+        Schema::create('catexpedientes', function (Blueprint $table) {
+            $table->increments('idcatexpediente')->unique();
+            $table->integer('numero')->unique();
             $table->string('nombre')->unique();
-            $table->timestamps();
+            $table->boolean('estatus')->default(0);
+            $table->timestamp('timestamp')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
@@ -27,6 +29,6 @@ class CreatePagadoraTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pagadora');
+        Schema::dropIfExists('catexpedientes');
     }
 }

@@ -18,10 +18,11 @@
           <li><a href="/puestos"><i class="fa fa-bars"></i>Puestos</a></li>
           <li><a href="/departamentos"><i class="fa fa-building"></i>Departamentos</a></li>
           <li><a href="/une"><i class="fa fa-globe"></i>UNE's</a></li>
-          <li><a href="/inventario"><i class="fa fa-database"></i>Inventario</a></li>
+          <li><a href="/pagadora"><i class="fa fa-american-sign-language-interpreting"></i>Pagadora</a></li>
           <li><a href="/horarios"><i class="fa fa-clock-o" aria-hidden="true"></i>Horarios</a></li>
           <li><a href="/incidencias"><i class="fa fa-id-card"></i>Incidencias</a></li>
-          <li><a href="/pagadora"><i class="fa fa-american-sign-language-interpreting"></i>Pagadora</a></li>
+          <li><a href="/inventario"><i class="fa fa-database"></i>Inventario</a></li>
+          <li><a href="/catexpedientes"><i class="fa fa-database"></i>Lista de Expediente</a></li>
         </ul>
       </li>
          <li class="submenu">
